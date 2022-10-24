@@ -32,7 +32,7 @@ https://Youcodein.github.io/codingclass/coding/css/index.html
 https://youcodein.github.io/codingclass/coding/site/site1/index_copy.html   
 
 ## 사이트 제작하기2   
-https://youcodein.github.io/codingclass/coding/site/site2_/index.html   
+https://youcodein.github.io/codingclass/coding/site/site2_T/index.html   
 
 ## 서치 이펙트   
 https://youcodein.github.io/codingclass/coding/javascript/effect/searchEffect.html   
