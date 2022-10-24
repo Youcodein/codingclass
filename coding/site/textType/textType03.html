@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        body {
+            background-color: #a16e49;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff1e0;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #fff8e8;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* textType03 */
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .text {
+            width: 373px;
+            height: 450px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        hr {
+            border: 1px solid #c3bab2;
+        }
+
+        .profile {
+            display: flex;
+            margin: 20px 0 20px 0;
+            position: relative;
+        }
+
+        .icon {
+            width: 54px;
+            height: 54px;
+            margin-right: 18px;
+        }
+
+        .name {
+            font-size: 25px;
+            margin-right: 25px;
+        }
+
+        .date {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .star {
+            margin-left: 14px;
+            position: absolute;
+            top: 34px;
+            left: 59px;
+        }
+
+        .star>img {
+            width: 23px;
+            height: 23px;
+            display: inline;
+        }
+
+        .more {
+            width: 130px;
+            height: 30px;
+            background-color: #b85555;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 20px;
+            margin: 30px 94px 0 88px;
+        }
+
+        .more > a {
+            color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType03" class="card__wrap nexon section">
+        <h2>🍞Youcodein 베이커리 후기🥐</h2>
+        <p>
+            우리 베이커리 손님들의 진짜 100% 리얼 후기들입니다.
+        </p>
+        <div class="container text__inner">
+            <article class="text">
+                <p class="desc">
+                    최고의 베이커리. 한국, 아니 우주에서 가장 맛있는 빵들입니다.
+                    사장님이 정말 정성을 담아 빵을 만드는 게 보입니다.
+                    제가 가장 좋아하는 빵은 슈크림인데요 바삭한 빵과 달콤하면서도
+                    깊은 맛의 크림이 환상의 조합입니다. 요 슈크림이 아주 미X..녀석입니다
+                </p>
+                <hr>
+                <div class="profile">
+                    <div class="icon">
+                        <img src="img/icon02_1.png" alt="프로필 아이콘">
+                    </div>
+                    <div class="name">박선혜</div>
+                    <div class="date">
+                        22. 08. 31
+                    </div>
+
+                    <div class="star">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                    </div>
+                </div>
+                <hr>
+                <div class="more">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </article>
+
+            <article class="text">
+                <p class="desc">
+                    친구가 추천해서 소금빵 먹어봤는데 너무너무 맛있었어요!
+                    어쩜 이렇게 맛있는지 제가 먹어본 소금빵중 제일 맛있었어요~
+                    다음에 또 가서 사먹으려구용 ㅎㅎ 다음엔 치즈빵? 을 한번 먹어보려 해요.
+                    친구는 쿠키가 맛있다고 하는데 그것도 너무너무 궁금하네요~ㅎㅎ...
+                </p>
+                <hr>
+                <div class="profile">
+                    <div class="icon">
+                        <img src="img/icon02_2.png" alt="프로필 아이콘">
+                    </div>
+                    <div class="name">권혜진</div>
+                    <div class="date">
+                        22. 08. 05
+                    </div>
+
+                    <div class="star">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                    </div>
+                </div>
+                <hr>
+                <div class="more">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </article>
+
+            <article class="text">
+                <p class="desc">
+                    대박짱임 여기서 케이크 샀는데 너무 만족스러워요.
+                    친구 생일케이크였는데 예쁘기도 너무 예쁘고 맛도 진짜 장난아니게
+                    맛있었어요 조금 비싸다 느껴지긴 했지만 먹어보고 왜 이 가격인지 알겠더라구요
+                    크림과 버터를 정말 좋은걸 쓰는 것 같아요 다음에도 또 사먹을게요~...
+                </p>
+                <hr>
+                <div class="profile">
+                    <div class="icon">
+                        <img src="img/icon02_3.png" alt="프로필 아이콘">
+                    </div>
+                    <div class="name">이희진</div>
+                    <div class="date">
+                        22. 07. 25
+                    </div>
+
+                    <div class="star">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                        <img src="img/star.png" alt="별">
+                    </div>
+                </div>
+                <hr>
+                <div class="more">
+                    <a href="#">자세히 보기</a>
+                </div>
+            </article>
+        </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

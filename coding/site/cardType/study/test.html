@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+        body {
+            background-color: #2254c3;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            height: 517px;
+            background-color: #fff;
+        }
+        .section {
+            padding: 120px 0;
+        }
+
+        /* +는 형제 > 바로 밑에 있는 자식(그래서 다른 자식들한테는 해당 안됨) */
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            /*figma auto랑 같음*/
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-style: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+         /* cardType02 */
+        .card__wrap {
+            width: 1160px;
+            height: 517px;
+            margin: 120px auto;
+        }
+        .card__inner {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        .card__inner .card {
+            width: 385px;
+            padding: 30px 26px;
+            border-right: 1px solid #d9d9d9;
+        }
+        .card__inner .card img {
+            width: 333.5px;
+            height: 230px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
+            background-color: #d9d9d9;
+            position: relative;
+        }
+        .card__inner .card .image .img_btn {
+            width: 75.8px;
+            height: 18px;
+            padding: 6px 18.4px 5px 14.5px;
+            border-radius: 50px;
+            background-color: #FFFFFF;
+            text-align: center;
+            line-height: 18px;
+            position: absolute;
+            transform: translate(210px, -250px);
+            
+        }
+        .card__inner .card .tit {
+            font-size: 20px;
+        } 
+
+        .card__inner .card .desc {
+            font-size: 16px;
+            font-weight: normal;
+            color: #666;
+            line-height: 1.4;
+            margin: 10px 0.5px 30px 0;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;  /*줄효과 clamp : 3줄 효과*/
+            -webkit-box-orient: vertical;
+        }
+        .card__inner .card .more {
+            width: 28px;
+            height: 28px;
+            background-image: url(); /*이 방법은 이미지가 안나오면 alt태그가 떠야하는데 안 뜸!->웹표준에 어긋남 //따라서 가상요소를 만들어서 웹표준을 지켜주어야 함*/ 
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }                                       
+
+    </style>
+</head>
+
+<body>
+    <section id="cardType03" class="card__wrap score section">
+        <div class="card__inner container">
+                <article class="card">
+                    <figure class="image">
+                        <img src="img/card_bg03_01.jpg" alt="여름 별미">
+                        <div class="img_btn">여름 별미</div>
+                    </figure>
+                    <h3 class="tit">여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 화채”
+                    </h3>
+                    <p class="desc">수박은 수분이 많아서 더위로 인해 땀이 났을 때 충분한 수분 보충이 가능합니다. 또한 수박을 먹으면 더운 한 여름에도 시원함을 느낄 수 있습니다.</p>
+                    <div class="profile">
+                        <img class="user" src="" alt="">
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="image">
+                        <img src="img/card_bg03_02.jpg" alt="여름 별미">
+                        <div class="img_btn">여름 별미</div>
+                    </figure>
+                    <h3 class="tit">여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 비빔국수”
+                    </h3>
+                    <p class="desc">비빔국수는 매콤새콤하면서 시원한 음식이여서 여름철에 먹으면 아주 별미입니다. 비빔국수에 얼음까지 넣는다면 이것이야말로 금상첨화입니다. </p>
+                    <a href="#" class="more"></a>
+                </article>
+                <article class="card">
+                    <figure class="image">
+                        <img src="img/card_bg03_03.jpg" alt="여름 별미">
+                        <div class="img_btn">여름 별미</div>
+                    </figure>
+                    <h3 class="tit">여름철 더위를 시원하게 이겨내기 위한 음식은? 바로 “ 팥빙수”
+                    </h3>
+                    <p class="desc">팥빙수는 팥과 얼음을 갈아서 만든 음식으로 몸에 좋은 팥이 들어가서 부담없이 즐길 수 있는 여름철 별미입니다. 시원하고 한국의 맛이 납니다.</p>
+                    <a href="#" class="more"></a>
+                </article>
+        </div>
+    </section>
+</body>
+
+</html>

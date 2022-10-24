@@ -1,0 +1,357 @@
+<div class="document">
+<h2 class="t_tit" data-ke-size="size26">Javascript Parallax Effect</h2>
+<p class="t_desc" data-ke-size="size16">parallax 이펙트 중 스크롤을 내리면 이미지와 텍스트가 움직여 이질적인 효과를 줍니다.</p>
+
+<div class="t_iframe" style="min-height: 1000px; padding-top: 0;"><iframe src="https://youcodein.github.io/coding2/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe></div>
+<div class="t_link"><a href="https://youcodein.github.io/coding2/javascript/effect/parallaxEffect05.html" target="_blank" rel="noopener">원본 사이트 보기</a></div>
+<div class="t_link"><a href="https://github.com/Youcodein/coding2/blob/main/javascript/effect/parallaxEffect05.html" target="_blank" rel="noopener">원본 소스 보기</a></div>
+
+
+<h2 class="t_tit">핵심 포인트(진행중)</h2>
+<p class="t_box">
+    HTML과 CSS코드에는 큰 차이가 없습니다.<br>
+    js코드를 중심으로 해설하겠습니다.
+</p>
+
+<h2 class="t_tit2">1. 진행중</h2>
+
+
+<h2 data-ke-size="size26">HTML</h2>
+<p class="t_desc2" data-ke-size="size16">html 소스입니다.</p>
+<div class="t_code">
+<pre><code class="language-html">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section01" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                글에 위인의 초상화가 있고 위인의 이름이 쓰여있다고 해서,
+                인터넷에서 본 말을 아무거나 믿지 말라.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section01 --&gt;
+        &lt;section id="section02" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section02&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                비록 내일 지구의 종말이 온다 하더라도 나는 오늘 한 그루의 사과나무를 심겠다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section02 --&gt;
+        &lt;section id="section03" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section03&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;그들이 죽음을 두려워하는 것이 이상합니다. 삶이 죽음보다 훨씬 더 아프다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section03 --&gt;
+        &lt;section id="section04" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section04&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                모든 것이 변한다는 것을 깨달으면 붙잡으려 할 것이 없다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section04 --&gt;
+        &lt;section id="section05" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section05&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                어떤 생각을 받아들이지 않고 즐겁게 할 수 있는 것은 교양 있는 정신의 표징이다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section05 --&gt;
+        &lt;section id="section06" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section06&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                철학은 언제나 우리 눈 앞에 놓여 있는 그 위대한 책에 기록되어 있습니다. 즉, 우주를 의미합니다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section06 --&gt;
+        &lt;section id="section07" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section07&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                행복은 힘이 증가하고 저항이 극복되고 있다는 느낌입니다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section07 --&gt;
+        &lt;section id="section08" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section08&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;사랑의 광기는 하늘의 축복 중 가장 큰 것입니다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section08 --&gt;
+        &lt;section id="section09" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section09&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;감히 알고! 당신의 지능을 사용할 용기를 가지십시오.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section09 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+</div>
+<!-- html -->
+<h2 data-ke-size="size26">CSS</h2>
+<p class="t_desc2" data-ke-size="size16">css 소스입니다.</p>
+<div class="t_code">
+<pre><code class="language-css">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top .4s ease;
+}
+
+
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#parallax__nav li a {
+    display: inline-block;
+    /* width: 30px; */
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+
+#parallax__cont {
+    max-width: 1600px;
+    /* background-color: rgba(255,255,255,0.1); */
+    width: 98%;
+    margin: 0 auto;
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.1); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 10vw;
+}
+
+.content__item:nth-child(even) {
+    margin-left: 0;
+    text-align: right;
+}
+
+.content__item__num {
+    font-size: 35vw;
+    font-family: 'Lato';
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+
+.content__item:nth-child(even) .content__item__num {
+    right: -5vw;
+    left: auto;
+}
+
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;
+    /* 첫글자만 대문자 */
+}
+
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.content__item__img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -5px;
+    top: -5px;
+    background-image: url(img/effect_bg02.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: saturate(0%);
+    /* transition: all 1s; */
+}
+
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(img/effect_bg09.jpg);
+}
+
+.content__item__desc {
+    font-size: 3vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+#parllax__nav li.active a {
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parllax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 10px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.8);
+        transform: translateY(-50%);
+    }
+
+    #parllax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parllax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+}
+
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+</code></pre>
+</div>
+<!-- css -->
+
+<h2 data-ke-size="size26">Javascript</h2>
+<p class="t_desc2" data-ke-size="size16">Javascript 소스입니다.</p>
+<div class="t_code">
+<pre><code class="language-js">function scroll() {
+    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+    document.querySelectorAll(".content__item").forEach(item => {
+        const target1 = item.querySelector(".content__item__img");
+        const target2 = item.querySelector(".content__item__desc");
+        const target3 = item.querySelector(".content__item__num");
+
+        let offset = (scrollTop - item.offsetTop) * 0.1;
+        let offset2 = (scrollTop - item.offsetTop) * 0.1;
+        let offset3 = (scrollTop - item.offsetTop) * 0.2;
+
+        // target1.style.transform = `translateY(${offset}px)`;
+        // target2.style.transform = `translateX(${offset2}px)`;
+
+        gsap.to(target1, {duration: .3, y: offset, ease: "power4.out"})
+        gsap.to(target2, {duration: .3, y: offset2, ease: "power4.out"})
+        gsap.to(target3, {duration: .3, y: offset3, ease: "power4.out"})
+    });
+
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+</div>
+<!-- html -->
+</div>

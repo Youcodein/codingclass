@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .text__title>h2 {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .section>h3 {
+            font-size: 16x;
+            margin-bottom: 20px;
+
+
+        }
+
+        /* textType02 */
+
+        .text__wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .text__title {
+            width: 373px;
+        }
+        .text_h3 {
+            width: 180px;
+            height: 25px;
+            border-radius: 10px;
+            background-color: #e43131;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+            line-height: 27px;
+
+        }
+
+        .text__title>p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #000;
+            text-align: left;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .text__inner {
+            width: 766px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__inner .text:nth-child(1) {
+            margin-bottom: 50px;
+        }
+        .text__inner .text:nth-child(2) {
+            margin-bottom: 50px;
+        }
+        .text {
+            width: 374px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .tit {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .gray {
+            background-color: #f5f5f5;
+        }
+        .icon{
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px
+        }
+        .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType02" class="text__wrap nexon section container">
+        <div class="text__title">
+            <div class="text_h3">
+                <h3>GOOD BREAD</h3>
+            </div>
+
+            <h2>빵을 더<br> 맛있게 먹자!</h2>
+            <p>
+                평소에 빵을 즐겨 드시나요?<br>
+                빵을 더 맛있게 즐기는 방법들을<br>
+                지금 이 자리에서 소개해드립니다!
+            </p>
+        </div>
+
+        <div class="text__inner">
+            <article class="text">
+                <div class="icon"><img src="img/icon7.png" alt="그냥 먹는다"></div>
+                <h3 class="tit">그냥 먹는다</h3>
+                <p class="desc">
+                    정말 맛있는 빵은 어떠한 기교를 부리지 않고 먹어도 맛있습니다. 
+                    순수한 빵을 맛보시면 이 말의 의미를 알게 될 것이라 자신합니다.
+                </p>
+
+            </article>
+            <article class="text">
+                <div class="icon"><img src="img/icon2.png" alt="구워서"></div>
+                <h3 class="tit">구워서</h3>
+                <p class="desc">
+                    불의 발견은 인간에게 아주 혁명적인 일이었습니다. 
+                    그리고 그 불로 우리는 빵을 구워먹는 기적을 행할 수 있었습니다. 
+                </p>
+
+            </article>
+            <article class="text">
+                <div class="icon"><img src="img/icon3.png" alt="크림, 잼과"></div>
+                <h3 class="tit">크림/잼과</h3>
+                <p class="desc">
+                    그냥 빵만 먹기 심심하다면? 크림이나 잼을 얹어서 드세요! 
+                    달콤하고 고소한 맛을 추가할 수 있어요! 맛있게 드세요~
+                </p>
+
+            </article>
+            <article class="text">
+                <div class="icon"><img src="img/icon4.png" alt="음료랑"></div>
+                <h3 class="tit">음료랑</h3>
+                <p class="desc">
+                    커피와 빵은 정말 궁합이 잘 맞죠 
+                    빵 한 입과 커피 한 모금에 작은 행복을 경험하세요. 당신의 소확행을 느끼세요
+                </p>
+
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>

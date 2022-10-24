@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 데이터 타입</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dracura.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="baisic.html">기본 규칙</a></li>
+                <li><a href="operate.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">전역변수/지역변수</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기</a></li>
+                <li><a href="search.html">서치 이펙트 만들기</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="element02.html">요소선택02</a></li>
+                <li><a href="Built-In Function.html">내장함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트에서의 데이터 타입</h2>
+            <p class="t_desc">데이터 타입은 변수에 저장되는 데이터의 유형으로 
+                '(Primitive)원시 데이터 타입'과 '(Object)객체 데이터 타입'으로 나눌 수 있습니다.
+            </p>
+
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>분류</th>
+                        <th>데이터 타입</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">원시(Primitive)</td>
+                        <td>number, string, boolean, undefined, null, symbol</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">객체(Object)</td>
+                        <td>function, object, array</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h3 class="t_tit2">number(숫자)데이터</h3>
+            <p class="t_desc">number 데이터는 정수, 소수점, 지수를 표현할 수 있습니다.</p>
+
+            <div class="t_box">
+                var num1 = 10; <br>
+                var num2 = 10.5; <br>
+                var num3 = le+10; <br>
+                console.log(num1);  //  10 <br>
+                console.log(num2);  //  10.5 <br>
+                console.log(num3);  //  100, le + 2는 1*10의 2승을 의미합니다.
+            </div>
+
+            <h3 class="t_tit2">string (문자)데이터</h3>
+            <p class="t_desc">string 데이터는 ' '또는 " "로 표현할 수 있습니다.</p>
+
+            <div class="t_box">
+                var str1 = "문자"; <br>
+                var str2 = "문자"; <br>
+                console.log(str1);  //  문자 <br>
+                console.log(str2);  //  문자 <br>
+            </div>
+            <p class="t_desc">문자 안에 문자가 들어갈 경우</p>
+
+            <div class="t_box">
+                var str1 = '문자는 "문자"''; <br>
+                var str2 = "문자는 '문자'"; <br>
+                console.log(str1);  //  문자는 "문자" <br>
+                console.log(str2);  //  문자는 '문자' <br>
+            </div>
+
+            <h3 class="t_tit2">boolean (논리)데이터</h3>
+            <p class="t_desc">boolean 데이터는 true(참)또는 false(거짓)의 값을 표현합니다.</p>
+
+            <div class="t_box">
+                var temp1 = (5 &gt; 4); <br>
+                var temp2 = (5 &lt; 4); <br>
+                console.log(temp1);  //  true <br>
+                console.log(temp2);  //  false <br>
+            </div>
+            <p class="t_desc">boolean 에서 0값은 false를 의미하며 0값 이외의 숫자나 문자 값은 true를 의미합니다.</p>
+
+            <div class="t_box">
+                var temp1 = 0; <br>
+                var temp2 = 0; <br>
+                console.log(temp1);  //  false <br>
+                console.log(temp2);  //  true <br>
+            </div>
+
+            <h3 class="t_tit2">undefined 데이터</h3>
+            <p class="t_desc">undefined 데이터는 변수는 선언하였으나 데이터 값,
+                혹은 객체의 속성 값을 지정하지 않았을 경우에 나오는 값입니다.</p>
+
+            <div class="t_box">
+                var temp1 = 10; <br>
+                var temp2; <br>
+                console.log(temp1);  //  10 <br>
+                console.log(temp2);  //  undefined <br> -> 변수에 데이터 값이 없기 때문에
+            </div>
+            <p class="t_desc">boolean 에서 0값은 false를 의미하며 0값 이외의 숫자나 문자 값은 true를 의미합니다.</p>
+
+            <div class="t_box">
+                var obj = {}; <br>
+                obj.name = '홍길동'; <br>
+                obj.age; <br>
+
+                console.log(obj.name);  //  홍길동 <br>
+                console.log(obj.age);  //  undefined <br> -> 객체에 속성 값이 없기 때문에
+            </div>
+
+            <h3 class="t_tit2">null 데이터</h3>
+            <p class="t_desc">undefined와 유사하지만 변수를 빈(empty)상태로 만들거나,
+                데이터를 저장하였으나 값이 존재하지 않을 때 null 값을 반환합니다.</p>
+
+            <div class="t_box">
+                var temp1 = 10; <br>
+                var temp2; <br>
+                console.log(temp1);  //  10 <br>
+                console.log(temp2);  //  undefined <br> -> 변수에 데이터 값이 없기 때문에
+            </div>
+            <p class="t_desc">boolean 에서 0값은 false를 의미하며 0값 이외의 숫자나 문자 값은 true를 의미합니다.</p>
+
+            <div class="t_box">
+                var obj = 10; <br>
+                obj = null; <br>
+                console.log(obj);  //  null, 변수를 빈 상태로 만듭니다. <br>
+                var obj = document.getElementById('gnb'); <br>
+                console.log(obj);  //  변수에 데이터 값을 저장은 하였으나 값이 존재하지 않을 경우 null을 저장합니다.
+            </div>
+
+            <h3 class="t_tit2">typeof 명령</h3>
+            <p class="t_desc">변수에 저장 되어 있는 데이터의 타입을 알아보기 위해 사용하는 명령어입니다.</p>
+
+            <div class="t_box">
+                var num = 10;
+                var str = '문자';
+                console.log(typeof num); // number
+                console.log(typeof str); // string
+            </div>
+
+        </div>
+    </main>
+      <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+    </footer>
+      <!-- //footer --> 
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

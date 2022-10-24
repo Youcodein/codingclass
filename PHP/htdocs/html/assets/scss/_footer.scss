@@ -1,0 +1,16 @@
+#footer {
+    h2 {
+        @include blind;
+    }
+    
+}
+
+.footer__inner {
+    @include flex_sb;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #666;
+    
+}

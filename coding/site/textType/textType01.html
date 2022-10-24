@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gray {
+            background-color: #f5f5f5;
+        }
+
+        /* textType01 */
+
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .text__inner .text:nth-child(1) {
+            margin-bottom: 20px;
+        }
+        .text__inner .text:nth-child(2) {
+            margin-bottom: 20px;
+        }
+        .text__inner .text:nth-child(3) {
+            margin-bottom: 20px;
+        }
+
+        .text__inner .text {
+            width: 373px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .text__inner .text .tit {
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .text:hover {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType" class="text__wrap nexon section">
+        <p>텍스트 유형01</p>
+        <h2>🍞빵을 맛있게 먹는 방법🥐</h2>
+        <div class="text__inner container">
+            <article class="text">
+                <div class="icon"><img src="img/icon1.png" alt="아이콘"></div>
+                <h3 class="tit">그냥 먹는다</h3>
+                <p class="desc">
+                    인간의 가장 기본적인 행위인 먹는다는 행위를 통해
+                    빵이라는 음식물을 섭취해봅시다. 공복일 시 더욱 맛있습니다.
+                </p>
+                <a href="#">더보기</a>
+            </article>
+
+            <article class="text">
+                <div class="icon"><img src="img/icon2.png" alt="아이콘"></div>
+                <h3 class="tit">구워서 먹는다</h3>
+                <p class="desc">
+                    불의 발견은 인간에게 아주 혁명적인 일이었습니다. 
+                    그리고 그 불로 우리는 빵을 구워먹는 기적을 행할 수 있었습니다. 
+                </p>
+                <a href="#">더보기</a>
+            </article>
+
+            <article class="text">
+                <div class="icon"><img src="img/icon3.png" alt="아이콘"></div>
+                <h3 class="tit">얹어서 먹는다</h3>
+                <p class="desc">
+                    그냥 빵만 먹기 심심하다면? 크림이나 잼을 얹어서 드세요!
+                    달콤하고 고소한 맛을 추가할 수 있어요! 맛있게 드세요~
+                </p>
+                <a href="#">더보기</a>
+            </article>
+            
+            <article class="text">
+                <div class="icon"><img src="img/icon4.png" alt="아이콘"></div>
+                <h3 class="tit">커피와 함께 먹는다</h3>
+                <p class="desc">
+                    커피와 빵은 정말 궁합이 잘 맞죠 
+                    빵 한 입과 커피 한 모금에 작은 행복을 경험하세요. 
+                    당신의 소확행을 느끼세요
+                </p>
+                <a href="#">더보기</a>
+            </article>
+
+            <article class="text">
+                <div class="icon"><img src="img/icon5.png" alt="아이콘"></div>
+                <h3 class="tit">선물로 준다</h3>
+                <p class="desc">
+                    가끔은 마음을 배부르게 해보세요. 
+                    평소에 감사하던 사람에게 빵으로 감사함을 전해보세요. 
+                    정말 기뻐할거예요!
+                </p>
+                <a href="#">더보기</a>
+            </article>
+            <article class="text">
+                <div class="icon"><img src="img/icon6.png" alt="아이콘"></div>
+                <h3 class="tit">만들어 먹는다</h3>
+                <p class="desc">
+                    예전부터 인간은 원하는 것이 있다면 만들어냈습니다. 
+                    자급자족의 인간! 이제 식량을 자급자족하세요! 
+                    굿인간 굿브레드
+                </p>
+                <a href="#">더보기</a>
+            </article>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 만들기</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dracura.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="baisic.html">기본 규칙</a></li>
+                <li><a href="operate.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">전역변수/지역변수</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">웹디자인기능사 QUIZ 만들기</h2>
+            <p class="t_desc2">
+                웹디자인기능사 필기시험 대비로 이때까지 배운 javascript기능들을 활용하여
+                간단한 퀴즈 게임을 만들어보았습니다. 열심히 <i>공부</i>하세요!
+            </p>
+
+            <h3 class="t_tit2">주관식 유형</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://hwangyoujin.github.io/coding2/javascript/effect/quizEffect02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/HWANGYoujin/coding2/blob/main/javascript/effect/quizEffect02.html" target="_blank">원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">일러스트레이터로 일러스트 그리기</h3>
+            <p class="t_desc2"> 
+                
+                Adobe 일러스트레이터를 사용하여 토끼 일러스트를 그려보았습니다. 일러스트레이터는 벡터 형식의 일러스트 작업을 할 수 있는 툴입니다.
+                1. 펜툴로 토끼를 그립니다.<br>
+                2. 펜툴로 그린 토끼를 Expand합니다.<br>
+                3. Live paint를 사용하여 색을 채웁니다.<br>
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                         //퀴즈 종류
+const quizNumber = document.querySelector(".quiz__question .number");           //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask");                 //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm");           //정답 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result");             //정답 결과
+const quizInput = document.querySelector(".quiz__answer .input");               //사용자 정답
+const quizView = document.querySelector(".quiz__view");                     //강아지
+
+//문제 정보
+const answerType = "웹디자인기능사";
+const answerNum = "2";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업이미지통합 전략은 무엇인가요?";
+let answerResult = "CIP"; //const를 사용하면 데이터를 변경할 수 없다.
+
+//문제 출력
+quizType.textContent = answerType;
+quizNumber.textContent = answerNum + ". ";
+quizAsk.textContent = answerAsk;
+quizResult.textContent = "정답은 : " + answerResult + "입니다.";
+
+//정답 숨기기
+quizResult.style.display = "none";
+
+
+//정답 확인
+quizConfirm.addEventListener("click", () => {
+    quizInput.style.display = "none";
+    quizResult.style.display = "block";
+    quizConfirm.style.display = "none";
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim(); //소문자 치환, 여백 없애줌
+    answerResult = answerResult.toLowerCase().trim();
+    // console.log(userWord)
+    // console.log(answerResult)
+
+    //사용자 정답 == 문제 정답
+    if(userWord == answerResult){
+        //정답일 때
+        // alert("정답입니다.")
+        quizView.classList.add("like");
+    } else {
+        //오답일 때
+        quizView.classList.add("dislike");
+        // alert("오답입니다.")
+
+        
+    }
+});    //정답버튼을 클릭했을 때
+</code></pre>
+            </div>
+
+
+        </div>
+
+
+        
+    </main>
+      <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+    </footer>
+      <!-- //footer --> 
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

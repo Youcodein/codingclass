@@ -1,0 +1,170 @@
+<style>
+  /* fonts */
+  @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+  .gmark {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+  }
+
+  #tt-body-page .main__add {
+    display: none;
+  }
+
+  .main__add {
+    background: #F5F5F5;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    position: relative;
+    justify-content: space-between;
+    padding: 100px 0;
+    display: flex;
+  }
+
+  .main__add::before {
+    content: '';
+    width: 1000px;
+    height: 100%;
+    background-color: #F5F5F5;
+    position: absolute;
+    left: -1000px;
+    top: 0;
+    z-index: 1;
+  }
+
+  .main__add::after {
+    content: '';
+    width: 1000px;
+    height: 100%;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: -1000px;
+    top: 0;
+    z-index: 1;
+  }
+
+  .main__add .card {
+    width: 32%;
+    height: 400px;
+    background: #ccc;
+  }
+
+  /* image */
+  .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image {
+            width: 32%;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+
+        .image__box {}
+
+        .image__box img {
+            vertical-align: top;
+
+            transition: all 0.6s ease-in-out
+        }
+
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 23px 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-sizing: border-box;
+            background-color: rgba(0,0,0,0.1);
+            bottom: -100px;
+            transition: all 0.3s ease-in-out
+        }
+        .image:hover .image__desc{
+            bottom: 0;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.03);
+        }
+
+        .img1 .image__desc{
+            background-color: rgba(0,0,0,0.1);
+        }
+        .img2 .image__desc{
+            background-color: rgba(0,0,0,0.2);
+        }
+        .img3 .image__desc{
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        .img1 .image__desc h3 {
+            color: #fff;
+        }
+        .img1 .image__desc .more {
+            color: #fff;
+        }
+
+        .img2 .image__desc h3 {
+            color: #fff;
+        }
+        .img2 .image__desc .more {
+            color: #fff;
+        }
+
+        .img3 .image__desc h3 {
+            color: #fff;
+        }
+        .img3 .image__desc .more {
+            color: #fff;
+        }
+
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+
+        }
+
+        .image__desc .more {
+            font-size: 16px;
+
+        }
+        .image__desc .more:hover {
+            text-decoration: underline;
+        }
+</style>
+<div class="main__add">
+  <div class="image__inner container">
+    <article class="image img1">
+        <figure class="image__box">
+            <img src="img/image_bg02_01.jpg" alt="">
+        </figure>
+        <div class="image__desc">
+            <h3>HTML</h3>
+            <a href="" class="more" title="자세히보기">자세히보기</a>
+        </div>
+    </article>
+    <article class="image img2">
+        <figure class="image__box">
+            <img src="img/image_bg02_02.jpg" alt="">
+        </figure>
+        <div class="image__desc">
+            <h3>CSS</h3>
+            <a href="" class="more" title="자세히보기">자세히보기</a>
+        </div>
+    </article>
+    <article class="image img3">
+        <figure class="image__box">
+            <img src="img/image_bg02_03.jpg" alt="">
+        </figure>
+        <div class="image__desc">
+            <h3>JAVASCRIPT</h3>
+            <a href="" class="more" title="자세히보기">자세히보기</a>
+        </div>
+    </article>
+</div>
+</div>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 조건문</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/dracura.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="baisic.html">기본 규칙</a></li>
+                <li><a href="operate.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">전역변수/지역변수</a></li>
+                <li><a href="quiz01.html">퀴즈 만들기</a></li>
+                <li><a href="search.html">서치 이펙트 만들기</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="element02.html">요소선택02</a></li>
+                <li><a href="Built-In Function.html">내장함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">조건문</h2>
+            <p class="t_desc2">조건문은 <i>지정한 조건에 따라 명령문의 실행 여부를 결정</i>하는 문법을 말합니다.
+                조건문의 조건으로는 비교 연산자나 논리 연산자가 사용됩니다.
+            </p>
+            <h3>if문</h3>
+            <p class="t_desc">조건식이 참일 때만 결과를 표현해주는 구문입니다.</p>
+            <p class="t_box">
+                if (조건식){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                }
+            </p>
+            <h3>if...else문</h3>
+            <p class="t_desc">if-else의 경우 조건식이 참일 때 if 블록의 실행문이 실행되고
+                거짓일 때 else블록의 실행문이 실행됩니다.</p>
+            <p class="t_box">
+                if (조건식){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문1;<br>
+                }else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문2;<br>
+                }
+            </p>
+            <h3>다중 if문</h3>
+            <p class="t_desc">여러가지 조건에 따라 조건문을 설정하는 구문.
+                조건에 계속 설정할 수 있으며 마지막에는 조건식을 쓰지 않습니다.</p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문1;<br>
+                } else if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문2;<br>
+                } else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;실행문3;<br>
+                }
+            </p>
+
+            <h3>중첩 if문</h3>
+            <p class="t_desc"><i>조건문(if문) 안에 조건문(if문)이 있는 구문</i>입니다.
+                바깥쪽에 있는 조건을 만족해야 조건 2로 넘어갑니다.</p>
+            <p class="t_box">
+                if (조건식1) {<br>
+                &nbsp;&nbsp;&nbsp;if (조건식2) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                }
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-js">var html = Number(prompt('html 점수임력',''));
+var css = Number(prompt('css 점수임력',''));
+var javascript = Number(prompt('javascript 점수임력',''));
+var avg = (html + css + javascript) / 3;
+var comment;
+if (avg&gt;=60) {
+    if (html &lt; 40) {
+        comment = 'HTML' + '40점 미만 불합격';
+    } else if (css &lt; 40) {
+        comment = 'CSS ' + '40점 미만 불합격';
+    } else if (javascript &lt; 40) {
+        comment = 'JAVASCRIPT' + '40점 미만 불합격';
+    } else {
+        comment = '평균 ' + avg + '점 합격';
+    }
+} else {
+    comment = '평균 ' + avg + '점 불합격';
+}
+document.write(comment);
+</code></pre>
+            </div>
+
+            <h3>switch문</h3>
+            <p class="t_desc">switch문은 어떤 변수의 값에 따라서 다르게 동작하는 문법입니다.
+                switch문에 사용하는 키워드는 switch, case, default, break 입니다.</p>
+            <p class="t_box">
+                switch (값) {<br>
+            &nbsp;&nbsp;&nbsp;case 값1 : <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;&nbsp;case 값2 : <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;default : <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                }
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-js">var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+switch (classification) {
+    case '아동' : 
+        classification += ': 입장료 무료';
+        break;
+    case '청소년' : 
+        classification += ': 입장료 2000원';
+        break;
+    case '성인' : 
+        classification += ': 입장료 5000원';
+        break;
+    default : 
+        classification = '입력 값을 다시 확인하세요';
+}
+document.write(classification);
+</code></pre>
+                            </div>
+
+            <hr>
+
+        </div>
+    </main>
+      <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+    </footer>
+      <!-- //footer --> 
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

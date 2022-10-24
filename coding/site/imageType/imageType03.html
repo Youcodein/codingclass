@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형03</title>
+    <link href="https://webfontworld.github.io/yangheeryu/GowunBatang.css" rel="stylesheet">
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        .gowun {
+            font-family: GowunBatang;
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+            border-radius: 10px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .container-fluid {
+            width: 100%;
+            padding: 0 100px;
+            box-sizing: border-box;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* imageType */
+        .image__inner {
+            display: grid;
+            grid-template-areas:
+                "box1 box1 box2 box3"
+                "box1 box1 box4 box5";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 20px;
+        }
+        .image {
+            position: relative;
+            overflow: hidden;
+        }
+        .image__inner .image:nth-child(1) {
+            grid-area: box1;
+            background: url(img/image_bg03_01.jpg);
+            background-size: cover;
+            border-radius: 10px;
+        }
+        .image__inner .image:nth-child(2) {
+            grid-area: box2;
+        }
+        .image__inner .image:nth-child(3) {
+            grid-area: box3;
+        }
+        .image__inner .image:nth-child(4) {
+            grid-area: box4;
+        }
+        .image__inner .image:nth-child(5) {
+            grid-area: box5;
+        }
+
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            padding: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            border-radius: 0 0 10px 10px ;
+        }
+
+        .image:hover .image__desc{
+            bottom: 0;
+        }
+        .image__desc h3 {
+            font-size: 20px;
+        }
+        .image__desc p {
+            font-size: 16px;
+            color: 666;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .image__sns {
+            position: absolute;
+            right: 10px;
+            opacity: 0;
+            top: 10px;
+            transition: all 0.5s ease;
+        }
+
+        .image__sns a {
+            width: 36px;
+            height: 36px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 5px;
+            background: url(img/image_bg_03_icon.svg) no-repeat;
+        }
+
+        .image__sns a:nth-child(1){}
+        .image__sns a:nth-child(2){
+            background-position: -50px 0;
+        }
+        .image__sns a:nth-child(3){
+            background-position: -100px 0;
+        }
+        .image__sns a:nth-child(4){
+            background-position: -150px 0;
+        }
+        .image__sns a:nth-child(5){
+            background-position: -200px 0;
+        }
+
+        .image:hover .image__sns {
+            /* right: 10px; */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType03" class="image__wrap gowun section">
+        <h2>귀엽고 멋진 동물들</h2>
+        <p>
+            동물을 사랑합시다. 저는 동물을 정말 사랑합니다.<br>
+            귀엽고 멋진 동물들을 만나보세요. 자연의 경이로움에 감탄하게 될 것입니다.
+        </p>
+        <div class="image__inner container-fluid">
+            <article class="image">
+                <!-- <figure class="image__box">
+                    <img src="img/image_bg03_01.jpg" alt="셰이크 로트폴라 모스크">
+                </figure> -->
+                <div class="image__desc">
+                    <h3>귀여운 앵무새</h3>
+                    <p>썬코뉴어는 정말 귀엽습니다. 호기심이 많고 사람을 좋아하는 종이기에 많은 사람들의 반려 앵무로 길러지고 있습니다. 너무 귀여워요 짱</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/image_bg03_02.jpg" alt="귀여운 여우">
+                </figure>
+                <div class="image__desc">
+                    <h3>귀여운 여우</h3>
+                    <p>여우는 정말 귀엽습니다. 너무 귀여워서 눈물이 나요. 여우 유튜버가 있다는 걸 아시나요? 그거 보시면 진짜 너무 귀여워서 눈물이 나올겁니다.</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/image_bg03_03.jpg" alt="멋진 늑대">
+                </figure>
+                <div class="image__desc">
+                    <h3>멋진 늑대</h3>
+                    <p>회색 늑대는 정말 멋지죠 개의 조상이라고 불리는 늑대 그래서 그런지 멋지고 무섭긴 하지만 그만큼 귀여워보이기도 하네요</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/image_bg03_04.jpg" alt="귀여운 사슴">
+                </figure>
+                <div class="image__desc">
+                    <h3>귀여운 사슴</h3>
+                    <p>사슴씨는 정말 귀여워요 순록, 고라니 등등... 다른건 잘 모르겠지만 비슷하게 생겼으니 친척뻘이겠죠??</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+            <article class="image">
+                <figure class="image__box">
+                    <img src="img/image_bg03_05.jpg" alt="귀여운 라쿤">
+                </figure>
+                <div class="image__desc">
+                    <h3>귀여운 라쿤</h3>
+                    <p>너굴맨이라 불리는 이 사진의 주인공은 사실 라쿤이었답니다! 하지만 둘 다 귀엽고 둘 다 비슷하게 생겼으니 뭐 상관 없지 않을까요</p>
+                </div>
+                <div class="image__sns">
+                    <a href="#" class="link"><span class="ir">페이스북</span></a>
+                    <a href="#" class="link"><span class="ir">페이지이동</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

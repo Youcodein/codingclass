@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 요소</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        /* 리셋 */
+        /* 여백 초기화 */
+        * {
+            margin: 0 auto;
+            padding: 0;
+            font-family: 'GmarketSans';
+        }
+
+        /* 링크 초기화 */
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        /* 목록 초기화 */
+        li {
+            list-style: none;
+        }
+
+        /* 제목 초기화 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* 기울기 초기화 */
+        em,
+        i {
+            font-style: normal;
+        }
+
+        /* 테이블 초기화 */
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        /* container */
+        body {}
+
+        .container {
+            width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+        /* header */
+        header {
+            width: 1200px;
+            height: 140px;
+            background-color: #47a5ba;
+            display: flex;
+        }
+
+        .logo1 {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            background-color: #d9d9d9;
+            margin: 20px;
+        }
+
+        .logo1>h1 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            color: #000;
+            line-height: 30px;
+        }
+
+        .logo1>p {
+            margin-top: 20px;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu>h2 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            color: #000;
+            line-height: 30px;
+            margin-top: 20px;
+        }
+
+        .manu>p {
+            width: 942px;
+            height: 40px;
+            background-color: #d9d9d9;
+        }
+
+        .nav {
+            width: 942px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #d9d9d9;
+            box-sizing: border-box;
+            margin: 30px 0 0 0;
+        }
+
+        .nav>h2 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            position: absolute;
+            top: 80px;
+            line-height: 30px;
+
+        }
+
+        .nav ul {
+            display: flex;
+            padding: 0 0 0 180px;
+        }
+
+        .nav ul li {
+            justify-content: space-between;
+        }
+
+        /* contents */
+        .contents {
+            width: 1200px;
+            height: 611px;
+            background-color: #47a5ba;
+            margin: 20px 0 20px 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+        }
+
+        .cont1 {
+            width: 373px;
+            height: 560px;
+            background-color: #b3eeea;
+            position: relative;
+        }
+
+        .cont1>h2 {
+            line-height: 560px;
+        }
+
+        .cont1>h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .cont2 {
+            width: 373px;
+            height: 560px;
+            background-color: #b3eeea;
+            position: relative;
+        }
+
+        .cont2>h2 {
+            line-height: 560px;
+        }
+
+        .cont2>h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+            top: 30px;
+
+        }
+
+        .article {
+            width: 373px;
+            height: 270px;
+            background-color: #b3eeea;
+            text-align: center;
+        }
+
+
+        .article>h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .article>p {
+            line-height: 270px;
+        }
+
+        .aside {
+            width: 373px;
+            height: 270px;
+            background-color: #b3eeea;
+            position: absolute;
+            left: 800px;
+            top: 310px;
+            text-align: center;
+        }
+
+        .aside>h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .aside>p {
+            line-height: 270px;
+        }
+
+        /* footer */
+        footer {
+            width: 1200px;
+            height: 120px;
+            background-color: #47a5ba;
+            position: relative;
+            padding: 15px 0 15px 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        footer>h2 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+        }
+
+        .box {
+            position: absolute;
+            left: 118px;
+        }
+
+        .address {
+            width: 667px;
+            height: 40px;
+            background-color: #d9d9d9;
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 40px;
+
+        }
+
+        .address > h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+        }
+
+        .p > h3 {
+            width: 78px;
+            height: 30px;
+            background-color: #c87474;
+            line-height: 30px;
+            position: absolute;
+        }
+
+        .p {
+            width: 667px;
+            height: 40px;
+            background-color: #d9d9d9;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="container">
+        <header class="header">
+            <div class="logo1">
+                <h1>h1</h1>
+                <p><a href="#">반응형웹</a></p>
+            </div>
+
+            <div class="menu">
+                <h2>header</h2>
+                <nav class="nav">
+                    <h2>nav</h2>
+                    <ul>
+                        <li><a href="#">MENU01</a></li>
+                        <li><a href="#">MENU02</a></li>
+                        <li><a href="#">MENU03</a></li>
+                        <li><a href="#">MENU04</a></li>
+                        <li><a href="#">MENU05</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contents">
+            <section class="cont1">
+                <h3>section</h3>
+                <h2>콘텐츠 그룹 01</h2>
+            </section>
+            <section class="cont2">
+                <h3>section</h3>
+                <h2>콘텐츠 그룹 02</h2>
+            </section>
+            <article class="article">
+                <h3>article</h3>
+                <p>주요 기사</p>
+            </article>
+            <aside class="aside">
+                <h3>aside</h3>
+                <p>광고</p>
+            </aside>
+        </div>
+        <footer class="footer">
+            <h2>footer</h2>
+            <div class="box">
+                <div class="address">
+                    <h3>address</h3>
+                    <p>경기도 부천시 오정구 삼정동 032)674-5685 icoxpub@naver.com</p>
+                </div>
+                <div class="p">
+                    <h3>p</h3>
+                    <p>COPYRIGHT ⓒALL rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

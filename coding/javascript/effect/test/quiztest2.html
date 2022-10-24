@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        // //1-100까지 출력
+        // for( let i = 1; i<=100; i++){
+        //     document.write(i)
+        // }
+        // document.write("<br>");
+
+        // //1-100까지(짝수만) 출력
+        // for( let i = 2; i<=100; i+=2){
+        //     document.write(i)
+        // }
+
+        // document.write("<br>");
+
+        // //9단 출력
+        // for( let i = 9; i<=9; i++){
+        //     for( let j = 1; j<=9; j++){
+        //         let sum = i*j;
+        //     document.write(i + "*" + j + "=" + sum,"<br>");
+        //     }
+        // }
+
+        // document.write("<br>");
+        // document.write("<br>");
+
+
+        // //테이블 10x10
+        // let table = "<table>";
+
+        //     for(let a=0; a<10; a++){
+        //         table += "<tr>";
+            
+        //             for( let i=0; i<10; i++){
+        //                 table += "<td>1</td>";
+        //                 }
+        //         table += "</tr>";
+        //     }
+
+        //     table += "</table>";
+
+        // document.write(table);
+        
+        // //let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // //for문, forEach문, map(), for in, for of를 통해서 출력
+
+        // let num = [
+        //     {title: "javascript"},
+        //     {title: "javascript2", class:"다이어트"},
+        //     {
+        //         a: 1,
+        //         b: 2,
+        //         c: 3,
+        //         d: 100
+        //     }
+        // ];
+
+        // let num2 = {
+        //     web: "반응형",
+        //     pub: {a:1, b:2, c:[1,2,3,4,5]},
+        // }
+        // console.log(num2.pub.c[2]);
+
+        let num3 = [1,2,3,4,5,6,7,8]
+
+
+        // for(let i = 0; i<num3.length; i++){
+        //     console.log(num3[i]);
+        // }
+
+        // num3.forEach((element,index) => {
+        //     console.log(num3[index])
+        // })
+
+        let num4 = [
+            {a:11, b:12},
+            {a:22, b:23},
+            {a:33, b:34},
+            {a:44, b:45},
+            {a:55, b:56}
+        ]
+        
+        for( let i = 0; i<num4.length; i++){
+            console.log(num4[i].b)
+        }
+        //12345
+
+        //객체는 " . "으로 불러오고 배열은[]로 불러오기
+    </script>
+</body>
+</html>

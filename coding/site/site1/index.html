@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기1</title>
+
+    <!-- SEO -->
+    <meta name="author" content="Youcodein">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, Youcodein">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/image.css">
+    <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <style>
+        .header__menu li.active a {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-sizing: content-box;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#imgTextType">이미지/텍스트 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+    </div>
+
+    <!-- skip -->
+
+    <header id="headerType" class="header__wrap nexon content__item">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Diary <em>deco</em></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li class="active"><a href="#sliderType">Hot!</a></li>
+                    <li><a href="#imageType">Why?</a></li>
+                    <li><a href="#imgTextType">for NEWBIE</a></li>
+                    <li><a href="#cardType">How?</a></li>
+                    <li><a href="#bannerType">Ask</a></li>
+                    <li><a href="#footerType">My Tip</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">로그인</a>
+                <button class="mbtn"></button>
+            </div>
+
+            <div class="mobile__menu">
+            <button class="cbtn"></button>
+            <div class="sub">
+                <li><a href="#sliderType">Hot!</a></li>
+                <li><a href="#imageType">Why?</a></li>
+                <li><a href="#imgTextType">for NEWBIE</a></li>
+                <li><a href="#cardType">How?</a></li>
+                <li><a href="#bannerType">Ask</a></li>
+                <li><a href="#footerType">My Tip</a></li>
+            </div>
+            </div>
+        </div>
+    </header>
+    <!-- headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap nexon scroll">
+            <h2>Hot Issue</h2>
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>Dairy</span>
+                            <h3>Art of Dairy</h3>
+                            <p>
+                                다이어리는 이제 기록을 넘어선 문화 예술이 되었습니다.<br>
+                                다이어리 꾸미기의 매력에 빠져보세요
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히보기</a>
+                                <a href="#" class="black">사이트보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sliderType -->
+
+        
+        <section id="imageType" class="image__wrap nexon section scroll">
+            <h2>Why?</h2>
+            <p>왜 사람들은 "다이어리 꾸미기" 에 열광하는가?</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <h3 class="image__title">Remember your Memories</h3>
+                    <p class="image__desc">기억으로 남기는 것도 좋은 방법이지만 기록으로 남기지 않은 기억은 금방 휘발되는 법입니다. 멋진 기억들을 기록하고 이후에 펼쳐보면 많은 감정들을 알려주죠.</p>
+                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                </article>
+                <article class="image img2">
+                    <h3 class="image__title">See my Feelings</h3>
+                    <p class="image__desc">당신의 감정을 시각적으로 표현하고 싶지 않으신가요? 스티커를 붙이세요. 그림을 그리세요. 당신의 추억을 장식하세요. 적절한 장식은 감정을
+                        실감나게 표현해줍니다. 마음에 드는 스티커나 그림으로 예쁘게 장식해보세요</p>
+                    <a class="image__btn yellow" href="/" title="자세히 보기">자세히 보기</a>
+                </article>
+            </div>
+        </section>
+        <!-- imageType -->
+
+        <section id="imgTextType" class="imgText__wrap nexon section gray scroll">
+            <h2 class="blind">유용한 사이트 살펴보기</h2>
+            <div class="imgtext__inner container">
+                <div class="imgText__txt">
+                    <span>초보 다.꾸인을 위해</span>
+                    <h3>유용한 사이트 살펴보기</h3>
+                    <p>다이어리 꾸미기를 처음 할 때 입문용으로 유용한 사이트입니다.</p>
+                    <ul>
+                        <li><a href="/">튜토리얼 사이트</a></li>
+                        <li><a href="/">레퍼런스 사이트</a></li>
+                        <li><a href="/">디지털 다이어리 스티커</a></li>
+                        <li><a href="/">유용한 블로그 모음</a></li>
+                        <li><a href="/">다꾸 자랑 사진들</a></li>
+                        <li><a href="/">Youtube 사이트</a></li>
+                    </ul>
+                </div>
+                <div class="imgText__img img1">
+                    <a href="/">레퍼런스 사이트</a>
+                </div>
+                <div class="imgText__img img2">
+                    <a href="/" class="blue">튜토리얼 사이트</a>
+                </div>
+            </div>
+        </section>
+        <!-- imgTextType -->
+
+        <section id="cardType" class="card__wrap nexon section scroll">
+            <h2>How?</h2>
+            <p>어떤 식으로 당신의 다이어리를 꾸밀건가요? 당신만의 멋진 다이어리를 만들어보세요!</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_01.jpg" alt="멋진 글을 적어보세요.">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">멋진 글을 적어보세요.</h3>
+                        <p class="desc">어떠한 글이 멋진 글이라고 정확히 정할 수는 없습니다만 당신이 쓰는 글이라면 어떤 글이든 멋질 거예요! 연필을 들고 종이에 적어볼까요? 용기를
+                            내세요 글을 적으세요! 당신의 마음을 적어보세요!</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span>
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_02.jpg" alt="당신의 추억을 기록하세요">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">당신의 추억을 기록하세요!</h3>
+                        <p class="desc">기억으로 남기는 것도 좋은 방법이지만 기록으로 남기지 않은 기억은 금방 휘발되는 법이죠. 당신의 기억과 감정을 어딘가에 박제하세요. 훗날 당신의
+                            추억을 읽고 기뻐할 당신의 얼굴을 상상하세요!</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span>
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_03.jpg" alt="당신의 추억을 장식하세요">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">당신의 추억을 장식하세요</h3>
+                        <p class="desc">당신의 감정을 시각적으로 표현하고 싶지 않으신가요? 스티커를 붙이세요. 그림을 그리세요. 당신의 추억을 장식하세요. 적절한 장식은 감정을
+                            실감나게
+                            표현해줍니다. 마음에 드는 스티커나 그림으로 예쁘게 장식해보세요</p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- cardType -->
+
+        <section id="bannerType" class="banner__wrap nexon content__item scroll">
+            <h2 class="blind">Ask</h2>
+            <div class="banner__inner">
+                <h3 class="title">Ask</h3>
+                <p class="desc">
+                    궁금한 점이 있으신가요? 아래 이메일로 연락 주세요!
+                    <a href="#" title="새 페이지 열림">D_Deco@abcde.com</a>
+                </p>
+                <span class="small">고객 센터</span>
+            </div>
+        </section>
+        <!-- bannerType -->
+
+        <section id="textType" class="text__wrap nexon section scroll">
+            <span>My Tip</span>
+            <h2 class="mb70">📖나만의 다이어리 꾸미기 팁!🖋</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">Only Text</h3>
+                    <p class="text__desc">문자만의 매력이 있지요. 어떠한 기교도, 장식도 없는 텍스트만의 매력은 미니멀리즘의 아름다움을 연상합니다.</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">Handwriting</h3>
+                    <p class="text__desc">글자만으론 너무 밋밋하신가요? 그렇다면 글씨에 예술적인 감각을 더해보면 어떨까요? 포인트가 될 거예요!</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">Color</h3>
+                    <p class="text__desc">무채색의 다이어리도 멋지지만 당신의 기억에 색을 칠해보는건 어떠세요? 당신의 감정을 색깔로 표현해보세요!</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">Hand Drawing</h3>
+                    <p class="text__desc">글만으로는 표현하기 어려울 때, 그림을 더해보세요! 당신도 저도 무엇인지 이해하기 쉬워요! 물론, 이해하기 어려운 그림도 매력적이죠!</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">Sticker</h3>
+                    <p class="text__desc">그림에 자신이 없다면 이미 만들어진 그림을 활용해봐요. 그래요, 바로 스티커를 이용해보세요!</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">Just WRITING!</h3>
+                    <p class="text__desc">앞의 팁은 모두 잊어버리세요! 자신다운 다이어리를 원하시나요? 그럼 겁먹지 말고 일단 "쓰세요!"</p>
+                    <a href="/" class="text__btn">더보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- textType -->
+
+    </main>
+    <!-- mainType -->
+
+    <footer id="footerType" class="footer__wrap nexon section gray content__item scroll">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">반응형 사이트</a></li>
+                        <li><a href="/">페럴랙스 사이트</a></li>
+                        <li><a href="/">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                        <li><a href="#">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="#">슬라이드 유형01</a></li>
+                        <li><a href="#">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형 01</a></li>
+                        <li><a href="#">이미지 유형 02</a></li>
+                        <li><a href="#">이미지 / 텍스트 유형 01</a></li>
+                        <li><a href="#">이미지 / 텍스트 유형 02</a></li>
+                        <li><a href="#">텍스트 유형 01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텐츠 영역</h3>
+                    <ul>
+                        <li><a href="#">카드 유형 01</a></li>
+                        <li><a href="#">카드 유형 02</a></li>
+                        <li><a href="#">카드 유형 03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">푸터 메뉴 유형 01</a></li>
+                        <li><a href="#">푸터 컨택트 유형 02</a></li>
+                        <li><a href="#">푸터 이메일 유형 03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                2022 D_Deco. Dairy Decoraion<br>
+                All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- footerType -->
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            //forEach
+
+            document.querySelectorAll(".scroll").forEach((element, index) => {
+                if (scrollTop >= element.offsetTop - 700) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active")
+                    })
+                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active");
+                }
+            })
+
+        });
+
+        //scroll이동
+        document.querySelectorAll("#headerType .header__inner .header__menu li a").forEach(li => {
+        li.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(li.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"  // 이동 부드럽게
+            });
+        });
+    });
+
+        const menuBtn = document.querySelector(".header__member .cbtn");  // 메뉴 아이콘
+        const menu = document.querySelector(".sub");   // 메뉴
+
+        menuBtn.addEventListener("mouseover", (e) => {
+            menu.classList.add("show");   // 메뉴 아이콘에 마우스 커서 올려놓으면 메뉴 보이기
+        });
+        menu.addEventListener("mouseleave", (e) => {
+            menu.classList.remove("show");    // 메뉴 아이콘에 마우스 커서 벗어나면 메뉴 사라지기
+        });
+
+
+    </script>
+</body>
+
+</html>

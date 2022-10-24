@@ -1,0 +1,135 @@
+#bannerType {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+.banner__inner {
+    padding: 120px 0;
+}
+.banner__inner .title {
+    font-size: 50px;
+    margin-bottom: 31px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 69px;
+}
+.banner__inner a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    padding: 15px 78px 12px;
+    background-color: #f34;
+}
+.banner__inner a:hover {
+    text-decoration: underline;
+}
+
+/* bannerimg */
+.banner__circle {
+    width: 400px;
+    height: 400px;
+    background: url(../img/bannerCircleImg.png) no-repeat center ;
+    position: absolute;
+    top: 70px;
+    right: 460px;
+    z-index: -1;
+}
+.banner__youtube {
+    width: 400px;
+    height: 200px;
+    background: url(../img/bannerYoutubeImg.png) no-repeat center ;
+    position: absolute;
+    top: 60px;
+    right: 370px;
+    z-index: -1;
+}
+.banner__dot1 {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: #4857ec;
+    position: absolute;
+    bottom: 174px;
+    left: 171px;
+    z-index: -1;
+}
+.banner__dot2 {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f7e36d;
+    position: absolute;
+    top: 25px;
+    left: 380px;
+    z-index: -1;
+}
+.banner__dot3 {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: #2fefb1;
+    position: absolute;
+    top: 79px;
+    right: 865px;
+    z-index: -1;
+}
+.banner__dot4 {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #2fefb1;
+    position: absolute;
+    bottom: 194px;
+    left: 920px;
+    z-index: -1;
+}
+.banner__dot5 {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f34;
+    position: absolute;
+    bottom: 101px;
+    right: 799px;
+    z-index: -1;
+}
+.banner__dot6 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #4857ec;
+    position: absolute;
+    bottom: 156px;
+    right: 313px;
+    z-index: -1;
+}
+
+/* media */
+@media(max-width: 960px) {
+    .banner__dot1,
+    .banner__dot2,
+    .banner__dot3,
+    .banner__dot4,
+    .banner__dot5,
+    .banner__dot6,
+    .banner__circle {
+        display: none;
+    }
+    .banner__youtube {
+        top: 40px;
+        right: 20%;
+        opacity: 0.2;
+    }
+    .banner__inner {
+        text-align: center;
+    }
+}
+@media(max-width: 600px) {
+    .banner__youtube {
+        right: 8px;
+        opacity: 0.2;
+    }
+}

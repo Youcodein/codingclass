@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 사이트 만들기</title>
+    <!-- SEO -->
+    <meta name="author" content="Youcodein">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, Youcodein">
+    <meta name="robots" content="all">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <!-- 아이콘 -->
+    <link rel="icon" href="assets/img/icon_256.png" />
+    <link rel="shortcut icon" href="assets/img/icon_256.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/icon_256.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon_192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icon_16.png" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="header__inner container">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="main.html" class="star"></a>
+                    </li>
+                </ul>
+            </div>
+            <h1>
+                <a href="main.html">PHP BLOG</a>
+            </h1>
+            <div class="right">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li class="active"><a href="joinAgree.html">회원가입</a></li>
+                </ul>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><span>로그인</span></a></li>
+                    <li><a href="#"><span>블로그</span></a></li>
+                    <li><a href="#"><span>로그아웃</span></a></li>
+                    <li><a href="#"><span>연락처</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <section id="banner">
+            <h2>회원가입 페이지입니다.</h2>
+            <div class="banner__inner2 container">
+                <div class="img">
+                    <img src="assets/img/join_finish.svg" alt="배너 이미지">
+                </div>
+                <div class="desc">
+                    어떤 일이라도 <em>노력</em>하고 즐기면 그 결과는 <em>빛</em>을 바란다고 생각합니다.<br>
+                    회원가입을 축하드립니다.
+                </div>
+                <a href="main.html">메인으로</a>
+            </div>
+        </section>
+        <!-- //banner -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <h2>푸터 영역입니다.</h2>
+        <div class="footer__inner container">
+            <address>Copyright @2022 noeyheyh</address>
+            <div>blog by noeyheyh</div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- 로그인 가입 팝업 -->
+    <div class="login__popup">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>로그인</h3>
+            </div>
+            <div class="login__contents">
+                <form name="login" action="loginSave.php" method="post">
+                    <fieldset>
+                        <legend>로그인 입력폼</legend>
+                        <div>
+                            <label for="youEmail">이메일</label>
+                            <!-- required필수로 안적으면 안넘어감 -->
+                            <input type="email" name="youEmail" id="youEmail" placeholder="이메일" class="input__style"
+                                required>
+                        </div>
+                        <div>
+                            <label for="youPass">비밀번호</label>
+                            <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style"
+                                required>
+                        </div>
+                        <button type="submit" class="input__button">로그인</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login__footer">
+                <div class="btn">
+                    <a href="#">회원가입</a>
+                    <a href="#">아이디 찾기</a>
+                    <a href="#">비밀번호 찾기</a>
+                </div>
+                <ul class="desc">
+                    <li>비밀번호 분실시 책임은 알아서 합니다.</li>
+                    <li>회원가입하면 이익은 없습니다. 도움되는 것도 없을거에요!</li>
+                    <li>개발자가 초급이어서 개인정보는 노출될 수도 있습니다.</li>
+                </ul>
+                <button type="button" class="btn-close"><span>닫기</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

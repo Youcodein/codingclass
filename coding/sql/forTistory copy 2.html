@@ -1,0 +1,302 @@
+<!-- Bootstrap core CSS -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/docs.min.css" rel="stylesheet">
+<link href="../assets/css/prism.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    
+<div class="document">
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header t_tit">MySQL</h2>
+                    <p class="lead t_desc">
+                        MySQL은 데이터베이스 소프트웨어입니다.
+                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터베이스라고 부릅니다.
+                    </p>
+                    <p class=" t_desc2">
+                        MySQL은 세계에서 가장 많이 쓰는 오픈 소스의 관계형 데이터베이스 관리시스템(RDBMS)입니다.<br>
+                        MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈소스를 개발된 무료 프로그램입니다.<br>
+                        그래서 홈페이지나 쇼핑몰(워드프레스, Cafe24, 제로보드 그누보드)등 일반적으로 웹 개발에 널리 사용하고 있습니다.
+                    </p>
+                </div>
+                <!-- intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header t_tit">MySQL 설치</h2>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택이다.<br>
+                        <a href="http://www.mamp.info/en/downlads/"
+                            target="_blank">http://www.mamp.info/en/downlads/</a>
+                    </div>
+
+                </div>
+                <!-- intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header t_tit">MySQL 실행</h2>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        윈도우 : cd MAMP/bin//mysql/bin<br>
+                        로그인 : mysql -uroot -proot
+                    </div>
+                    <div class="">
+<pre><code class="language-js">Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+</div>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        맥 : cd Application/mamp/Libary/bin<br>
+                        로그인 : ./mysql -uroot -proot
+                    </div>
+                    <div class="">
+<pre><code class="language-js">webstoryboyhwang@Webstoryboyui-MacBookPro bin % ./mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 188
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                    </div>
+                </div>
+                <!-- intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header t_tit">데이터베이스</h2>
+                    <h3 id="intro4-1" class="page-header t_tit2">데이터베이스 만들기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        create database 데이터베이스 이름;
+                    </div>
+                    <div class="">
+<pre><code class="language-js">mysql> create database sample02;
+Query OK, 1 row affected (0.00 sec)
+</code></pre>
+</div>
+
+                    <h3 id="intro4-2" class="page-header t_tit2">데이터베이스 보기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        show databases;
+                    </div>
+                    <div class="">
+<pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sample02           |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+</div>
+
+                <h3 id="intro4-3" class="page-header t_tit2">데이터베이스 사용</h3>
+                <div class=" bs-callout bs-callout-info t_desc2">
+                    use 데이터베이스 이름;
+                </div>
+<pre><code class="language-js">mysql> use sample01;
+Database changed
+</code></pre>
+
+                <h3 id="intro4-4" class="page-header t_tit2">데이터베이스 삭제</h3>
+                <div class=" bs-callout bs-callout-info t_desc2">
+                    drop database 데이터베이스 이름;
+                </div>
+<pre><code class="language-js">mysql> drop database sample02;
+Query OK, 0 rows affected (0.03 sec)
+</code></pre>
+                </div>
+                <!-- intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header t_tit">테이블</h2>
+
+                    <h3 id="intro5-1" class="page-header t_tit2">테이블 만들기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        create table 테이블 이름;
+                    </div>
+<pre><code class="line-numbers language-js">create table member (
+myMemberID int(10) unsigned auto_increment,
+youEmail varchar(40) NOT NULL,
+youName varchar(20) NOT NULL,
+youPass varchar(20) NOT NULL,
+youBirth int(20) NOT NULL,
+regTime int(20) NOT NULL,
+PRIMARY KEY (myMemberID)
+) charset=utf8;
+</code></pre>
+                    <h3 id="intro5-2" class="page-header t_tit2">테이블 전체보기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        show tables;
+                    </div>
+<pre><code class="line-numbers language-js">mysql> show tables;
++--------------------+
+| Tables_in_sample01 |
++--------------------+
+| member             |
++--------------------+
+1 row in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro5-3" class="page-header t_tit2">테이블 보기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        decs 테이블 이름;
+                    </div>
+<pre><code class="line-numbers language-js">mysql> desc member;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(20)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | int(20)          | NO   |     | NULL    |                |
+| regTime    | int(20)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+</code></pre>
+                    <h3 id="intro5-4" class="page-header t_tit2">테이블 삭제</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        drop table 테이블 이름;
+                    </div>
+<pre><code class="language-js">mysql> drop table member;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+                    <h3 id="intro5-5" class="page-header t_tit2">테이블 복사</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                    </div>
+<pre><code class="language-js">
+</code></pre>
+
+
+                </div>
+                <!-- intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header t_tit">테이블 데이터</h2>
+
+                    <h3 id="intro6-1" class="page-header t_tit2">테이블 입력하기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        INSERT INTO 테이블이름(필드명) VALUE(데이터);
+                    </div>
+<pre><code class="line-numbers language-js">
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com', '황**', '1234', '19******', '1234567')
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@naver.com', '김**', '1234', '19******', '04')
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@naver.com','권**','1234','19******','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com', '문**', '1234', '19******', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com','이**','1234','19******','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com','권**','1234','19******','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com','전**','1234','19******','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@naver.com','김**','1234','19******','1234567')
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@gmail.com', '김**', '1234', '20******','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***@naver.com','이**','1234','19******','1234567')
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('***3@naver.com', '김**', '1234', '19******', '1234567');
+</code></pre>
+                    <h3 id="intro6-2" class="page-header t_tit2">테이블 불러오기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                        SELECT 필드명 FROM 테이블명 WHERE 조건
+                    </div>
+                    <h4 class="t_tit3">전체 데이터 불러오기</h4>
+<pre><code class="language-js">mysql> SELECT * FROM member;
++------------+--------------------------+---------+---------+----------+----------+
+| myMemberID | youEmail                 | youName | youPass | youBirth | regTime  |
++------------+--------------------------+---------+---------+----------+----------+
+|          1 | ****@gmail.com           | 황**    | 1234    | 19****** |  1234567 |
+|          2 | ****@naver.com           | 박**    | 1234    | 19****** |  1234567 |
+|          3 | ****@naver.com           | 김**    | 1234    | 19****** |        4 |
+|          4 | ****@gmail.com           | 강**    | 1234    | 19****** |  1234567 |
+|          5 | ****@gmail.com           | 박**    | 1234    | 19****** |  1234567 |
+|          6 | ****@gmail.com           | 이**    | 1234    | 19****** |  1234567 |
+|          7 | ****@gmail.com           | 김**    | 1234    | 19****** |  1234567 |
+|          8 | ****@naver.com           | 여**    | 1234    | 22****** | 12324567 |
+|          9 | ****@naver.com           | 최**    | 3950    | 20****** |  1234567 |
+|         10 | ****@gmail.com           | 전**    | 1234    | 19****** |  1234567 |
+|         11 | ****@gmail.com           | 권**    | 1234    | 19****** |  1234567 |
+|         12 | ****@gmail.com           | 문**    | 1234    | 19****** |  1234567 |
+|         13 | ****@naver.com           | 권**    | 1234    | 19****** |  1234567 |
+|         14 | ****@naver.com           | 김**    | 1234    | 19****** |        4 |
+|         15 | ****@gmail.com           | 이**    | 1234    | 19****** |  1234567 |
+|         16 | ****@naver.com           | 김**    | 1234    | 19****** |  1234567 |
+|         17 | ****@naver.com           | 송**    | 1234    | 19****** |  1234567 |
+|         18 | ****@naver.com           | 김**    | 1234    | 19****** |  1234567 |
+|         19 | ****@naver.com           | 김**    | 1234    | 19****** |  1234567 |
+|         20 | ****@naver.com           | 정**    | 1234    | 19****** |  1234567 |
+|         21 | ****@gmail.com           | 김**    | 1234    | 20****** |  1234567 |
+|         22 | ****@naver.com           | 이**    | 1234    | 19****** |  1234567 |
+|         23 | ****@naver.com           | 김**    | 1234    | 19****** |  1234567 |
++------------+--------------------------+---------+---------+----------+----------+
+23 rows in set (0.00 sec)
+</code></pre>
+                <h4 class="pt20 t_tit3">myMemberID가 6번인 경우</h4>
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE myMemberID = 6;
++------------+----------------------+---------+---------+----------+---------+
+| myMemberID | youEmail             | youName | youPass | youBirth | regTime |
++------------+----------------------+---------+---------+----------+---------+
+|          6 | **********@gmail.com | 이**    | 1234    | 19****** | 1234567 |
++------------+----------------------+---------+---------+----------+---------+
+1 row in set (0.01 sec)
+</code></pre>
+
+                <h4 class="pt20 t_tit3">Email 중에 naver 텍스트를 포함하고 있는 경우</h4>
+<pre><code class="language-js">mysql> SELECT * FROM member WHERE youEmail LIKE '%naver%';
++------------+------------------------+---------+---------+----------+----------+
+| myMemberID | youEmail               | youName | youPass | youBirth | regTime  |
++------------+------------------------+---------+---------+----------+----------+
+|          2 | ****@naver.com         | 박**  | 1234      | 19****** |  1234567 |
+|          3 | ****@naver.com         | 김**  | 1234      | 19****** |        4 |
+|          8 | ****@naver.com         | 여**  | 1234      | 22****** | 12324567 |
+|          9 | ****@naver.com         | 최**  | 3950      | 20****** |  1234567 |
+|         13 | ****@naver.com         | 권**  | 1234      | 19****** |  1234567 |
+|         14 | ****@naver.com         | 김**  | 1234      | 19****** |        4 |
+|         16 | ****@naver.com         | 김**  | 1234      | 19****** |  1234567 |
+|         17 | ****@naver.com         | 송**  | 1234      | 19****** |  1234567 |
+|         18 | ****@naver.com         | 김**  | 1234      | 19****** |  1234567 |
+|         19 | ****@naver.com         | 김**  | 1234      | 19****** |  1234567 |
+|         20 | ****@naver.com         | 정**  | 1234      | 19****** |  1234567 |
+|         22 | ****@naver.com         | 이**  | 1234      | 19****** |  1234567 |
+|         23 | ****@naver.com         | 김**  | 1234      | 19****** |  1234567 |
++------------+------------------------+---------+---------+----------+----------+
+13 rows in set (0.00 sec)
+</code></pre>
+
+
+                    <h3 id="intro6-3" class="page-header t_tit2">테이블 수정하기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                    </div>
+<pre><code class="language-js">
+</code></pre>
+                    <h3 id="intro6-4" class="page-header t_tit2">테이블 삭제하기</h3>
+                    <div class=" bs-callout bs-callout-info t_desc2">
+                    </div>
+<pre><code class="language-js">
+</code></pre>
+
+
+
+                </div>
+                <!-- intro6 -->
+            </div>
+            <!-- //col-md-9 -->    
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</div>

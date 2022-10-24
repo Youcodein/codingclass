@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1>Search</h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="searchEffect01.html">1</a>
+                    <ul class="sub">
+                        <li><a href="searchEffect01.html">HTML</a></li>
+                        <li><a href="searchEffect01_css.html">CSS</a></li>
+                        <li><a href="searchEffect01_javascript.html">JAVASCRIPT</a></li>
+                    </ul>
+                </li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>indexOf()를 이용하여 검색하기</span>
+            <h1>HTML 태그 검색하기</h1>
+
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="HTML 태그를 입력해주세요!">
+            </div>
+
+            <div class="search__list">
+                <div class="html">
+                    <ul>
+                        <li data-name="a"><strong>a</strong> : a 태그는 다른 페이지 이동을 설정합니다.</li>
+                        <li data-name="abbr"><strong>abbr</strong> : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.</li>
+                        <li data-name="acronym"><strong>acronym</strong> : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.</li>
+                        <li data-name="address"><strong>address</strong> : address는 가까운 HTML 요소의 사람, 단체, 조직 등에 대한 연락처
+                            정보를
+                            나타냅니다.</li>
+                        <li data-name="applet"><strong>applet</strong> : applet는 자바 애플릿을 보이게 하는 곳에 쓰입니다.</li>
+                        <li data-name="area"><strong>area</strong> : area는 이미지의 핫스팟 영역을 정의하고 하이퍼링크를 추가하는데 쓰입니다.</li>
+                        <li data-name="article"><strong>article</strong> : article는 문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로
+                            구분해
+                            배포하거나 재사용할 수 있는 구획을 나타낼때 사용합니다.</li>
+                        <li data-name="aside"><strong>aside</strong> : aside는 무서의 주요 내용과 간접적으로 연관된 부분을 나타낼때 사용합니다.</li>
+                        <li data-name="audio"><strong>audio</strong> : audio는 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
+                        <li data-name="b"><strong>b</strong> : b는 글씨를 굵게 할 때 사용합니다. 그러나 를 사용해 텍스트를 꾸미면 안됩니다. 대신 CSS
+                            font-weigh를 사용하여 굵은 글씨를 나타내거나 strong으로로 중요한 텍스트를 표현하세요.</li>
+                        <li data-name="audio"><strong>audio</strong> : audio는 문서에 소리 콘텐츠를 포함할 때 사용합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+    <footer id="footer">
+        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+    </footer>
+    <!-- footer -->
+
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");            //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li"); //목록 리스트
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+            searchList.forEach(el => {
+                const cssName = el.dataset.name;
+                if (cssName.indexOf(searchWord)) {
+                    el.classList.add("hide");
+                } else {
+                    el.classList.remove("hide");    //indexOf값이 0이 되는 값만 hide를 지워줍니다.
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

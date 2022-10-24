@@ -1,0 +1,205 @@
+
+<div class="document">
+<h2 class="t_tit" data-ke-size="size26">이미지 유형 2</h2>
+<p class="t_desc" data-ke-size="size16">이미지 유형 레이아웃 사이트입니다. html과 css로 작업하였습니다.</p>
+<div class="t_iframe" style="min-height: 1000px; padding-top: 0;"><iframe src="https://youcodein.github.io/coding2/site/imageType/imageType02.html" frameborder="0"></iframe></div>
+<div class="t_link"><a href="https://youcodein.github.io/coding2/site/imageType/imageType02.html" target="_blank" rel="noopener">원본 사이트 보기</a></div>
+<div class="t_link"><a href="https://github.com/Youcodein/coding2/blob/main/site/imageType/imageType02.html" target="_blank" rel="noopener">원본 소스 보기</a></div>
+<h2 data-ke-size="size26">레이아웃 설정</h2>
+<p class="t_desc2" data-ke-size="size16">figma로 그리드와 사이트의 레이아웃을 잡습니다.</p>
+<div class="t_iframe"><iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTNqhMyejddfylXxue7gjHH%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D375%253A143" allowfullscreen></iframe></div>
+<h2 data-ke-size="size26">HTML</h2>
+<p class="t_desc2" data-ke-size="size16">html 소스입니다.</p>
+<div class="t_code">
+<pre class="language-html xml"><code>&lt;body&gt;
+&lt;section id="imageType01" class="image__wrap gmark section"&gt;
+    &lt;h2&gt;BEST 소품샵&lt;/h2&gt;
+    &lt;p&gt;다양한 소품샵을 가 본 사람이 뽑은 최고의 소품샵 BEST3&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;figure&gt; class="image__box"&gt;
+                &lt;img src="img/image_bg02_01.jpg" alt=""&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;내가만든 기린키링&lt;/h3&gt;
+                &lt;a&gt; href="" class="more" title="자세히보기"&gt;자세히보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;figure&gt; class="image__box"&gt;
+                &lt;img src="img/image_bg02_02.jpg" alt=""&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;자그마한 인테리어방&lt;/h3&gt;
+                &lt;a&gt; href="" class="more" title="자세히보기"&gt;자세히보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img3"&gt;
+            &lt;figure&gt; class="image__box"&gt;
+                &lt;img src="img/image_bg02_03.jpg" alt=""&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3&gt;오늘의 감성&lt;/h3&gt;
+                &lt;a&gt; href="" class="more" title="자세히보기"&gt;자세히보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;/body&gt;
+</code></pre>
+</div>
+<!-- html -->
+<h2 data-ke-size="size26">CSS</h2>
+<p class="t_desc2" data-ke-size="size16">css 소스입니다. figma로 설정해놓은 레이아웃이나 zaplin을 보며 적절하게 css를 설정해줍니다.</p>
+<div class="t_code">
+<pre class="language-css"><code>/* fonts */
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+.gmark {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.section>h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section>p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image {
+    width: 32%;
+    background-color: #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+.image__box {}
+
+.image__box img {
+    vertical-align: top;
+
+    transition: all 0.6s ease-in-out
+}
+
+.image__desc {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 23px 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.1);
+    bottom: -100px;
+    transition: all 0.3s ease-in-out
+}
+.image:hover .image__desc{
+    bottom: 0;
+}
+.image:hover .image__box img {
+    transform: scale(1.03);
+}
+
+.img1 .image__desc{
+    background-color: rgba(0,0,0,0.1);
+}
+.img2 .image__desc{
+    background-color: rgba(0,0,0,0.2);
+}
+.img3 .image__desc{
+    background-color: rgba(0,0,0,0.3);
+}
+
+.img1 .image__desc h3 {
+    color: #fff;
+}
+.img1 .image__desc .more {
+    color: #fff;
+}
+
+.img2 .image__desc h3 {
+    color: #fff;
+}
+.img2 .image__desc .more {
+    color: #fff;
+}
+
+.img3 .image__desc h3 {
+    color: #fff;
+}
+.img3 .image__desc .more {
+    color: #fff;
+}
+
+.image__desc h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+
+}
+
+.image__desc .more {
+    font-size: 16px;
+
+}
+.image__desc .more:hover {
+    text-decoration: underline;
+}
+</code></pre>
+</div>
+</div>

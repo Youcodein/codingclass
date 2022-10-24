@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <link rel="stylesheet" href="assets/css/slider2.css">
+    <link rel="stylesheet" href="">
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        /* 컨테이너 */
+
+        .container {
+            width: 1000px;
+            padding: 0;
+            margin: 0 auto;
+            min-width: 960px;
+        }
+
+        /* test */
+
+        /* main */
+        #main {
+            margin-bottom: 40px;
+            /* border-bottom: 1px solid #999; */
+        }
+
+        /* header */
+        #header {
+            width: 1000px;
+        }
+
+        .header__inner {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .header__logo {
+            width: 100px;
+        }
+
+        .header__menu {
+            width: 70%;
+            text-align: right;
+        }
+
+        .header__menu li {
+            display: inline;
+        }
+
+        .header__menu li a {
+            padding: 5px 10px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+            font-weight: 700;
+        }
+
+        .header__menu li a:hover {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+
+
+        /* banner */
+
+        .banner {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .notice {
+            width: 480px;
+            height: 150px;
+            padding: 30px 20px;
+            background-color: #f2f2f2;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .ad {
+            width: 470px;
+            height: 200;
+        }
+
+        /* notice */
+        .title {}
+
+        .title>h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .title>h4 {
+            font-size: 15px;
+            font-weight: 400;
+            color: #999;
+        }
+
+        .title>.sub {
+            position: absolute;
+            top: 110px;
+            left: 40px;
+        }
+
+        .title>.sub>a {
+            color: #999;
+            position: relative;
+
+        }
+
+        .title>.sub>a>img {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            bottom: 2px;
+            left: -20px;
+
+        }
+
+        .modallogo {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            bottom: 45px;
+            left: 370px;
+        }
+
+        .modallogo:hover {
+            cursor: pointer;
+        }
+
+
+        /* contents */
+
+
+
+        .contents {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+
+        .cont1 {
+            position: relative;
+        }
+        .cont2 {
+            position: relative;
+        }
+        .cont3 {
+            position: relative;
+        }
+        .cont1>img {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+
+        }
+
+        .cont2>img {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .cont3>img {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .best1 {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            color: #ccc;
+            background-color: #666;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .best2 {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            color: #ccc;
+            background-color: #666;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .best3 {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            color: #ccc;
+            background-color: #666;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+
+
+        /* footer */
+        #footer {
+            height: 180px;
+            font-size: 10px;
+            padding: 30px 50px;
+            background-color: #202020;
+            margin-top: 20px;
+            align-items: right;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .footer_desc {
+            position: absolute;
+            top: 50px;
+            left: 450px;
+
+        }
+
+        .Logo2 {
+            width: 170px;
+            height: 65px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="header" class="header__wrap nexon container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/"><img src="assets/img/te2_logo.jpg" alt=""></a>
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#">COOKIT 소개</a></li>
+                    <li><a href="#">COOKIT 메뉴</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">MY 쿡킷</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="container">
+        <section id="sliderType">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="assets/img/te2_slider.jpg" alt="테스트 이미지"></div>
+                        <div class="slider"><img src="assets/img/te2_slider2.jpg" alt="테스트 이미지2"></div>
+                        <div class="slider"><img src="assets/img/te2_slider3.jpg" alt="테스트 이미지3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="banner nexon">
+            <div class="notice">
+                <div class="title">
+                    <h3>우리집도 COOKIT 배송이 되나요?</h3>
+                    <h4>배송이 가능한지 알려드릴게요</h4>
+                    <div class="modallogo"><img src="assets/img/te2_1.jpg" alt="테스트모달1"></div>
+                    <span class="sub"> <a href="#"> <img src="assets/img/teicon2_2.jpg" alt="테스트 아이콘2">배송지 검색</a></span>
+                </div>
+            </div>
+            <div class="notice">
+                <div class="title">
+                    <h3>7월 30일(화)에 받을 수 있어요</h3>
+                    <h4>오전 7시까지 주문하시면 다음날 배송됩니다.</h4>
+                    <div class="modallogo"><img src="assets/img/te2_2.jpg" alt="테스트모달2"></div>
+                    <span class="sub"> <a href="#"> 63:28:32 <img src="assets/img/teicon2_3.jpg" alt="테스트 아이콘2"></a>남은
+                        시간</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contents nexon">
+            <h2>실시간 베스트 | 베스트 리뷰</h2>
+            <div class="cont">
+                <div class="cont1">
+                    <span class="best1">
+                        Best<br>
+                        01
+                    </span>
+                    <img src="assets/img/tecons2_1.jpg" alt="">
+                    <p>평양식 어복쟁반</p>
+                    <p>33,800원/3인분</p>
+                </div>
+                <div class="cont2">
+                    <span class="best2">
+                        02
+                    </span>
+                    <img src="assets/img/tecons2_2.jpg" alt="">
+                    <p>새우쭈꾸미삼겹살</p>
+                    <p>33,800원/3인분</p>
+                </div>
+                <div class="cont3">
+                    <span class="best3">
+                        03
+                    </span>
+                    <img src="assets/img/tecons2_3.jpg" alt="">
+                    <p>병풍나물 아귀찜</p>
+                    <p>33,800원/3인분</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer" class="footer nexon container">
+
+        <div class="Logo2"><img src="assets/img/te2_logo2.jpg" alt="테스트 로고"></div>
+         <div class="footer_desc">
+            <p style="font-size: 15px; font-weight: 700; margin-bottom: 20px; color: #fff;">
+                이용약관<span style="color: #ccc;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> 개인정보처리방침 <span style="color: #ccc;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> 법적고지 <span style="color: #ccc;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span> 사업자정보확인</span>
+            </p>
+            <address style="margin-bottom: 10px; color: #666;">
+                씨제이제일제당(주)<span style="color: #ccc;">|</span>대표자 : 신현재
+            </address>
+            <p style="margin-bottom: 10px; color: #666;">
+                주소 : 서울 중구 동호로 330CJ제일제당 센터 (우)04560 <span style="color: #ccc;">|</span> 사업자등록번호 : 104-86-09535<br>
+            </p>
+            <p style="margin-bottom: 10px; color: #666;">
+                통신판매업신고 중구 제 07767호 <span style="color: #ccc;">|</span> 개인정보보호책임자 : 류화정
+            </p>
+         </div>
+
+
+
+    </footer>
+
+    <!-- script -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/common.min.js"></script>
+
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img");           //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner");       //움직이는 영역
+        const slider = document.querySelectorAll(".slider");                //각각의 이미지
+
+
+        let currentIndex = 0;                                                   //현재 보이는 이미지
+        let sliderCount = slider.length;                                        //이미지 갯수
+        let sliderWidth = sliderImg.offsetWidth;                                //이미지 가로값
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);        //첫번째 이미지 복사
+        sliderInner.appendChild(sliderClone);                                   //첫번째 이미지를 마지막에 넣어줌
+
+        function sliderEffect() {
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex + "px)";
+
+            if (currentIndex == sliderCount) {
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateX(0px)";
+                }, 700);
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, 2000);
+    </script>
+</body>
+
+</html>

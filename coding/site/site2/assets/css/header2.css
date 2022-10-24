@@ -1,0 +1,128 @@
+.header__inner {
+    width: 100%;
+    height: 113px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: #f6f8fd;
+}
+.header__logo {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 21px;
+}
+.header__logo em {
+    text-transform: uppercase;
+}
+.header__menu {
+    font-size: 16px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 13px 30px;
+    margin: 0 5px;
+}
+.header__menu li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+.header__menu li.active a {
+    text-decoration: underline;
+}
+.header_ham {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+}
+.header_ham span {
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+    transition: 0.25s margin 0.25s, 0.25s transform;
+}
+.header_ham span:nth-child(1) {
+    margin-top: 18px;
+}
+.header_ham.active span {
+    transition: 0.25s margin, 0.25s transform 0.25s;
+}
+.header_ham.active span:nth-child(1) {
+    margin-top: 25px;
+    margin-bottom: -7px;
+    transform: rotate(45deg);
+}
+.header_ham.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.header_ham.active span:nth-child(3) {
+    margin-top: -2px;
+    transform: rotate(135deg);
+}
+
+/* media */
+@media (max-width: 1300px){
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: auto;
+    }
+    .header__menu li {
+        display: block;
+    }
+    .header_ham {
+        display: block;
+    }
+    .header__menu {
+        position: fixed;
+        right: -100%;
+        top: 69px;
+        background: #fff;
+        width: 30%;
+        height: 100vh;
+        padding: 20px;
+        text-align: right;
+        transition: right 0.4s ease-in;
+        align-items: start;
+        justify-content: end;
+        font-size: 20px;
+    }
+    .header__menu ul li {
+        display: block;
+        margin: 20px;
+    }
+    .header__menu ul li a {
+        padding: 10px;
+        white-space: nowrap;
+    }
+    .header__menu.active {
+        right: 0;
+    }
+}
+@media(max-width: 960px) {
+}
+@media(max-width: 600px) {
+    .header__menu {
+        width: 60%;
+    }
+}

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 전역변수/지역변수</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracura.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+
+            <h2 class="t_tit">패럴랙스 이펙트 2 - 사이드 메뉴</h2>>
+            
+            <div class="t_iframe">
+                <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FmS7K1u5BHcIAeMxL0Iqg0F%2FUntitled%3Fnode-id%3D1%253A5" allowfullscreen></iframe>
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;"><iframe src="https://youcodein.github.io/coding2/javascript/effect/parallaxEffect02" frameborder="0"></iframe></div>
+            <div class="t_link"><a href="https://youcodein.github.io/coding2/javascript/effect/parallaxEffect02" target="_blank" rel="noopener">원본 사이트 보기</a></div>
+            <div class="t_link"><a href="https://github.com/Youcodein/coding2/javascript/effect/parallaxEffect02" target="_blank" rel="noopener">원본 소스 보기</a></div>
+
+            <h2 class="t_tit2">패럴렉스 이펙트 사이드 메뉴</h2>
+            <p class="t_desc2">
+                스크롤을 움직였을 때 사이드에 있는 점 모양의 메뉴에 변화가 생깁니다. 스크롤의 위치가 해당 섹션에 위치/사이드 메뉴의 점을 클릭하면 해당 섹션에 대응하는 사이드 메뉴의 점이 활성화됩니다.
+            </p>
+            <div class="t_code">
+                <p class="t_desc">html 소스입니다</p>
+<pre><code class="language-html">&lt;nav id="parallax__dot"&gt;
+    &lt;ul&gt;
+        &lt;li class="active"&gt;&lt;a href="#section01"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section02"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section03"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section04"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section05"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section06"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section07"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section08"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section09"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- parallax nav --&gt;
+&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section01" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                글에 위인의 초상화가 있고 위인의 이름이 쓰여있다고 해서,
+                인터넷에서 본 말을 아무거나 믿지 말라.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section01 --&gt;
+        &lt;section id="section02" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section02&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                비록 내일 지구의 종말이 온다 하더라도 나는 오늘 한 그루의 사과나무를 심겠다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section02 --&gt;
+        &lt;section id="section03" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section03&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;그들이 죽음을 두려워하는 것이 이상합니다. 삶이 죽음보다 훨씬 더 아프다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section03 --&gt;
+        &lt;section id="section04" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section04&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                모든 것이 변한다는 것을 깨달으면 붙잡으려 할 것이 없다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section04 --&gt;
+        &lt;section id="section05" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section05&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                어떤 생각을 받아들이지 않고 즐겁게 할 수 있는 것은 교양 있는 정신의 표징이다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section05 --&gt;
+        &lt;section id="section06" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section06&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                철학은 언제나 우리 눈 앞에 놓여 있는 그 위대한 책에 기록되어 있습니다. 즉, 우주를 의미합니다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section06 --&gt;
+        &lt;section id="section07" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section07&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;
+                행복은 힘이 증가하고 저항이 극복되고 있다는 느낌입니다.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section07 --&gt;
+        &lt;section id="section08" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section08&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;사랑의 광기는 하늘의 축복 중 가장 큰 것입니다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section08 --&gt;
+        &lt;section id="section09" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section09&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc"&gt;감히 알고! 당신의 지능을 사용할 용기를 가지십시오.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- section09 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;/aside&gt;
+</code></pre>
+
+                <p class="t_desc">css 소스입니다</p>
+<pre><code class="language-css">/* parallax__cont */
+    #parallax__cont {
+        max-width: 1600px;
+        /* background-color: rgba(255,255,255,0.1); */
+        width: 98%;
+        margin: 0 auto;
+    }
+    
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255,255,255,0.1); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 10vw;
+    }
+    
+    .content__item:nth-child(even) {
+        margin-left: 0;
+        text-align: right;
+    }
+    
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+    
+    .content__item:nth-child(even) .content__item__num {
+        right: -5vw;
+        left: auto;
+    }
+    
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+        /* 첫글자만 대문자 */
+    }
+    
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+    
+    .content__item__img {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5px;
+        top: -5px;
+        background-image: url(img/effect_bg02.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        filter: saturate(0%);
+        transition: all 1s;
+    }
+    
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(img/effect_bg09.jpg);
+    }
+    
+    .content__item__desc {
+        font-size: 3vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+    
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+    }
+    
+    #parllax__nav li.active a {
+        border-radius: 5px;
+    }
+    
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    #parallax__info li,
+    .scrollTop {
+        line-height: 1.4;
+    }
+    
+    #parallax__info li.active a {
+        border-radius: 5px;
+    }
+    
+    @media (max-width: 800px) {
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+        #parallax__info {
+            left: 10;
+            bottom: 10px;
+        }
+    
+    }
+    
+    #parallax__dot {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10000;
+        background: rgba(0,0,0,0.4);
+        padding: 20px 10px;
+        border-radius: 30px;
+    }
+    #parallax__dot li {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 12px 8px;
+        box-shadow: 0 0 0 2px rgba(255,255,255,0);
+        transition: box-shadow 0.2s ease;
+    }
+    #parallax__dot li a {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+    }
+    #parallax__dot li.active {
+        box-shadow: 0 0 0 2px rgba(255,255,2551);
+    }
+    #parallax__dot li.active a {
+        transform: scale(0.4);
+    }
+    #parallax__dot li span {
+        display: none;
+    }
+</code></pre>
+
+                <p class="t_desc">javascript 소스입니다</p>
+<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach( el => {
+    el.addEventListener("click", e => {
+        e.preventDefault();
+
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior:"smooth"})
+    })
+});
+
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+    document.querySelectorAll(".content__item").forEach((e,i) => {
+        if(scrollTop >= e.offsetTop - 10){
+            document.querySelectorAll("#parallax__dot li").forEach(li =>{
+                li.classList.remove("active")
+            });
+            document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active");
+        }
+    })
+});
+</code></pre>
+            </div>
+
+
+            <h2 class="t_tit">점을 클릭했을 때 스크롤 이동시키기</h2>
+            <h3 class="t_tit2">1. 사이드 메뉴의 점 정보 가져오기</h3>
+                <p class="t_desc2">
+                    - 메뉴의 a 태그인 점을 querySelectorAll을 이용해 모두 선택하여 forEach문을 작성합니다. 여기서 el은 각각의 점을 의미합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el => {});
+</code></pre>
+                </div>
+
+                <h2 class="t_tit2">2. 사이드 메뉴의 점을 클릭했을때 스크롤 이동시키기</h3>
+                <p class="t_desc2">
+                    - el(각 점/ a 태그)를 대상으로 addEventListener() 메서드로 "click" 이벤트를 발생시킵니다.<br>
+                    - getAttribute("href")을 이용해 href 속성을 불러와 선택합니다.<br>
+                    - scrollIntoView()메서드를 사용하여 점을 클릭하였을 때 스크롤을 이동시키게 합니다.
+                    - scrollIntoView()의 behavior: "smooth" 속성을 사용하면 스크롤 되어 화면이 이동할 때, 화면이 부드럽게 움직입니다.<br>
+                </p>
+
+                <h3 class="t_tit2">※ preventDefault</h3>
+                <div class="t_box">
+                a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나 창이 새로고침하여 실행됩니다.<br>
+                preventDefault 를 사용하면 이러한 동작을 막아줄 수 있습니다.
+                </div>
+                <div class="t_code">
+<pre><code class="language-js">el.addEventListener("click", e => {
+    e.preventDefault();
+
+    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+});
+</code></pre>
+                </div>
+                <h2 class="t_tit">스크롤을 했을 때 해당 섹션에 대응하는 메뉴의 점 활성화시키기</h2>
+                <h2 class="t_tit2">1. 스크롤 했을 때 이벤트 발생시키기</h3>
+                <p class="t_desc2">
+                    - 창(window)를 대상으로 scroll 이벤트를 발생시킵니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">window.addEventListener("scroll", () => {});
+</code></pre>
+                </div>
+
+                <h2 class="t_tit2">2. 변수 생성</h3>
+                <p class="t_desc2">
+                    - 스크롤 값을 구하기 위한 변수를 생성시키고 변수 안에 스크롤 값을 저장합니다.
+                </p>
+                <h3 class="t_tit2">※ 변수에 세가지 값을 모두 저장하는 이유</h3>
+                <div class="t_box">
+                    특정 브라우저에서 호환성의 문제로 앞의 값을 불러오지 못할 때를 대비하여 대안으로 뒤의 값을 불러오기 위함입니다.
+                </div>
+                <div class="t_code">
+<pre><code class="language-js">let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+</code></pre>
+                </div>
+
+                <h2 class="t_tit2">3. scrollTop의 값 보여주기</h3>
+                <p class="t_desc2">
+                    - 저장한 scrollTop 값을 보여줄 수 있도록, 만들어 둔 span 태그 안에 innerText를 이용해 작성해 줍니다.
+                </p>
+                <h3 class="t_tit2">※ Math.floor() </h3>
+                <div class="t_box">
+                    수학 계산을 해주는 Math 속성의 floor() 메서드는 값을 올림해 줍니다.
+                </div>
+                <div class="t_code">
+<pre><code class="language-js">document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
+</code></pre>
+                </div>
+
+                <h2 class="t_tit2">4. 각 섹션 선택</h3>
+                <p class="t_desc2">
+                    - 각 섹션의 공통 요소인 content__item 클래스를 이용해, 각각의 섹션을 모두 선택해 줍니다.<br>
+                    - 이는 각 섹션의 offsetTop 값과 scrollTop 값을 비교해 버튼을 활성화하기 위함입니다.<br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">document.querySelectorAll(".content__item").forEach((e, i) => {});
+</code></pre>
+                </div>
+
+                <h2 class="t_tit2">5. 메뉴 활성화 / 비활성화</h3>
+                <p class="t_desc2">
+                    - if문을 사용해 메뉴를 활성화 하는 조건문을 작성해 줍니다.<br>
+                    - scrollTop 값이 e(각 섹션)의 offsetTop 값보다 크거나 같다는 것은 화면에 그 섹션이 위치했다는 의미입니다.<br>
+                    &lt;중요&gt;<br>
+                    - querySelectorAll를 이용해 모든 메뉴를 선택해 준 후, forEach문을 작성해, 모든 메뉴의 active 클래스를 제거합니다.<br>
+                    - 이는 이미 지나가버린 섹션을 나타내는 메뉴는 활성화 되지 않도록 하기 위함입니다.<br><br>
+                    - querySelector를 이용해 i+1 번째 메뉴(현재 도달한 섹션을 나타내는 메뉴)를 선택해 준 후, active 클래스를 추가합니다.<br>
+                    - 현재 도달한 섹션을 나타내는 메뉴를 활성화 하기 위함입니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">if(scrollTop >= e.offsetTop -10){
+    document.querySelectorAll("#parallax__dot li").forEach(li => {
+        li.classList.remove("active");
+    });
+    document.querySelector("#parallax__dot li:nth-child("+ (i+1) +")").classList.add("active");
+}
+</code></pre>
+                </div>
+        </div>
+
+
+        <!-- script -->
+    </main>
+
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+<!-- 220804 -->
+
+</html>

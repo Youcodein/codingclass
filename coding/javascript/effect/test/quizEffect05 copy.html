@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NanumBarunpen/NanumBarunpen.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식(한문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="quiz__wrap">
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kkb7528@naver.com">kkb7528@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        // const num = [100, 200, 300, 400, 500];
+        // num.forEach((el) => {
+        //     //console.log(el);
+        //     document.querySelector(".quiz__wrap").innerHTML += el; //변수는 데이터 추가 +붙여야 100200300400500 다 출력
+        // });
+        //문제정보
+        const quizInfo = [
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "1",
+                answerAsk : "검은 종이 위에 노랑과 파랑을 나열하고 일정한 거리에서 보면 노랑이 파랑보다 가깝게 보인다. 이때의 노랑색을 무엇이라 하는가?",
+                answerChoice : {
+                    1: "후퇴색",
+                    2: "팽창색",
+                    3: "진출색",
+                    4: "수축색"
+                },
+                answerResult : "3",
+                answerEx : "후퇴색(멀어져 보이는 색), 팽창색(확대되어 보이는 색), 진출색(가깝게 보이는 색), 수축색(줄어들게 보이는 색)"
+            },
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "2",
+                answerAsk : "다음 중 시각 디자인에 속하지 않는 것은?",
+                answerChoice : {
+                    1: "텍스트타일 디자인",
+                    2: "패키지 디자인",
+                    3: "POP 디자인",
+                    4: "타이포그래피"
+                },
+                answerResult : "1",
+                answerEx : "텍스트타일 디자인은 제품디자인에 속합니다."
+            },
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "3",
+                answerAsk : "디자인 형태의 분류 중 이념적 형태에 속하는 것은?",
+                answerChoice : {
+                    1: "인위 형태",
+                    2: "추상 형태",
+                    3: "자연 형태",
+                    4: "실제 형태"
+                },
+                answerResult : "2",
+                answerEx : "이념적 형태는 점, 선, 면, 입체와 같은 기하학적인 요소를 가지고 있는 것을 말합니다."
+            },
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "4",
+                answerAsk : "색팽이의 혼합관계와 관련이 있는 것은?",
+                answerChoice : {
+                    1: "색료혼합",
+                    2: "표준혼합",
+                    3: "회전혼합",
+                    4: "보색혼합"
+                },
+                answerResult : "3",
+                answerEx : "팽이가 도는 모습을 연상해 보시면 쉽게 답을 구할 수 있습니다."
+            },
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "5",
+                answerAsk : "해안에 있는 조약돌은 자연의 힘에 의해 필연적으로 만들어진 형태라는 자연의 법칙이 만든 자연의 형태를 주장한 사람은?",
+                answerChoice : {
+                    1: "르코르뷔지에",
+                    2: "파파넥",
+                    3: "아른하임",
+                    4: "모홀로나기"
+                },
+                answerResult : "4",
+                answerEx : "'해안에 있는'이라는 말로 무인도를 생각한 뒤 무인도에서 홀로나기를 연상해서 외우시면 쉽습니다."
+            },
+            {
+                answerType : "웹디자인기능사 2011년 02회",
+                answerNum : "6",
+                answerAsk : "색상환 24등분, 명도 단계 8등분의 색 체계를 구성하고 “조화는 질서와 같다”는 색채 조화 이론을 발표한 사람은?",
+                answerChoice : {
+                    1: "오스트발트",
+                    2: "슈브뢸",
+                    3: "비렌",
+                    4: "문스펜서"
+                },
+                answerResult : "1",
+                answerEx : "색상환 24등분, 명도 단계 8등분, '조화는 질서와 같다'이론을 내신 분은 오스트발트 입니다."
+            }
+        ];
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        function updateQuiz(){
+            const exam = [];
+            quizInfo.forEach((question, number) => {
+                exam.push(`
+                    <div class="quiz">
+                        <span class="quiz__type">${question.answerType}</span>
+                        <h2 class="quiz__question">
+                            <span class="number">${question.answerNum}</span>
+                            <div class="ask">${question.answerAsk}</div>
+                        </h2>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다 !</div>
+                            <div class="false">틀렸습니다 !</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label for="select1${number}">
+                                    <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label for="select2${number}">
+                                    <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label for="select3${number}">
+                                    <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label for="select4${number}">
+                                    <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+            exam.push(`
+                <div class="quiz__confirm">
+                    <button class="check">정답 확인하기</button>
+                    <div class="ex"></div>
+                </div>
+            `);
+            quizWrap.innerHTML = exam.join('');
+        }
+        updateQuiz();
+        //정답 확인
+        //퀴즈 만들어 놓은 다음 불러와야함 선택자
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".quiz__selects");        //보기
+            const quiz__View = document.querySelectorAll(".quiz__view");        //강아지
+        }
+        answerQuiz();
+    </script>
+</body>
+
+</html>

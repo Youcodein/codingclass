@@ -1,0 +1,115 @@
+.textType01__inner {
+    display: flex;
+}
+.textType01__inner .subtit {
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 3px 30px 2px;
+    border-radius: 30px;
+    background: #FF3344;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.textType01__inner .tit {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 26px;
+}
+.textType01__inner .tit_desc {
+    width: 60%;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    word-break: keep-all;
+}
+.textType01__inner .text__box.left {
+    width: 358px;
+    margin-right: 36px;
+}
+.textType01__inner .text__box.right {
+    width: 373px;
+}
+.textType01__inner .text {
+    box-sizing: border-box;
+}
+.textType01__inner .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.textType01__inner .text:nth-child(1) {
+    margin-bottom: 21px;
+}
+.textType01__inner .left .text:nth-child(1) .icon {
+    background: url(../img/texticon01.svg) no-repeat center;
+    background-color: #48EC9D33;
+}
+.textType01__inner .left .text:nth-child(2) .icon {
+    background: url(../img/texticon03.svg) no-repeat center;
+    background-color: #F76D6D33;
+}
+.textType01__inner .right .text:nth-child(1) .icon {
+    background: url(../img/texticon02.svg) no-repeat center;
+    background-color: #8DFF3333;
+}
+.textType01__inner .right .text:nth-child(2) .icon {
+    background: url(../img/texticon04.svg) no-repeat center;
+    background-color: #4857EC33;
+}
+.textType01__inner .textTit {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.textType01__inner .textDesc {
+    width: 100%;
+    height: 80px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 150%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+/* media */
+@media(max-width: 960px) {
+    
+}
+@media(max-width: 600px) {
+    .textType01__inner {
+        display: contents;
+        text-align: center;
+    }
+    .textType01__inner .subtit,
+    .textType01__inner .tit,
+    .textType01__inner .tit_desc {
+        margin: 0 auto;
+    }
+    .textType01__inner .subtit {
+        margin-top: 70px;
+    }
+    .textType01__inner .tit {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .textType01__inner .tit_desc {
+        margin-bottom: 20px;
+    }
+    .textType01__inner .text__box {
+        margin: 0 auto;
+    }
+    .textType01__inner .text__box.left {
+        margin-right: auto;
+    }
+    .textType01__inner .textDesc {
+        text-align: justify;
+    }
+    .textType01__inner .icon  {
+        margin: 20px auto 10px;
+    }
+}

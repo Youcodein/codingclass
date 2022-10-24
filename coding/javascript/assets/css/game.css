@@ -1,0 +1,189 @@
+@import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'MabinogiClassic';
+    font-weight: normal;
+    cursor: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 52px;
+    user-select: none;
+    pointer-events: none;
+    background-size: cover;
+    background-position: center center;
+    z-index: 10000;
+
+
+}
+
+
+#header {
+    position: fixed;
+    width: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 0;
+    font-weight: normal;
+}
+
+#header h1 {
+    font-size: 25px;
+    color: #fff;
+    padding: 5px;
+}
+
+#header .time {
+    color: #fff;
+
+}
+
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 54px;
+}
+
+.icon2 {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    width: 54px;
+    
+}
+
+.icon3 {
+    position: absolute;
+    left: 100px;
+    top: 400px;
+    width: 54px;
+}
+
+.icon4 {
+    position: absolute;
+    left: 100px;
+    top: 500px;
+    width: 54px;
+}
+
+.icon5 {
+    position: absolute;
+    left: 100px;
+    top: 600px;
+    width: 54px;
+}
+
+.icon6 {
+    position: absolute;
+    left: 100px;
+    top: 700px;
+    width: 54px;
+}
+
+.icon1 img,
+.icon2 img,
+.icon3 img,
+.icon4 img,
+.icon5 img,
+.icon6 img {
+    width: 54px;
+}
+
+.icon1 span,
+.icon2 span,
+.icon3 span,
+.icon4 span,
+.icon5 span,
+.icon6 span {
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+    white-space: nowrap;
+
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+}
+
+#footer .agent {}
+
+.mac #footer {
+    background: #fff;
+    color: #000;
+}
+
+.window #footer {}
+
+
+/* 소스보기 */
+
+.sourceInner {
+    display: none;
+    background: #000000;
+    width: 900px;
+    height: 700px;
+    padding: 50px 20px 30px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    position: relative;
+
+}
+
+.sourceInner.show {
+    display: block;
+
+}
+
+.sourceInner iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.sourceClose {
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.sourceClose:hover {
+    background: #474747;
+}
+

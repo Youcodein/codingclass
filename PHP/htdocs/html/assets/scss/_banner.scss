@@ -1,0 +1,122 @@
+#banner h2 {
+    @include blind;
+}
+
+.banner__inner {
+    @include flex_sb;
+    padding: 60px 0;
+    border-bottom: 3px solid $black;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $black;
+        position: absolute;
+        left: 0;
+        bottom: -9px;
+    }
+
+    .img {
+        width: 30%;
+        border-radius: 50%;
+        overflow: hidden;
+        filter: saturate(0%);
+        transition: all 1s;
+    }
+
+    .desc {
+        width: 65%;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1.5;
+        word-break: keep-all;
+
+        em {
+            color: $font-em;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 0%;
+                height: 100%;
+                background: #2FE9DE;
+                opacity: 0.2;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &:hover .img {
+        filter: saturate(100%);
+    }
+
+    &:hover .desc em {
+        color: $black;
+        transition: color 0.3s;
+    }
+
+    &:hover .desc em::before {
+        width: 100%;
+        transition: all 0.6s;
+    }
+}
+
+
+//회원가입
+.banner__inner2 {
+    @include border-bottom;
+    padding: 60px 0;
+    text-align: center;
+
+
+    .img {
+        width: 25%;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: all 1s;
+        margin-bottom: 20px;
+    }
+
+    .desc {
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.5;
+        word-break: keep-all;
+        
+
+        em {
+            color: $font-em;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 0%;
+                height: 100%;
+                background: #2FE9DE;
+                opacity: 0.2;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &:hover .img {
+        filter: saturate(100%);
+    }
+
+    &:hover .desc em {
+        color: $black;
+        transition: color 0.3s;
+    }
+
+    &:hover .desc em::before {
+        width: 100%;
+        transition: all 0.6s;
+    }
+}

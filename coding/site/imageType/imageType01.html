@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 타입01</title>
+    <style>
+        /* font */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .SCore {
+            font-family: SCoreDream;
+            font-weight: 300;
+        }
+
+        body {}
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0 0 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* blind : 접근성을 이유로 필요로 한다. */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* imageType01 */
+        .image__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .image__inner .image {
+            width: 570px;
+            height: 370px;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .image__inner .image:nth-child(1) {
+
+            background-color: #444;
+        }
+
+        .image__inner .image:nth-child(2) {
+
+            background-color: #555;
+        }
+
+        .tit {
+            position: absolute;
+            left: 30px;
+            top: 197px;
+            font-size: 32px;
+            color: #fff;
+            text-align: left;
+        }
+
+        .desc {
+            position: absolute;
+            left: 30px;
+            top: 244px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+            text-align: left;
+            margin: 0 30px 30px 0;
+        }
+
+        .btn {
+            position: absolute;
+            left: 30px;
+            top: 302px;
+            width: 120px;
+            height: 38px;
+            background-color: rgba(184, 115, 115, 0.71);
+            border-style: none;
+        }
+        .btn a {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imageType01" class="image__Wrap SCore section">
+        <h2>다이어리 꾸미기</h2>
+        <p>당신만의 멋진 기록장, 개성있는 다이어리를 만들어보세요!</p>
+    </section>
+    <div class="image__inner container">
+        <article class="image">
+            <h3 class="tit">당신의 기억들</h3>
+            <p class="desc">당신의 기억들당신의 기억들당신의 기억들당신의 기억들당신의
+                기억들당신의 기억들당신의 기억들당신의 기억들당신의 기억들당신의 기억들</p>
+            <img src="img/image_bg01_01.jpg" alt="다이어리">
+            <button class="btn">
+                <a href="#">자세히 보기</a>
+            </button>
+        </article>
+        <article class="image">
+            <h3 class="tit">당신의 기억들</h3>
+            <p class="desc">당신의 기억들당신의 기억들당신의 기억들당신의 기억들당신의
+                기억들당신의 기억들당신의 기억들당신의 기억들당신의 기억들당신의 기억들</p>
+            <img src="img/image_bg01_02.jpg" alt="다이어리">
+            <button class="btn">
+                <a href="#">자세히 보기</a>
+            </button>
+        </article>
+    </div>
+</body>
+
+</html>

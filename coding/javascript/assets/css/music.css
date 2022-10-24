@@ -1,0 +1,288 @@
+.music__wrap {}
+
+.music__inner {
+    width: 500px;
+    background: #000;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.music__header {
+    width: 100%;
+    height: 30px;
+    /* background: #ccc; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    /* border-bottom: 1px solid #fff; */
+
+}
+
+.music__header h2 {
+    font-size: 15px;
+
+}
+
+.music__contents {
+    background: #c4c4c4;
+    width: 100%;
+    /* height: 300px; */
+}
+
+.music__view {
+    display: flex;
+    padding: 20px;
+}
+
+.music__view .img {
+    width: 30%;
+}
+
+.music__view .img img {
+    width: 100%;
+}
+
+.music__view .title {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.volume {
+    width: 10%;
+
+}
+
+.volume .volume_line {
+    rotate: 270deg;
+    height: 10px;
+    width: 120px;
+    background: #000;
+    border-radius: 5px;
+    margin: 60px -40px;
+}
+
+.volume .volume_line .volumeBar {
+    height: inherit;
+    width: 50%;
+    background: #5ddf3d;
+    border-radius: 5px;
+}
+
+.music__view .title h3 {
+    margin-bottom: 5px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.music__view .title p {
+    color: #ff4646;
+    font-size: 16px;
+}
+
+.music__control {
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+
+.music__control .progress {
+    width: 100%;
+    height: 6px;
+    background: #000;
+    border-radius: 5px;
+}
+
+.music__control .progress .bar {
+    width: 0%;
+    height: inherit;
+    background: #5ddf3d;
+    border-radius: 5px;
+}
+
+.music__control .progress .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3px;
+}
+
+.music__control .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 0 80px;
+}
+
+.music__control .control i:hover {
+    background-color: #eeeeee !important;
+    padding: 10px;
+    display: inline-block;
+}
+
+.music__control .control svg {
+    width: 50%;
+}
+
+.music__control .control .repeat {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -192px 0;
+    scale: 0.7;
+}
+
+.music__control .control .repeat_one {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -240px 0;
+    scale: 0.7;
+}
+
+.music__control .control .shuffle {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -288px 0;
+    scale: 0.7;
+}
+
+.music__control .control .prev {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -100px 0;
+    scale: 0.7;
+}
+
+.music__control .control .play {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: 0 0;
+    scale: 0.7;
+}
+
+.music__control .control .stop {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -50px 0;
+    scale: 0.7;
+}
+
+.music__control .control .next {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -150px 0;
+    scale: 0.7;
+}
+
+.music__control .control .list {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -336px 0;
+    scale: 0.7;
+}
+
+
+.music__view {}
+
+.music__footer {
+    background: #c4c4c4;
+}
+
+.music__list {
+    padding: 20px;
+    display: none;
+}
+
+.music__list.show {
+    display: block;
+}
+
+.music__list h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.music__list h3 .list {
+    display: inline-block;
+    vertical-align: -15px;
+    width: 48px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -336px 0;
+    scale: 0.7;
+    margin-right: 5px;
+
+}
+
+.music__list h3 .close {
+    display: inline-block;
+    width: 48px;
+    vertical-align: -16px;
+    margin-left: 210px;
+    height: 48px;
+    background: url(../img/musicBar.png) no-repeat;
+    background-position: -384px 0;
+    scale: 0.7;
+}
+
+.music__list h3 .close:hover{
+    background-color: #eeeeee !important;
+    padding: 10px;
+    display: inline-block;
+}
+
+.music__list ul {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.music__list li {
+    border-bottom: 1px solid #000;
+    list-style: none;
+    position: relative;
+    padding: 5px 0;
+}
+
+.music__list li.playing {
+    color: #aaffa2;
+    background: #b298c7;
+}
+
+.music__list strong {
+    display: block;
+    font-size: 20px;
+}
+
+.music__list li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.music__list li em {
+    font-style: normal;
+}

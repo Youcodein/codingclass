@@ -1,0 +1,130 @@
+<!-- Bootstrap core CSS -->
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/docs.min.css" rel="stylesheet">
+<link href="../assets/css/prism.css" rel="stylesheet">
+
+<div class="document">
+
+<h1 class="t_tit">CSS animation</h1>
+<h2 class="t_tit2">만드는 방법</h2>
+<p class="t_desc2">
+    1. 애니메이션으로 만들고 싶은 이미지를 프레임 수만큼 가져옵니다.(연속되는 이미지로 가져와주세요)
+    2. 이미지들을 하나로 이어 붙입니다. 포토샵에서 (이미지의 너비) X (프레임 수) 만큼의 너비로 새 파일을 만들어서 순서대로 이어붙이시면 됩니다.
+    3. 그 이미지를 저장합니다.
+    4. 이 이미지를 CSS의 background를 이용하여 넣어줄 위치에 위치시킵니다.
+    5. 애니메이션효과를 부여합니다. 소스는 아래의 소스를 참고해주세요.
+</p>
+
+<p class="t_box">
+    <img style="width: 1000px;" src="https://github.com/Youcodein/coding2/blob/main/animation/img/cupani.jpg?raw=true" alt="">
+</p>
+
+
+<style>
+    .timing.bg2 > div {background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);}
+    .timing.bg9 > div {background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);}
+    
+    .timing6.show {animation: move 4s 1 step-start;}
+    .timing7.show {animation: move 4s 1 step-end;}
+    .timing8.show {animation: move 4s 1 steps(4, start);}
+    .timing9.show {animation: move 4s 1 steps(4, end);}
+    .timing10.show {animation: move 4s 1 steps(10, start);}
+    .timing11.show {animation: move 4s 1 steps(10, end);}
+</style>
+<!-- Intro2 -->
+<div class="bs-docs-section">
+    
+    <style>
+        .step {
+            height: 700px;
+            background: #333;
+            position: relative;
+        }
+        .step .stepbox {
+            width: 800px; height: 600px;
+            background: url(https://github.com/Youcodein/coding2/blob/main/animation/img/cupani.jpg?raw=true);
+            border-radius: 0;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            animation: ani 1s steps(32, start) infinite;
+        }
+
+        @keyframes ani {
+            0% {background-position: 0 0;}
+            100% {background-position: -25600px 0;}
+        }
+
+
+    </style>
+    <div class="sample">
+        <div class="timing step">
+            <div class="stepbox"></div>
+        </div>
+    </div>
+</div>
+
+<h2 class="t_tit2">HTML 소스</h2>
+<div class="t_code">
+<pre><code class="language-html">&lt;div class="sample"&gt;
+    &lt;div class="timing step"&gt;
+        &lt;div class="stepbox"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre> 
+</div>
+
+<div class="t_code">
+<pre><code class="language-css">
+.step {
+    height: 700px;
+    background: #333;
+    position: relative;
+}
+.step .stepbox {
+    width: 800px; height: 600px;
+    background: url(https://github.com/Youcodein/coding2/blob/main/animation/img/cupani.jpg?raw=true);
+    border-radius: 0;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    animation: ani 1s steps(32, start) infinite;
+}
+
+@keyframes ani {
+    0% {background-position: 0 0;}
+    100% {background-position: -25600px 0;}
+}
+</code></pre> 
+</div>
+
+<div class="t_code">
+<pre><code class="language-js">
+$(".start2").click(function(){
+$(".timing.bg2 > div").addClass("show");
+setTimeout(function(){
+$(".timing.bg2 > div").removeClass("show");
+},4000);
+});
+</code></pre> 
+</div>
+<!-- //Intro2 -->
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../assets/js/jquery-1.9.1.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+<script src="../assets/js/prism.js"></script>
+<script>
+$(".start2").click(function(){
+$(".timing.bg2 > div").addClass("show");
+setTimeout(function(){
+$(".timing.bg2 > div").removeClass("show");
+},4000);
+});
+
+
+</script>
+</div>
+
