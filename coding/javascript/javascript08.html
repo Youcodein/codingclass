@@ -1,201 +1,304 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>자바스크립트 : 숫자 객체</title>
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/dracura.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/dracura.css" />
+  </head>
+  <body>
     <header id="header">
-        <h1><a href="index.html">Javascript</a></h1>
-        <nav class="header_nav">
-            <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
-                <li><a href="javascript02.html">데이터 불러오기</a></li>
-                <li><a href="javascript03.html">데이터 실행하기</a></li>
-                <li><a href="javascript04.html">데이터 제어하기</a></li>
-            </ul>
-            <ul>
-                <li><a href="javascript05.html">문자열 객체</a></li>
-                <li><a href="javascript06.html">배열 객체</a></li>
-                <li><a href="javascript07.html">수학 객체</a></li>
-                <li class="active"><a href="javascript08.html">숫자 / 데이트 객체</a></li>
-                <li><a href="javascript09.html">브라우저 객체</a></li>
-                <li><a href="javascript10.html">요소 객체</a></li>
-                <li><a href="javascript11.html">이벤트 객체</a></li>
-                <li><a href="javascript12.html">제이쿼리</a></li>
-
-            </ul>
-            <ul class="effect">
-                <li><a href="effect/searchEffect.html">검색 효과</a></li>
-                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
-                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
-                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
-                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
-                <li><a href="effect/parallaxEffect.html">패랠렉스 효과</a></li>
-                <li><a href="effect/gameEffect.html">게임 효과</a></li>
-            </ul>
-
-        </nav>
+      <h1><a href="index.html">Javascript</a></h1>
+      <nav class="header_nav">
+        <ul>
+          <li><a href="javascript01.html">데이터 저장하기</a></li>
+          <li><a href="javascript02.html">데이터 불러오기</a></li>
+          <li><a href="javascript03.html">데이터 실행하기</a></li>
+          <li><a href="javascript04.html">데이터 제어하기</a></li>
+        </ul>
+        <ul>
+          <li><a href="javascript05.html">문자열 객체</a></li>
+          <li><a href="javascript06.html">배열 객체</a></li>
+          <li><a href="javascript07.html">수학 객체</a></li>
+          <li class="active">
+            <a href="javascript08.html">숫자 / 데이트 객체</a>
+          </li>
+          <li><a href="javascript09.html">브라우저 객체</a></li>
+          <li><a href="javascript10.html">요소 객체</a></li>
+          <li><a href="javascript11.html">이벤트 객체</a></li>
+          <li><a href="javascript12.html">제이쿼리</a></li>
+        </ul>
+        <ul class="effect">
+          <li><a href="effect/searchEffect.html">검색 효과</a></li>
+          <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+          <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+          <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+          <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+          <li><a href="effect/parallaxEffect.html">패랠렉스 효과</a></li>
+          <li><a href="effect/gameEffect01.html">게임 효과</a></li>
+        </ul>
+      </nav>
     </header>
-   <!-- //header -->
+    <!-- //header -->
 
     <main id="main">
-        <div class="container">
-            <div class="main_menu">
-                <ul>
-                    <li><a href="#sample01">01. 숫자 메서드 : Number.MAX_VALUE</a></li>
-                    <li><a href="#sample02">02. 숫자 메서드 : Number.MIN_VALUE</a></li>
-                    <li><a href="#sample03">03. 숫자 메서드 : Number.MAX_SAFE_INTEGER</a></li>
-                    <li><a href="#sample04">04. 숫자 메서드 : Number.MIN_SAFE_INTEGER</a></li>
-                    <li><a href="#sample05">05. 숫자 메서드 : Number.NaN</a></li>
-                    <li><a href="#sample06">06. 숫자 메서드 : Number.isFinite</a></li>
-                    <li><a href="#sample07">07. 숫자 메서드 : Number.isInteger</a></li>
-                    <li><a href="#sample08">08. 숫자 메서드 : Number.isNaN</a></li>
-                    <li><a href="#sample09">09. 숫자 메서드 : Number.prototype.toFixed</a></li>
-                    <li><a href="#sample10">10. 숫자 메서드 : Number.prototype.toPrecision</a></li>
-                    <li><a href="#sample11">11. 숫자 메서드 : Number.prototype.toString</a></li>
-                </ul>
-                <br>
-                <ul>
-                    <li><a href="#sample12">12. 데이트 메서드 : New Date()</a></li>
-                    <li><a href="#sample13">13. 데이트 메서드 : Date.now()</a></li>
-                    <li><a href="#sample14">14. 데이트 메서드 : Date.parse()</a></li>
-                    <li><a href="#sample15">15. 데이트 메서드 : Date.UTC()</a></li>
-                    <li><a href="#sample16">16. 데이트 메서드 : Date.prototype.getFullYear()</a></li>
-                    <li><a href="#sample17">17. 데이트 메서드 : Date.prototype.setFullYear()</a></li>
-                    <li><a href="#sample18">18. 데이트 메서드 : Date.prototype.getMonth()</a></li>
-                    <li><a href="#sample19">19. 데이트 메서드 : Date.prototype.setMonth()</a></li>
-                    <li><a href="#sample20">20. 데이트 메서드 : Date.prototype.getDate()</a></li>
-                    <li><a href="#sample21">21. 데이트 메서드 : Date.prototype.setDate()</a></li>
-                    <li><a href="#sample22">22. 데이트 메서드 : Date.prototype.getDay()</a></li>
-                    <li><a href="#sample23">23. 데이트 메서드 : Date.prototype.getHours()</a></li>
-                    <li><a href="#sample24">24. 데이트 메서드 : Date.prototype.setHours()</a></li>
-                    <li><a href="#sample25">25. 데이트 메서드 : Date.prototype.getMinutes()</a></li>
-                    <li><a href="#sample26">26. 데이트 메서드 : Date.prototype.setMinutes()</a></li>
-                    <li><a href="#sample27">27. 데이트 메서드 : Date.prototype.getSeconds()</a></li>
-                    <li><a href="#sample28">28. 데이트 메서드 : Date.prototype.setSeconds()</a></li>
-                    <li><a href="#sample29">29. 데이트 메서드 : Date.prototype.getMilliseconds()</a></li>
-                    <li><a href="#sample30">30. 데이트 메서드 : Date.prototype.setMilliseconds()</a></li>
-                    <li><a href="#sample31">31. 데이트 메서드 : Date.prototype.getTime()</a></li>
-                    <li><a href="#sample32">32. 데이트 메서드 : Date.prototype.getTimezoneOffset()</a></li>
-                    <li><a href="#sample33">33. 데이트 메서드 : Date.prototype.toDateString()</a></li>
-                    <li><a href="#sample34">34. 데이트 메서드 : Date.prototype.toTimeString()</a></li>
-                    <li><a href="#sample35">35. 데이트 메서드 : Date.prototype.toISOString()</a></li>
-                    <li><a href="#sample36">36. 데이트 메서드 : Date.prototype.toLocaleString()</a></li>
-                    <li><a href="#sample37">37. 데이트 메서드 : Date.prototype.toLocaleTimeString()</a></li>
-                    
-                </ul>
-            </div>
-            <div class ="main_sample">
-                <div id="sample01" class="sample">
-                    <h3>01. 숫자 메서드 : Number.MAX_VALUE</h3>
-                    <p>
-                        Number.MAX_VALUE 속성은 JavaScript가 표현할 수 있는 제일 큰 양의 숫자 값을 나타냅니다
-                    </p>
-                    
-                </div>
-                <!-- //sample01 -->
-
-                <div id="sample02" class="sample">
-                    <h3>02. 숫자 메서드 : Number.MIN_VALUE</h3>
-                    <p>
-                        Number.MIN_VALUE 속성은 JavaScript가 표현할 수 있는 제일 작은 양의 숫자 값을 나타냅니다
-                    </p>
-                    
-                </div>
-                <!-- //sample02 -->
-
-                <div id="sample03" class="sample">
-                    <h3>03. 숫자 메서드 : Number.MAX_SAFE_INTEGER</h3>
-                    <p>
-                        Number.MAX_SAFE_INTEGER 상수는 JavaScript에서 안전한 최대 정수값을 나타냅니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample03 -->
-
-                <div id="sample04" class="sample">
-                    <h3>04. 숫자 메서드 : Number.MIN_SAFE_INTEGER</h3>
-                    <p>
-                        Number.MIN_SAFE_INTEGER 상수는 JavaScript에서 안전한 최소 정수값을 나타냅니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample04 -->
-
-                <div id="sample05" class="sample">
-                    <h3>05. 숫자 메서드 : Number.NaN</h3>
-                    <p>
-                        Number.NaN 속성은 Not-A-Number(숫자가 아님)를 나타냅니다. NaN과 같습니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample05 -->
-
-                <div id="sample06" class="sample">
-                    <h3>06. 숫자 메서드 : Number.isFinite</h3>
-                    <p>
-                        Number.isFinite() 메소드는 전달된 값이 유한한 수인지 아닌지를 검사합니다. <br>
-                        이 메소드는 전역 함수인 isFinite() 함수처럼 전달된 값을 숫자로 강제 변환하지 않습니다.<br> 
-                        이 메소드는 오직 셀 수 있는 값에서만 동작하며, 그 값이 유한한 경우에만 true를 반환합니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample06 -->
-                <div id="sample07" class="sample">
-                    <h3>07. 숫자 메서드 : Number.isInteger</h3>
-                    <p>
-                        Number.isInteger() 메소드는 인수의 값이 정수인지 아닌지를 반환해줍니다. 전달된 값이 정수이면 true를 아니라면 NaN, Infinity와 같은 값은 모두 false를 반환합니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample07 -->
-
-                <div id="sample08" class="sample">
-                    <h3>08. 숫자 메서드 : Number.isNaN</h3>
-                    <p>
-                        isNaN() 함수는 어떤 값이 NaN인지 판별합니다. isNaN 함수는 몇몇 혼란스러운 케이스을 가지고 있으므로, ECMAScript 2015에서 추가한 Number.isNaN()으로 바꾸는 편이 좋을 수도 있습니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample08 -->
-
-                <div id="sample09" class="sample">
-                    <h3>09. 숫자 메서드 : Number.prototype.toFixed</h3>
-                    <p>
-                        Number 인스턴스의 소수 부분 자릿수를 전달받은 값으로 고정하고 그  값을 문자열로 반환합니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample09 -->
-
-                <div id="sample10" class="sample">
-                    <h3>10. 숫자 메서드 : Number.prototype.toPrecision</h3>
-                    <p>
-                        number 인스턴스의 가수와 소수 부분을 합친 자릿수를 전달받은 값으로 고정하고, 그 값을 문자열로 반환합니다.
-                    </p>
-                    
-                </div>
-                <!-- //sample09 -->
-            </div>
+      <div class="container">
+        <div class="main_menu">
+          <ul>
+            <li><a href="#sample01">01. 숫자 메서드 : Number.MAX_VALUE</a></li>
+            <li><a href="#sample02">02. 숫자 메서드 : Number.MIN_VALUE</a></li>
+            <li>
+              <a href="#sample03">03. 숫자 메서드 : Number.MAX_SAFE_INTEGER</a>
+            </li>
+            <li>
+              <a href="#sample04">04. 숫자 메서드 : Number.MIN_SAFE_INTEGER</a>
+            </li>
+            <li><a href="#sample05">05. 숫자 메서드 : Number.NaN</a></li>
+            <li><a href="#sample06">06. 숫자 메서드 : Number.isFinite</a></li>
+            <li><a href="#sample07">07. 숫자 메서드 : Number.isInteger</a></li>
+            <li><a href="#sample08">08. 숫자 메서드 : Number.isNaN</a></li>
+            <li>
+              <a href="#sample09">09. 숫자 메서드 : Number.prototype.toFixed</a>
+            </li>
+            <li>
+              <a href="#sample10"
+                >10. 숫자 메서드 : Number.prototype.toPrecision</a
+              >
+            </li>
+            <li>
+              <a href="#sample11"
+                >11. 숫자 메서드 : Number.prototype.toString</a
+              >
+            </li>
+          </ul>
+          <br />
+          <ul>
+            <li><a href="#sample12">12. 데이트 메서드 : New Date()</a></li>
+            <li><a href="#sample13">13. 데이트 메서드 : Date.now()</a></li>
+            <li><a href="#sample14">14. 데이트 메서드 : Date.parse()</a></li>
+            <li><a href="#sample15">15. 데이트 메서드 : Date.UTC()</a></li>
+            <li>
+              <a href="#sample16"
+                >16. 데이트 메서드 : Date.prototype.getFullYear()</a
+              >
+            </li>
+            <li>
+              <a href="#sample17"
+                >17. 데이트 메서드 : Date.prototype.setFullYear()</a
+              >
+            </li>
+            <li>
+              <a href="#sample18"
+                >18. 데이트 메서드 : Date.prototype.getMonth()</a
+              >
+            </li>
+            <li>
+              <a href="#sample19"
+                >19. 데이트 메서드 : Date.prototype.setMonth()</a
+              >
+            </li>
+            <li>
+              <a href="#sample20"
+                >20. 데이트 메서드 : Date.prototype.getDate()</a
+              >
+            </li>
+            <li>
+              <a href="#sample21"
+                >21. 데이트 메서드 : Date.prototype.setDate()</a
+              >
+            </li>
+            <li>
+              <a href="#sample22"
+                >22. 데이트 메서드 : Date.prototype.getDay()</a
+              >
+            </li>
+            <li>
+              <a href="#sample23"
+                >23. 데이트 메서드 : Date.prototype.getHours()</a
+              >
+            </li>
+            <li>
+              <a href="#sample24"
+                >24. 데이트 메서드 : Date.prototype.setHours()</a
+              >
+            </li>
+            <li>
+              <a href="#sample25"
+                >25. 데이트 메서드 : Date.prototype.getMinutes()</a
+              >
+            </li>
+            <li>
+              <a href="#sample26"
+                >26. 데이트 메서드 : Date.prototype.setMinutes()</a
+              >
+            </li>
+            <li>
+              <a href="#sample27"
+                >27. 데이트 메서드 : Date.prototype.getSeconds()</a
+              >
+            </li>
+            <li>
+              <a href="#sample28"
+                >28. 데이트 메서드 : Date.prototype.setSeconds()</a
+              >
+            </li>
+            <li>
+              <a href="#sample29"
+                >29. 데이트 메서드 : Date.prototype.getMilliseconds()</a
+              >
+            </li>
+            <li>
+              <a href="#sample30"
+                >30. 데이트 메서드 : Date.prototype.setMilliseconds()</a
+              >
+            </li>
+            <li>
+              <a href="#sample31"
+                >31. 데이트 메서드 : Date.prototype.getTime()</a
+              >
+            </li>
+            <li>
+              <a href="#sample32"
+                >32. 데이트 메서드 : Date.prototype.getTimezoneOffset()</a
+              >
+            </li>
+            <li>
+              <a href="#sample33"
+                >33. 데이트 메서드 : Date.prototype.toDateString()</a
+              >
+            </li>
+            <li>
+              <a href="#sample34"
+                >34. 데이트 메서드 : Date.prototype.toTimeString()</a
+              >
+            </li>
+            <li>
+              <a href="#sample35"
+                >35. 데이트 메서드 : Date.prototype.toISOString()</a
+              >
+            </li>
+            <li>
+              <a href="#sample36"
+                >36. 데이트 메서드 : Date.prototype.toLocaleString()</a
+              >
+            </li>
+            <li>
+              <a href="#sample37"
+                >37. 데이트 메서드 : Date.prototype.toLocaleTimeString()</a
+              >
+            </li>
+          </ul>
         </div>
+        <div class="main_sample">
+          <div id="sample01" class="sample">
+            <h3>01. 숫자 메서드 : Number.MAX_VALUE</h3>
+            <p>
+              Number.MAX_VALUE 속성은 JavaScript가 표현할 수 있는 제일 큰 양의
+              숫자 값을 나타냅니다
+            </p>
+          </div>
+          <!-- //sample01 -->
 
+          <div id="sample02" class="sample">
+            <h3>02. 숫자 메서드 : Number.MIN_VALUE</h3>
+            <p>
+              Number.MIN_VALUE 속성은 JavaScript가 표현할 수 있는 제일 작은 양의
+              숫자 값을 나타냅니다
+            </p>
+          </div>
+          <!-- //sample02 -->
 
+          <div id="sample03" class="sample">
+            <h3>03. 숫자 메서드 : Number.MAX_SAFE_INTEGER</h3>
+            <p>
+              Number.MAX_SAFE_INTEGER 상수는 JavaScript에서 안전한 최대 정수값을
+              나타냅니다.
+            </p>
+          </div>
+          <!-- //sample03 -->
+
+          <div id="sample04" class="sample">
+            <h3>04. 숫자 메서드 : Number.MIN_SAFE_INTEGER</h3>
+            <p>
+              Number.MIN_SAFE_INTEGER 상수는 JavaScript에서 안전한 최소 정수값을
+              나타냅니다.
+            </p>
+          </div>
+          <!-- //sample04 -->
+
+          <div id="sample05" class="sample">
+            <h3>05. 숫자 메서드 : Number.NaN</h3>
+            <p>
+              Number.NaN 속성은 Not-A-Number(숫자가 아님)를 나타냅니다. NaN과
+              같습니다.
+            </p>
+          </div>
+          <!-- //sample05 -->
+
+          <div id="sample06" class="sample">
+            <h3>06. 숫자 메서드 : Number.isFinite</h3>
+            <p>
+              Number.isFinite() 메소드는 전달된 값이 유한한 수인지 아닌지를
+              검사합니다. <br />
+              이 메소드는 전역 함수인 isFinite() 함수처럼 전달된 값을 숫자로
+              강제 변환하지 않습니다.<br />
+              이 메소드는 오직 셀 수 있는 값에서만 동작하며, 그 값이 유한한
+              경우에만 true를 반환합니다.
+            </p>
+          </div>
+          <!-- //sample06 -->
+          <div id="sample07" class="sample">
+            <h3>07. 숫자 메서드 : Number.isInteger</h3>
+            <p>
+              Number.isInteger() 메소드는 인수의 값이 정수인지 아닌지를
+              반환해줍니다. 전달된 값이 정수이면 true를 아니라면 NaN, Infinity와
+              같은 값은 모두 false를 반환합니다.
+            </p>
+          </div>
+          <!-- //sample07 -->
+
+          <div id="sample08" class="sample">
+            <h3>08. 숫자 메서드 : Number.isNaN</h3>
+            <p>
+              isNaN() 함수는 어떤 값이 NaN인지 판별합니다. isNaN 함수는 몇몇
+              혼란스러운 케이스을 가지고 있으므로, ECMAScript 2015에서 추가한
+              Number.isNaN()으로 바꾸는 편이 좋을 수도 있습니다.
+            </p>
+          </div>
+          <!-- //sample08 -->
+
+          <div id="sample09" class="sample">
+            <h3>09. 숫자 메서드 : Number.prototype.toFixed</h3>
+            <p>
+              Number 인스턴스의 소수 부분 자릿수를 전달받은 값으로 고정하고 그
+              값을 문자열로 반환합니다.
+            </p>
+          </div>
+          <!-- //sample09 -->
+
+          <div id="sample10" class="sample">
+            <h3>10. 숫자 메서드 : Number.prototype.toPrecision</h3>
+            <p>
+              number 인스턴스의 가수와 소수 부분을 합친 자릿수를 전달받은 값으로
+              고정하고, 그 값을 문자열로 반환합니다.
+            </p>
+          </div>
+          <!-- //sample09 -->
+        </div>
+      </div>
     </main>
-      <!-- //main -->
+    <!-- //main -->
 
     <footer id="footer">
-        <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
+      <a href="mailto:foryoucodin@gmail.com">foryoucodin@gmail.com</a>
     </footer>
-      <!-- //footer --> 
+    <!-- //footer -->
     <script src="assets/js/highlight.min.js"></script>
     <script>
-        hljs.highlightAll();
+      hljs.highlightAll();
     </script>
-</body>
+  </body>
 </html>
