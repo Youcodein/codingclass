@@ -107,7 +107,7 @@ body {
 .icon4 span,
 .icon5 span,
 .icon6 span {
-  display: block;
+  /* display: block; */
   background: #000;
   color: #fff;
   font-size: 14px;

@@ -4,7 +4,12 @@
 .memory__game.open {
   display: block;
 }
+
 .memory__wrap {
+  display: none;
+}
+.memory__wrap.show {
+  display: block;
 }
 .memory__info {
   color: #fff;
@@ -14,6 +19,7 @@
   margin-bottom: 20px;
 }
 .memory__inner {
+  position: relative;
   width: 500px;
   height: 600px;
   border-radius: 10px;
@@ -23,6 +29,50 @@
   left: 500px;
   top: 100px;
   animation: flicker 0.5s infinite alternate;
+}
+.memory__close {
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+}
+.memory__close:hover {
+  background: #666;
+}
+.memory__rules {
+  display: none;
+}
+.memory__rules.show {
+  display: block;
+  position: absolute;
+  color: #fff;
+  background: #666;
+  border: 1px solid #fff;
+  width: 400px;
+  padding: 25px;
+  text-align: center;
+  z-index: 10;
+  top: 160px;
+  left: 40px;
+}
+
+.memory__rules.show > h2 {
+  margin-bottom: 20px;
+}
+.memory__rules.show > p {
+  line-height: 1.5;
+}
+.memory__start__btn {
+  margin: 20px auto;
+  text-align: center;
+  width: 100px;
+  padding: 10px 5px;
+  background: #8040ff;
+  /* cursor: pointer; */
+}
+.memory__start__btn:hover {
+  background: #492396;
 }
 .memory__card {
   padding: 30px;
@@ -49,7 +99,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(128, 64, 255);
+  background: hsl(260, 100%, 63%);
   backface-visibility: hidden;
   transition: all 0.5s ease-in-out;
   padding: 10%;

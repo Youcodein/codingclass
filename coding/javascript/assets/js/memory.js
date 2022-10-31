@@ -66,8 +66,8 @@ function matchCards(img1, img2) {
     }, 500);
 
     setTimeout(() => {
-      cardOne.classList.remove("shake", "flip");
-      cardTwo.classList.remove("shake", "flip");
+      cardOne.classList.remove("shakeX", "flip");
+      cardTwo.classList.remove("shakeX", "flip");
       cardOne = cardTwo = "";
       disableDeck = false;
     }, 1600);
@@ -117,9 +117,32 @@ function shuffleCard() {
     imgTag.src = `../assets/img/memory_card_game/${arr[index]}.svg`;
   });
 }
-shuffleCard();
+// shuffleCard();
 
 //카드 클릭
 memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
+});
+
+//창닫기 버튼
+
+const memoryIcon = document.querySelector(".icon3");
+const memoryWrap1 = document.querySelector(".memory__wrap");
+const memoryClose = document.querySelector(".memory__close");
+memoryIcon.addEventListener("click", () => {
+  memoryWrap1.classList.toggle("show");
+});
+memoryClose.addEventListener("click", () => {
+  memoryWrap1.classList.remove("show");
+});
+
+//게임시작 버튼
+const gameRule = document.querySelector(".memory__rules.show");
+const gameStartBtn = document.querySelector(".memory__start__btn");
+
+gameStartBtn.addEventListener("click", () => {
+  gameRule.classList.remove("show");
+
+  soundMatch.play();
+  shuffleCard();
 });
