@@ -74,6 +74,35 @@
 .memory__start__btn:hover {
   background: #492396;
 }
+
+.memory_gameEnd {
+  position: absolute;
+  top: 230px;
+  left: 120px;
+  text-align: center;
+  width: 250px;
+  padding: 30px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #666;
+}
+
+.memory__score {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.memory__onemore {
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  background: #8040ff;
+  color: #fff;
+  border: 1px dashed #fff;
+}
+.memory__onemore:hover {
+  background: #492396;
+}
 .memory__card {
   padding: 30px;
   /* margin-top: 90px; */

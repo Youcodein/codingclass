@@ -49,7 +49,7 @@ function matchCards(img1, img2) {
     matchedCard++;
     // alert("이미지가 일치합니다");
     if (matchedCard == 8) {
-      alert("게임 오버");
+      alert("게임 성공~!");
     }
     soundMatch.play();
 
@@ -146,3 +146,5 @@ gameStartBtn.addEventListener("click", () => {
   soundMatch.play();
   shuffleCard();
 });
+
+//게임 점수
