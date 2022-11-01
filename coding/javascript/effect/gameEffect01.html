@@ -527,7 +527,7 @@
           </div>
           <div class="memory_gameEnd">
             <div class="memory__score">
-              <p>당신의 점수는 <em>100</em>점!</p>
+              <p>당신의 점수는 <span>100</span>점!</p>
             </div>
             <div class="memory__onemore">다시하기</div>
           </div>
@@ -598,6 +598,11 @@
       $(".memory__inner").draggable({
         drag: function () {
           $(".mouse__cursor img").attr("src", "../assets/img/cursor_green.png");
+        },
+      });
+      $(".search__wrap").draggable({
+        drag: function () {
+          $(".mouse__cursor img").attr("src", "../assets/img/cursor_blue.png");
         },
       });
 

@@ -4,10 +4,15 @@
 
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
+const memoryGameEnd = document.querySelector(".memory_gameEnd");
+const memoryGameEndMsg = document.querySelector(".memory__score");
+const memoryGameScore = document.querySelector(".memory__score p > span");
+const memoryGameOneMore = document.querySelector(".memory__onemore");
 
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0;
+let matchScore = 100;
 
 let sound = [
   "../assets/audio/O.mp3",
@@ -49,7 +54,11 @@ function matchCards(img1, img2) {
     matchedCard++;
     // alert("이미지가 일치합니다");
     if (matchedCard == 8) {
-      alert("게임 성공~!");
+      setTimeout(() => {
+        // alert("게임 성공~!");
+        memoryGameEnd.classList.add("show");
+        memoryGameScore.innerHTML = `${matchScore}`;
+      }, 500);
     }
     soundMatch.play();
 
@@ -71,7 +80,7 @@ function matchCards(img1, img2) {
       cardOne = cardTwo = "";
       disableDeck = false;
     }, 1600);
-
+    matchScore = matchScore - 5;
     soundUnMatch.play();
   }
 }
@@ -136,9 +145,25 @@ memoryClose.addEventListener("click", () => {
   memoryWrap1.classList.remove("show");
 });
 
+//리셋
+function memoryReset() {
+  gameRule.classList.add("show");
+  cardOne = cardTwo = "";
+  disableDeck = false;
+  matchedCard = 0;
+  matchScore = 100;
+  memoryCards.forEach((card) => {
+    card.classList.remove("flip");
+  });
+  //카드 클릭
+  memoryCards.forEach((card) => {
+    card.addEventListener("click", filpCard);
+  });
+}
+
 //게임시작 버튼
-const gameRule = document.querySelector(".memory__rules.show");
 const gameStartBtn = document.querySelector(".memory__start__btn");
+const gameRule = document.querySelector(".memory__rules.show");
 
 gameStartBtn.addEventListener("click", () => {
   gameRule.classList.remove("show");
@@ -147,4 +172,8 @@ gameStartBtn.addEventListener("click", () => {
   shuffleCard();
 });
 
-//게임 점수
+//게임 재시작
+memoryGameOneMore.addEventListener("click", () => {
+  memoryGameEnd.classList.remove("show");
+  memoryReset();
+});

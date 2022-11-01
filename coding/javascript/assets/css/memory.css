@@ -76,6 +76,7 @@
 }
 
 .memory_gameEnd {
+  display: none;
   position: absolute;
   top: 230px;
   left: 120px;
@@ -85,6 +86,9 @@
   color: #fff;
   border: 1px solid #fff;
   background: #666;
+}
+.memory_gameEnd.show {
+  display: block;
 }
 
 .memory__score {
