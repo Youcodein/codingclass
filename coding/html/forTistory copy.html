@@ -1,0 +1,50 @@
+<div class="document">
+  <h2 class="t_tit" data-ke-size="size26">
+    프로그래머스 Lv.1 "나머지가 1이 되는 수 찾기"
+  </h2>
+  <p class="t_desc2" data-ke-size="size16">
+    문제 : " 자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다. "
+  </p>
+  <p class="t_desc2" data-ke-size="size16">
+    조건 : n은 0 이상 3000이하인 정수입니다.
+  </p>
+  <h2 class="t_tit" data-ke-size="size26">내 풀이</h2>
+  <div class="t_code">
+<pre class="javascript"><code>function solution(n) {
+  let answer = 0;
+  for(let i=0; i&lt;=n; i++){
+      if(n%i==0){
+          answer+=i;
+      }
+  }
+  return answer;
+}
+</code></pre>
+  </div>
+  <p class="t_box">
+    n을 i로 나눈 값이 0이 됐을 때, 즉 n의 약수인 값 i를 다 더하기 위해 answer+=i;을 써준 후 return으로 출력하면 약수의 합을 구할 수 있습니다.
+  </p>
+  <!-- 내 풀이 -->
+
+  <h2 class="t_tit" data-ke-size="size26">다른 사람들의 풀이</h2>
+  <div class="t_code">
+<pre class="javascript"><code>function sumDivisor(num) {
+  var root=Math.sqrt(num);
+  var sum=num;
+  for(var i=0;i&lt;num;i++){
+      if(i&gt;root && num%i==0){
+          sum=sum+i;
+          console.log("큰수: "+sum);
+      }else if(i&lt;root && num%i==0){
+           sum=sum+i;
+          console.log("작은수: "+sum);
+      }
+  }
+  return sum;
+}
+</code></pre>
+  </div>
+  <p class="t_box">
+    조건으로 num의 제곱근을 구하는 변수 root를 지정해서 약수가 num의 제곱근보다 작을때와 클때의 범위를 정해서 약수의 합을 구하였습니다.
+  </p>
+</div>

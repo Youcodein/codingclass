@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>introduceMyself</title>
+
+    <link
+      href="https://webfontworld.github.io/amore/AritaBuri.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "AritaBuri";
+        font-weight: 100;
+      }
+      .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .scrollTop {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        line-height: 40px;
+        z-index: 100000;
+        color: #ffecef;
+      }
+      /* layout */
+      #contents {
+      }
+      #section1 {
+        height: 10000px;
+      }
+      #section2 {
+      }
+      #section3 {
+      }
+      #section4 {
+      }
+      #section5 {
+      }
+      #section6 {
+      }
+
+      /* sec1 */
+      .sec1_text1 {
+        width: 100%;
+        height: 100vh;
+        background: #251b37;
+        background-size: cover;
+        background-position: center;
+      }
+      .sec1_text2 {
+        font-size: 8vw;
+        white-space: nowrap;
+        color: #ffecef;
+      }
+      .sec1_text3 {
+        text-align: center;
+        font-size: 7vw;
+        white-space: nowrap;
+        color: #ffecef;
+      }
+      .sec1_text4 {
+        width: 15vw;
+        height: 20vw;
+        background: url(../../assets/img/mypic.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: 100000;
+      }
+      .sec1_text5 {
+        width: 50vw;
+        height: 30vw;
+        padding: 8vw 10vw;
+        /* border-radius: 50%; */
+        background: rgba(55, 41, 72, 0.6);
+        color: #ffecef;
+        text-align: center;
+        font-size: 6vw;
+      }
+      .sec1_text6 {
+        width: 50vw;
+        height: 30vw;
+        padding: 8vw 10vw;
+        background: rgba(55, 41, 72, 0.6);
+        color: #ffecef;
+        text-align: center;
+        font-size: 6vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scrollTop">0</div>
+    <main id="contents">
+      <section id="section1">
+        <div class="sec1">
+          <div class="sec1_text1 fixed"></div>
+          <div
+            class="sec1_text2 fixed"
+            data-0="left: 70%; opacity: 0;display: block;"
+            data-100="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-300=" display: none;"
+          >
+            안
+          </div>
+          <div
+            class="sec1_text2 fixed"
+            data-500="left: 70%; opacity: 0;display: block;"
+            data-700="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-900=" display: none;"
+          >
+            안녕
+          </div>
+          <div
+            class="sec1_text2 fixed"
+            data-1100="left: 70%; opacity: 0;display: block;"
+            data-1200="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-1400=" display: none;"
+          >
+            안녕하
+          </div>
+          <div
+            class="sec1_text2 fixed"
+            data-1600="left: 70%; opacity: 0;display: block;"
+            data-1800="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-2000=" display: none;"
+          >
+            안녕하세
+          </div>
+          <div
+            class="sec1_text2 fixed"
+            data-2200="left: 70%; opacity: 0;display: block;"
+            data-2400="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-2600=" display: none;"
+          >
+            안녕하세요
+          </div>
+
+          <div
+            class="sec1_text3 fixed"
+            data-2600="left: 70%; opacity: 0;display: block;"
+            data-3000="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+            data-3300=" display: none;"
+          >
+            프론트엔드 개발자
+          </div>
+          <div
+            class="sec1_text4 fixed"
+            data-3300="left: 70%; opacity: 0;display: block;"
+            data-4000="left: 50%; opacity: 1; transform: translate(-200%, -50%) scale(1);"
+            data-4500="opacity: 0;"
+            ></div>
+          <div
+            class="sec1_text5 fixed"
+            data-3500="left: 70%; opacity: 0;display: block;"
+            data-4000="left: 50%; opacity: 1; transform: translate(-40%, -50%) scale(1);"
+            data-4500="opacity: 0;"
+          >
+            YoucodeIn<br />
+            입니다!
+
+            <div
+            class="sec1_text6 fixed"
+            data-4500="left: 70%; opacity: 0;display: block;"
+            data-6000="left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(1);"
+          >
+          </div>
+        </div>
+      </section>
+      <!--section1-->
+      <section id="section2"></section>
+      <!--section2-->
+      <section id="section3"></section>
+      <!--section3-->
+      <section id="section4"></section>
+      <!--section4-->
+      <section id="section5"></section>
+      <!--section5-->
+      <section id="section6"></section>
+      <!--section6-->
+    </main>
+    <!-- contents -->
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+      const s = skrollr.init();
+      function scroll() {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
+  </body>
+</html>
