@@ -6,7 +6,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */ 
+ */
 .clearfix {
   *zoom: 1;
 }
@@ -189,7 +189,7 @@ textarea {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 0.5cm;
   }
   p,
@@ -205,7 +205,8 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: 'Abel',"나눔고딕", Nanum Gothic,"맑은고딕", Malgun Gothic, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Abel", "나눔고딕", Nanum Gothic, "맑은고딕", Malgun Gothic,
+    "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #666;
@@ -521,7 +522,6 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
-  
 }
 .container:before,
 .container:after {
@@ -796,7 +796,7 @@ blockquote small {
   color: #999999;
 }
 blockquote small:before {
-  content: '\2014 \00A0';
+  content: "\2014 \00A0";
 }
 blockquote.pull-right {
   float: right;
@@ -810,10 +810,10 @@ blockquote.pull-right small {
   text-align: right;
 }
 blockquote.pull-right small:before {
-  content: '';
+  content: "";
 }
 blockquote.pull-right small:after {
-  content: '\00A0 \2014';
+  content: "\00A0 \2014";
 }
 q:before,
 q:after,
@@ -830,7 +830,8 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: "나눔고딕", Nanum Gothic,"맑은고딕", Malgun Gothic, Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: "나눔고딕", Nanum Gothic, "맑은고딕", Malgun Gothic, Monaco,
+    Menlo, Consolas, "Courier New", monospace;
   font-size: 14px;
   color: #333333;
   -webkit-border-radius: 3px;
@@ -912,7 +913,8 @@ input,
 button,
 select,
 textarea {
-  font-family: "나눔고딕", Nanum Gothic,"맑은고딕", Malgun Gothic, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "나눔고딕", Nanum Gothic, "맑은고딕", Malgun Gothic, "Open Sans",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 label {
   display: block;
@@ -976,10 +978,10 @@ input[type="color"],
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border linear .2s, box-shadow linear .2s;
-  -moz-transition: border linear .2s, box-shadow linear .2s;
-  -o-transition: border linear .2s, box-shadow linear .2s;
-  transition: border linear .2s, box-shadow linear .2s;
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -1002,9 +1004,12 @@ input[type="color"]:focus,
   outline: thin dotted \9;
   /* IE6-9 */
 
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(82, 168, 236, 0.6);
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -1746,11 +1751,11 @@ table {
 }
 .table th {
   background: #2683af;
-  color:#fff;
+  color: #fff;
 }
 .table th.red {
   background: red;
-  color:#fff;
+  color: #fff;
 }
 .table td {
   background: #f5f5f5;
@@ -1862,12 +1867,9 @@ table {
   background-color: #f7f7f7;
 }
 .table-striped tbody > tr:nth-child(odd) > td:hover,
-.table-striped tbody td:hover{
+.table-striped tbody td:hover {
   background-color: #fff;
 }
-
-
-
 
 .table-hover tbody tr:hover > td,
 .table-hover tbody tr:hover > th {
@@ -1982,7 +1984,7 @@ table th[class*="span"],
   display: inline-block;
   width: 14px;
   height: 14px;
-  *margin-right: .3em;
+  *margin-right: 0.3em;
   line-height: 14px;
   vertical-align: text-top;
   background-image: url("../img/glyphicons-halflings-green.png");
@@ -1992,22 +1994,22 @@ table th[class*="span"],
 }
 
 .table-center tr td {
-	text-align: center;
+  text-align: center;
 }
 .table-center tr td a {
-	color:#666;
-	padding: 10px 0;
-	display: block;
+  color: #666;
+  padding: 10px 0;
+  display: block;
 }
 .table-center tr td a:hover {
-	background-color: #3fbf79;
-	color: #fff;
+  background-color: #3fbf79;
+  color: #fff;
 }
 
 .table-center tr td:nth-of-type(2):before {
-	margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* White icons with optional class, or on hover/focus/active states of certain elements */
 .icon-white,
@@ -2030,7 +2032,7 @@ table th[class*="span"],
   background-image: url("../img/glyphicons-halflings-white.png");
 }
 .icon-glass {
-  background-position: 0      0;
+  background-position: 0 0;
 }
 .icon-music {
   background-position: -24px 0;
@@ -2638,7 +2640,7 @@ table th[class*="span"],
   padding-right: 20px;
 }
 .typeahead {
-  width:100%;
+  width: 100%;
   z-index: 1051;
   margin-top: 2px;
   -webkit-border-radius: 3px;
@@ -2654,13 +2656,13 @@ table th[class*="span"],
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  
+
   /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);*/
 }
 .well img {
-  width:100%;
+  width: 100%;
 }
 .well blockquote {
   border-color: #ddd;
@@ -2748,7 +2750,7 @@ button.close {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  *margin-left: .3em;
+  *margin-left: 0.3em;
 }
 .btn:hover,
 .btn:focus,
@@ -2860,7 +2862,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #3fbf79;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2881,7 +2882,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #fbb450;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -2902,7 +2902,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #ee5f5b;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-danger:hover,
 .btn-danger:focus,
@@ -2923,7 +2922,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #ff8a3c;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2944,7 +2942,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #5bc0de;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -2965,7 +2962,6 @@ input[type="button"].btn-block {
   color: #ffffff;
   *background-color: #444444;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .btn-inverse:hover,
 .btn-inverse:focus,
@@ -3041,7 +3037,7 @@ input[type="submit"].btn.btn-mini {
   font-size: 0;
   vertical-align: middle;
   white-space: nowrap;
-  *margin-left: .3em;
+  *margin-left: 0.3em;
 }
 .btn-group:first-child {
   *margin-left: 0;
@@ -3131,9 +3127,12 @@ input[type="submit"].btn.btn-mini {
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
-  -webkit-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  -moz-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
-  box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   *padding-top: 5px;
   *padding-bottom: 5px;
 }
@@ -3155,9 +3154,11 @@ input[type="submit"].btn.btn-mini {
 }
 .btn-group.open .dropdown-toggle {
   background-image: none;
-  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 .btn-group.open .btn.dropdown-toggle {
   background-color: #e6e6e6;
@@ -3345,11 +3346,11 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 0;
 }
 .nav-list img {
-	vertical-align: -6px;
-	margin-right: 3px;
+  vertical-align: -6px;
+  margin-right: 3px;
 }
-.nav-list .sb img{
-	padding-left: 15px;
+.nav-list .sb img {
+  padding-left: 15px;
 }
 .nav-list > li > a,
 .nav-list .nav-header {
@@ -3359,7 +3360,7 @@ input[type="submit"].btn.btn-mini {
 }
 .nav-list > li > a {
   padding: 3px 15px;
-  color: #8A8A8A;
+  color: #8a8a8a;
 }
 .nav-list > .active > a,
 .nav-list > .active > a:hover,
@@ -3695,9 +3696,9 @@ input[type="submit"].btn.btn-mini {
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-    font-size: 33px;
+  font-size: 33px;
   color: #000;
-    font-family: Abel;;
+  font-family: Abel;
 }
 .navbar .brand:hover,
 .navbar .brand:focus {
@@ -3780,7 +3781,8 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   margin-bottom: 0;
   padding: 4px 14px;
-  font-family: "나눔고딕", Nanum Gothic,"맑은고딕", Malgun Gothic, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "나눔고딕", Nanum Gothic, "맑은고딕", Malgun Gothic, "Open Sans",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -3877,7 +3879,6 @@ input[type="submit"].btn.btn-mini {
   color: #ffffff;
   *background-color: #f2f2f2;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .navbar .btn-navbar:hover,
 .navbar .btn-navbar:focus,
@@ -3909,7 +3910,7 @@ input[type="submit"].btn.btn-mini {
   margin-top: 3px;
 }
 .navbar .nav > li > .dropdown-menu:before {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -3920,7 +3921,7 @@ input[type="submit"].btn.btn-mini {
   left: 9px;
 }
 .navbar .nav > li > .dropdown-menu:after {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
@@ -4055,9 +4056,12 @@ input[type="submit"].btn.btn-mini {
   color: #ffffff;
   background-color: #515151;
   border-color: #111111;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.15);
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -4089,7 +4093,6 @@ input[type="submit"].btn.btn-mini {
   color: #ffffff;
   *background-color: #151515;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
 }
 .navbar-inverse .btn-navbar:hover,
 .navbar-inverse .btn-navbar:focus,
@@ -4350,10 +4353,10 @@ input[type="submit"].btn.btn-mini {
   outline: none;
 }
 .modal.fade {
-  -webkit-transition: opacity .3s linear, top .3s ease-out;
-  -moz-transition: opacity .3s linear, top .3s ease-out;
-  -o-transition: opacity .3s linear, top .3s ease-out;
-  transition: opacity .3s linear, top .3s ease-out;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+  transition: opacity 0.3s linear, top 0.3s ease-out;
   top: -25%;
 }
 .modal.fade.in {
@@ -4906,7 +4909,7 @@ a.badge:focus {
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
   }
   .container,
   .navbar-static-top .container,
@@ -5579,8 +5582,6 @@ a.badge:focus {
   }
 }
 @media (max-width: 767px) {
-	
-
   body {
     padding-left: 0px;
     padding-right: 0px;
@@ -5728,8 +5729,9 @@ a.badge:focus {
   .carousel-caption {
     position: static;
   }
-  .well {padding: 0;}
-
+  .well {
+    padding: 0;
+  }
 }
 @media (max-width: 768px) {
   body {
@@ -5767,7 +5769,7 @@ a.badge:focus {
   }
   .nav-collapse .nav > li {
     float: none;
-      width: 100%;
+    width: 100%;
   }
   .nav-collapse .nav > li > a {
     margin-bottom: 2px;
@@ -5857,9 +5859,12 @@ a.badge:focus {
     margin: 11px 0;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
-    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.1);
   }
   .navbar-inverse .nav-collapse .navbar-form,
   .navbar-inverse .nav-collapse .navbar-search {
@@ -5882,118 +5887,115 @@ a.badge:focus {
     padding-left: 10px;
     padding-right: 10px;
   }
-  
 }
 @media (min-width: 769px) {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important;
   }
-  
 }
-
-
-
-
-
-
-
 
 .screenshots ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 .screenshots ul li {
-    float: left;
-    min-height: 100%;
-    width: 25%;
-    background-color: #000;
-    list-style: none;
-    font-size: 0;
+  float: left;
+  min-height: 100%;
+  width: 25%;
+  background-color: #000;
+  list-style: none;
+  font-size: 0;
 }
 .screenshots figure {
-    position: relative;
-    overflow: hidden;
-    padding:0;
-    margin:0;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 .screenshots figure img {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
-.screenshots figure:hover img, .screenshots figure:focus img {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+.screenshots figure:hover img,
+.screenshots figure:focus img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .screenshots figcaption {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 25% 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(63, 97, 132, 0.85);
-    text-align: center;
-    font-size: 15px;
-    opacity: 0;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25% 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 97, 132, 0.85);
+  text-align: center;
+  font-size: 15px;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 .screenshots figcaption a {
-    color: #fff
+  color: #fff;
 }
 .screenshots figcaption a span {
-    font-size: 30px;
+  font-size: 30px;
 }
-.screenshots figcaption a:hover, .screenshots figcaption a:focus {
-    color: #73d0da
+.screenshots figcaption a:hover,
+.screenshots figcaption a:focus {
+  color: #73d0da;
 }
-.screenshots figure:hover figcaption, .screenshots figure:focus figcaption {
-    opacity: 1
+.screenshots figure:hover figcaption,
+.screenshots figure:focus figcaption {
+  opacity: 1;
 }
 .visible {
-    opacity: 1
+  opacity: 1;
 }
 .screenshots figure.cs-hover figcaption {
-    opacity: 1
+  opacity: 1;
 }
 .screenshots figcaption i {
-    font-size: 35px
+  font-size: 35px;
 }
 .screenshots figcaption p {
-    margin-bottom: 0;
-    text-transform: uppercase;
-    font-weight: 400;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 .screenshots figcaption .caption-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -100px;
-    width: 200px;
-    -webkit-transform: translate(0px, 15px);
-    -ms-transform: translate(0px, 15px);
-    transform: translate(0px, 15px);
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  width: 200px;
+  -webkit-transform: translate(0px, 15px);
+  -ms-transform: translate(0px, 15px);
+  transform: translate(0px, 15px);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
-.screenshots figure:hover figcaption .caption-content, .screenshots figure:focus figcaption .caption-content {
-    -webkit-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-    transform: translate(0px, 0px);
-}
-
-@media screen and (max-width:960px) {
-    .screenshots ul li {width: 50%;}
+.screenshots figure:hover figcaption .caption-content,
+.screenshots figure:focus figcaption .caption-content {
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
 }
 
-
-@media screen and (max-width:480px) {
-    .screenshots ul li {width: 100%;}
+@media screen and (max-width: 960px) {
+  .screenshots ul li {
+    width: 50%;
+  }
 }
 
+@media screen and (max-width: 480px) {
+  .screenshots ul li {
+    width: 100%;
+  }
+}
