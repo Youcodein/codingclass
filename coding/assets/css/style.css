@@ -639,7 +639,7 @@ overlay-text-thumb {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #f2a1d1;
+  background: #97d9fb8c;
   color: #ffffff;
   font-size: 25px;
   font-weight: 300;
@@ -660,7 +660,7 @@ overlay-text-thumb {
   width: 100%;
   height: 32px;
   top: 50%;
-  color: #a92c76;
+  color: #3a87ad;
   font-size: 20px;
   text-transform: uppercase;
   line-height: 20px;
@@ -1938,7 +1938,7 @@ overlay-text-thumb {
   width: 100%;
   height: 32px;
   top: 50%;
-  color: #a92c76;
+  color: #124e2d;
   font-size: 20px;
   text-transform: uppercase;
   line-height: 20px;
@@ -1983,7 +1983,7 @@ overlay-text-thumb {
 }
 
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts {
-  background: #a92c76;
+  background: #41ab71;
   color: #fff;
   width: auto;
   left: 50%;
@@ -1999,11 +1999,11 @@ overlay-text-thumb {
   font-size: 20px;
 }
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts:hover {
-  background: #8b1c5e;
+  background: #124e2d;
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts {
-  background: #a92c76;
-  background: #a92c76;
+  background: #41ab71;
+  background: #41ab71;
   color: #fff;
   width: auto;
   left: 50%;
@@ -2016,7 +2016,7 @@ overlay-text-thumb {
   height: auto;
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts:hover {
-  background: #8b1c5e;
+  background: #124e2d;
 }
 
 /* 바닐라컵케익 */
@@ -2191,7 +2191,7 @@ overlay-text-thumb {
   text-align: center;
 }
 .donutImg h5 {
-  color: #f47cc3;
+  color: #2579a3;
   font-size: 23px;
   padding-top: 22px;
   text-transform: uppercase;
