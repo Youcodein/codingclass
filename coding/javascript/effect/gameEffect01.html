@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>gameEffect01</title>
     <link rel="stylesheet" href="../assets/css/bg.css" />
+    <!-- <link rel="stylesheet" href="../assets/css/bg2.css" /> -->
     <link rel="stylesheet" href="../assets/css/game.css" />
     <link rel="stylesheet" href="../assets/css/memory.css" />
     <link rel="stylesheet" href="../assets/css/music.css" />
@@ -59,12 +60,16 @@
     <!-- footer -->
 
     <div class="game__box">
-      <div class="music__wrap">
+      <div class="music__wrap show">
         <div class="music__inner">
           <div class="music__header">
             <div>***</div>
             <h2>Music Player</h2>
-            <div>***</div>
+            <div class="div">
+              <div>***</div>
+              <div class="Music__close">X</div>
+            </div>
+            
           </div>
           <div class="music__contents">
             <div class="music__view">
@@ -584,27 +589,34 @@
           $(".mouse__cursor img").attr("src", "../assets/img/cursor_white.png");
         },
       });
-      $(".music__inner").draggable({
-        drag: function () {
-          $(".mouse__cursor img").attr("src", "../assets/img/cursor_red.png");
-        },
-      });
-      $(".sourceInner").draggable({
-        drag: function () {
-          $(".mouse__cursor img").attr("src", "../assets/img/cursor_white.png");
-        },
-      });
+      $(".music__wrap").draggable({stack: ".wrap", opacity: 0.8});
+            $(".memory__wrap").draggable({stack: ".wrap", opacity: 0.8});
+            $(".search__wrap").draggable({stack: ".wrap", opacity: 0.8});
+            $(".sourceInner").draggable({stack: ".wrap", opacity: 0.8});
 
-      $(".memory__inner").draggable({
-        drag: function () {
-          $(".mouse__cursor img").attr("src", "../assets/img/cursor_green.png");
-        },
-      });
-      $(".search__wrap").draggable({
-        drag: function () {
-          $(".mouse__cursor img").attr("src", "../assets/img/cursor_blue.png");
-        },
-      });
+
+
+      // $(".music__inner").draggable({
+      //   drag: function () {
+      //     $(".mouse__cursor img").attr("src", "../assets/img/cursor_red.png");
+      //   },
+      // });
+      // $(".sourceInner").draggable({
+      //   drag: function () {
+      //     $(".mouse__cursor img").attr("src", "../assets/img/cursor_white.png");
+      //   },
+      // });
+
+      // $(".memory__inner").draggable({
+      //   drag: function () {
+      //     $(".mouse__cursor img").attr("src", "../assets/img/cursor_green.png");
+      //   },
+      // });
+      // $(".search__wrap").draggable({
+      //   drag: function () {
+      //     $(".mouse__cursor img").attr("src", "../assets/img/cursor_blue.png");
+      //   },
+      // });
 
       //마우스
       const cursor = document.querySelector(".mouse__cursor");
@@ -623,11 +635,13 @@
         let nowHours = now.getHours();
         let nowMins = now.getMinutes();
         let nowSecs = now.getSeconds();
+
         if (nowHours > 12) {
-          nowHours = `${nowHours - 12}`;
-        } else if (nowHours >= 0 && nowHours <= 9) {
-          nowHours = `0${nowHours}`;
+            nowHours = `${nowHours - 12} PM`;
+        } else {
+            nowHours = `${nowHours} AM`;
         }
+
         if (nowMins < 10) nowMins = `0${nowMins}`;
         if (nowSecs < 10) nowSecs = `0${nowSecs}`;
 
@@ -643,7 +657,7 @@
           nowMonth +
           ". " +
           nowDate +
-          " | " +
+          '\u00A0\u00A0\u00A0\u00A0' + " | " + '\u00A0\u00A0\u00A0\u00A0'  +
           nowHours +
           " : " +
           nowMins +
@@ -701,6 +715,7 @@
       };
     </script>
 
+<!-- 클릭 이벤트 -->
     <script>
       const sourceIcon = document.querySelector(".icon_box .icon6");
       const sourceView = document.querySelector(".sourceInner");
@@ -715,21 +730,56 @@
       sourceCloseBtn.addEventListener("click", () => {
         sourceView.classList.remove("show");
       });
+      // 소스보기
     </script>
-    <!-- 소스 보기 -->
 
     <script>
+
+
+      let popupIndex = 0;
+                  const musicIcon = document.querySelector(".icon1");
+                  const musicWrap1 = document.querySelector(".music__wrap");
+                  const musicClose = document.querySelectorAll(".music__header .Music__close");
+                  musicIcon.addEventListener("click", () => {
+                      musicWrap1.classList.toggle("show");
+                  });
+                  musicClose.forEach((e) => {
+                      e.addEventListener("click", () => {
+                          musicWrap1.classList.remove("show");
+                          musicAudio.pause();
+                      });
+                  });
+      // 음악 플레이어
+
+
       const searchIcon = document.querySelector(".icon2");
       const searchWrap = document.querySelector(".search__wrap");
       const searchClose = document.querySelectorAll(".search__header div");
       searchIcon.addEventListener("click", () => {
         searchWrap.classList.add("show");
+        memoryWrap1.classList.remove("show");
       });
       searchClose.forEach((e) => {
         e.addEventListener("click", () => {
           searchWrap.classList.remove("show");
+        searchAudio.pause();
         });
       });
+      // 서치 게임
+
+      const memoryIcon = document.querySelector(".icon3");
+      const memoryWrap1 = document.querySelector(".memory__wrap");
+      const memoryClose = document.querySelector(".memory__close");
+      memoryIcon.addEventListener("click", () => {
+        memoryWrap1.classList.toggle("show");
+        searchWrap.classList.remove("show");
+      });
+      memoryClose.addEventListener("click", () => {
+        memoryWrap1.classList.remove("show");
+      });
+
+      //메모리 게임
+
     </script>
   </body>
 </html>

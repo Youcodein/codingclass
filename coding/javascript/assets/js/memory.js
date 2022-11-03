@@ -72,16 +72,16 @@ function matchCards(img1, img2) {
     setTimeout(() => {
       cardOne.classList.add("shakeX");
       cardTwo.classList.add("shakeX");
-    }, 500);
+    }, 400);
+    soundUnMatch.play();
 
     setTimeout(() => {
       cardOne.classList.remove("shakeX", "flip");
       cardTwo.classList.remove("shakeX", "flip");
       cardOne = cardTwo = "";
       disableDeck = false;
-    }, 1600);
+    }, 1300);
     matchScore = matchScore - 5;
-    soundUnMatch.play();
   }
 }
 
@@ -133,17 +133,7 @@ memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
 });
 
-//창닫기 버튼
 
-const memoryIcon = document.querySelector(".icon3");
-const memoryWrap1 = document.querySelector(".memory__wrap");
-const memoryClose = document.querySelector(".memory__close");
-memoryIcon.addEventListener("click", () => {
-  memoryWrap1.classList.toggle("show");
-});
-memoryClose.addEventListener("click", () => {
-  memoryWrap1.classList.remove("show");
-});
 
 //리셋
 function memoryReset() {

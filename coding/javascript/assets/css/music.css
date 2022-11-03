@@ -1,4 +1,10 @@
-.music__wrap {}
+.music__wrap {
+    display: none;
+}
+
+.music__wrap.show {
+    display: block;
+}
 
 .music__inner {
     width: 500px;
@@ -20,6 +26,18 @@
     color: #fff;
     /* border-bottom: 1px solid #fff; */
 
+}
+
+.div {
+    display: flex;
+}
+.Music__close {
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.Music__close:hover {
+    background: #666;
 }
 
 .music__header h2 {

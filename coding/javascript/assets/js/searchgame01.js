@@ -400,6 +400,9 @@ const searchTime = document.querySelector(".time span");
     const searchResultWrap = document.querySelector(".search__result");
     const searchRestart = document.querySelector(".search__result .restart");
 
+    let goodJobSound = new Audio("../assets/audio/Success.mp3");
+    let clearSound = new Audio("../assets/audio/up.mp3");
+
     let timeReamining = 120,    //남은시간
         timeInterval = "",  //시간 간격
         Score = 0,    //점수
@@ -440,6 +443,7 @@ const searchTime = document.querySelector(".time span");
         let input = event.currentTarget.value.trim().toLowerCase();
         
         if(answers.hasOwnProperty(input) && !answers[input]){
+            goodJobSound.play();
             answers[input] = true;  //정답일 경우 true로 바꿔주기
             Score++;    //점수++
 
@@ -554,3 +558,25 @@ const searchTime = document.querySelector(".time span");
         searchAudio.play();
     });
     searchRestart.addEventListener("click", restart);
+
+    // 서치게임
+    const searchClose1 = document.querySelectorAll(".search__header div");
+    searchClose1.forEach( (e) => {
+        e.addEventListener("click", () => {
+            searchResultWrap.classList.remove("show");
+            searchStart.style.display = "block";
+            timeReamining = 120;
+            Score = 0;
+            searchCount.innerText = "0";
+    
+            searchAnswers.innerHTML = "";
+            searchMissAnswers.innerHTML = "";
+    
+            
+            searchAudio.pause();
+            searchAudioPlay.style.display = "none";
+            searchAudioStop.style.display = "block";
+            searchTime.innerText = displayTime();
+            clearInterval(timeInterval);
+        });
+    })
