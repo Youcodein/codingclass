@@ -1,0 +1,220 @@
+/* modal__wrap */
+.modal__wrap {}
+.modal__btn {
+    color: #fff;
+    border: 1px solid #223547;
+    background-color: #223547;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+    /* position: absolute;
+    right: 20px;
+    bottom: 20px; */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s ;
+}
+.modal__btn:hover {
+    border: 1px solid #000;
+    background-color: rgba(255,255,255,0.3);
+    color: rgb(52, 52, 52);
+}
+.modal__cont {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    /* 코드 박스 가운데로 내려주기 위해 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    z-index: 10000;
+}
+.modal__box {
+    width: 70%;
+    height: 60vh;
+    /* 기본이 16px 0.5 = 8px */
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
+    transform: scale(0);
+}
+.modal__box .title {
+    padding-inline: 1rem;
+    background-color: rgb(33, 33, 33);
+    display: flex;
+    /* 중앙정렬 */
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(100, 100, 115);
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 30px;
+    position: relative;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(100, 100, 115);
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(100, 100, 115);
+    border-radius: 50%;
+}
+.modal__box .title .plus {
+    color: rgb(119, 116, 127);
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+    color: rgb(119, 116, 127);
+    background-color: rgb(50, 49, 52);
+    padding: 0.3rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: #1F224E;
+}
+.modal__box .title .tabs > div em {
+    font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+    margin-left: 5rem;
+}
+.modal__box .cont {
+    background-color: #282936;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.modal__box .cont > div {
+    display: none;
+}
+.modal__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #1F224A;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.7);
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(0);
+
+}
+.modal__close:hover {
+    background-color: #33377D;
+}
+.modal__close svg {
+    color: #fff;
+}
+/* modal animation */
+.modal__cont.show {     /*전체 배경*/
+    animation: foldOut 1s ease forwards;
+}
+.modal__cont.show.hide {/*스크립트 박스*/
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+
+.modal__cont.show .modal__close { /*닫기 버튼*/
+    animation: zoomOut 0.3s 1.5s  ease forwards;
+}
+
+.modal__cont.show.hide .modal__close { /*닫기 버튼*/
+    animation: zoomIn 0.3s  ease forwards;
+}
+.modal__cont.show .modal__box {
+    animation: zoomOut 0.5s 1s ease forwards;
+    /* 뒤에 숫자는 delay 시간 */
+}
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+
+@keyframes foldOut {
+    0% {transform: scale(0) scaleY(0.002);}
+    50% {transform: scale(1) scaleY(0.002);}
+    100% {transform: scale(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0% {transform: scale(1) scaleY(1);}
+    50% {transform: scale(1) scaleY(0.002);}
+    100% {transform: scale(0) scaleY(0.002);}
+}
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@media (max-width:1100px) {
+    .modal__box .title {
+        overflow: hidden;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs > div .close {
+        display: none;
+    }
+}
+@media (max-width : 800px) {
+    #header {
+        width: 100%;
+        text-align: center;
+    }
+    #header h1{
+        line-height: 1.4;
+    }
+    .modal__box {
+        width: 96%;
+    }
+}

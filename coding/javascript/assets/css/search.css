@@ -23,9 +23,10 @@
     list-style: none;
   }
   /* header */
+  
   #header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   #header nav {
     margin: 10px;
@@ -380,3 +381,5 @@
       transform:  translate(-50%, -50%) scale3d(1, 1, 1);
     }
   }
+
+  
