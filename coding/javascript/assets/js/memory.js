@@ -3,11 +3,13 @@
 // 03 두개의 카드를 뒤집기 확인하기(첫번째,두번째)
 
 const memoryWrap = document.querySelector(".memory__wrap");
+const memoryCard = memoryWrap.querySelectorAll(".memory__card");
 const memoryCards = memoryWrap.querySelectorAll(".cards li");
 const memoryGameEnd = document.querySelector(".memory_gameEnd");
 const memoryGameEndMsg = document.querySelector(".memory__score");
 const memoryGameScore = document.querySelector(".memory__score p > span");
 const memoryGameOneMore = document.querySelector(".memory__onemore");
+const scoreView = document.querySelector(".memory__scoreView > span");
 
 let cardOne, cardTwo;
 let disableDeck = false;
@@ -54,18 +56,19 @@ function matchCards(img1, img2) {
     matchedCard++;
     // alert("이미지가 일치합니다");
     if (matchedCard == 8) {
+      soundSuccess.play();
       setTimeout(() => {
         // alert("게임 성공~!");
         memoryGameEnd.classList.add("show");
         memoryGameScore.innerHTML = `${matchScore}`;
       }, 500);
     }
-    soundMatch.play();
 
     cardOne.removeEventListener("click", filpCard);
     cardTwo.removeEventListener("click", filpCard);
     cardOne = cardTwo = "";
     disableDeck = false;
+    soundMatch.play();
   } else {
     // alert("이미지가 일치하지 않습니다.");
     //일치하지 않는경우(틀린 음악, 이미지가 좌우로 움직임)
@@ -73,7 +76,6 @@ function matchCards(img1, img2) {
       cardOne.classList.add("shakeX");
       cardTwo.classList.add("shakeX");
     }, 400);
-    soundUnMatch.play();
 
     setTimeout(() => {
       cardOne.classList.remove("shakeX", "flip");
@@ -82,7 +84,15 @@ function matchCards(img1, img2) {
       disableDeck = false;
     }, 1300);
     matchScore = matchScore - 5;
+    soundUnMatch.play();
+
+    if (matchScore == 0) {
+      memoryCard.style.pointerEvents = "none";
+      memoryGameEnd.classList.add("show");
+      memoryGameScore.innerHTML = `${matchScore}`;
+    }
   }
+  scoreView.innerText = matchScore;
 }
 
 //카드 섞기
@@ -133,8 +143,6 @@ memoryCards.forEach((card) => {
   card.addEventListener("click", filpCard);
 });
 
-
-
 //리셋
 function memoryReset() {
   gameRule.classList.add("show");
@@ -142,6 +150,7 @@ function memoryReset() {
   disableDeck = false;
   matchedCard = 0;
   matchScore = 100;
+  scoreView.innerText = "0";
   memoryCards.forEach((card) => {
     card.classList.remove("flip");
   });

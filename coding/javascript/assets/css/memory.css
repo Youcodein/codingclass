@@ -10,8 +10,8 @@
 }
 .memory__wrap.show {
   display: block;
-  
 }
+
 .memory__info {
   color: #fff;
   font-size: 14px;
@@ -30,6 +30,12 @@
   left: 500px;
   top: 100px;
   animation: flicker 0.5s infinite alternate;
+}
+.memory__scoreView {
+  color: #fff;
+  position: absolute;
+  top: 80px;
+  right: 50px;
 }
 .memory__close {
   font-size: 25px;

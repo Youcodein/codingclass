@@ -69,7 +69,6 @@
               <div>***</div>
               <div class="Music__close">X</div>
             </div>
-            
           </div>
           <div class="music__contents">
             <div class="music__view">
@@ -299,6 +298,7 @@
 
       <div class="memory__wrap">
         <div class="memory__inner">
+          <div class="memory__scoreView">점수 : <span>0</span></div>
           <div class="memory__info">
             <span class="memory__close">X</span>
             <h1>메모리 카드 게임</h1>
@@ -589,12 +589,10 @@
           $(".mouse__cursor img").attr("src", "../assets/img/cursor_white.png");
         },
       });
-      $(".music__wrap").draggable({stack: ".wrap", opacity: 0.8});
-            $(".memory__wrap").draggable({stack: ".wrap", opacity: 0.8});
-            $(".search__wrap").draggable({stack: ".wrap", opacity: 0.8});
-            $(".sourceInner").draggable({stack: ".wrap", opacity: 0.8});
-
-
+      $(".music__wrap").draggable({ stack: ".wrap", opacity: 0.8 });
+      $(".memory__wrap").draggable({ stack: ".wrap", opacity: 0.8 });
+      $(".search__wrap").draggable({ stack: ".wrap", opacity: 0.8 });
+      $(".sourceInner").draggable({ stack: ".wrap", opacity: 0.8 });
 
       // $(".music__inner").draggable({
       //   drag: function () {
@@ -637,9 +635,9 @@
         let nowSecs = now.getSeconds();
 
         if (nowHours > 12) {
-            nowHours = `${nowHours - 12} PM`;
+          nowHours = `${nowHours - 12} PM`;
         } else {
-            nowHours = `${nowHours} AM`;
+          nowHours = `${nowHours} AM`;
         }
 
         if (nowMins < 10) nowMins = `0${nowMins}`;
@@ -657,7 +655,9 @@
           nowMonth +
           ". " +
           nowDate +
-          '\u00A0\u00A0\u00A0\u00A0' + " | " + '\u00A0\u00A0\u00A0\u00A0'  +
+          "\u00A0\u00A0\u00A0\u00A0" +
+          " | " +
+          "\u00A0\u00A0\u00A0\u00A0" +
           nowHours +
           " : " +
           nowMins +
@@ -715,7 +715,7 @@
       };
     </script>
 
-<!-- 클릭 이벤트 -->
+    <!-- 클릭 이벤트 -->
     <script>
       const sourceIcon = document.querySelector(".icon_box .icon6");
       const sourceView = document.querySelector(".sourceInner");
@@ -734,23 +734,22 @@
     </script>
 
     <script>
-
-
       let popupIndex = 0;
-                  const musicIcon = document.querySelector(".icon1");
-                  const musicWrap1 = document.querySelector(".music__wrap");
-                  const musicClose = document.querySelectorAll(".music__header .Music__close");
-                  musicIcon.addEventListener("click", () => {
-                      musicWrap1.classList.toggle("show");
-                  });
-                  musicClose.forEach((e) => {
-                      e.addEventListener("click", () => {
-                          musicWrap1.classList.remove("show");
-                          musicAudio.pause();
-                      });
-                  });
+      const musicIcon = document.querySelector(".icon1");
+      const musicWrap1 = document.querySelector(".music__wrap");
+      const musicClose = document.querySelectorAll(
+        ".music__header .Music__close"
+      );
+      musicIcon.addEventListener("click", () => {
+        musicWrap1.classList.toggle("show");
+      });
+      musicClose.forEach((e) => {
+        e.addEventListener("click", () => {
+          musicWrap1.classList.remove("show");
+          musicAudio.pause();
+        });
+      });
       // 음악 플레이어
-
 
       const searchIcon = document.querySelector(".icon2");
       const searchWrap = document.querySelector(".search__wrap");
@@ -762,7 +761,7 @@
       searchClose.forEach((e) => {
         e.addEventListener("click", () => {
           searchWrap.classList.remove("show");
-        searchAudio.pause();
+          searchAudio.pause();
         });
       });
       // 서치 게임
@@ -779,7 +778,6 @@
       });
 
       //메모리 게임
-
     </script>
   </body>
 </html>
