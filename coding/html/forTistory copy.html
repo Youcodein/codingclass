@@ -1,36 +1,48 @@
 <div class="document">
   <h2 class="t_tit" data-ke-size="size26">
-    Programmers Lv.1 : 문자열을 정수로 바꾸기
+    Programmers Lv.1 : 정수 제곱근 판별
   </h2>
   <p class="t_desc2" data-ke-size="size16">
-    " 문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요. "
+    " 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려
+    합니다. n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수
+    x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. "
   </p>
   <p class="t_desc2" data-ke-size="size16">
-    s의 길이는 1 이상 5이하입니다.<br />
-    s의 맨앞에는 부호(+, -)가 올 수 있습니다.<br />
-    s는 부호와 숫자로만 이루어져있습니다.<br />
-    s는 "0"으로 시작하지 않습니다.
+    n은 1이상, 50000000000000 이하인 양의 정수입니다.
   </p>
   <h2 class="t_tit" data-ke-size="size26">내 풀이</h2>
   <div class="t_code">
-    <pre class="javascript"><code>function solution(s) {
-  if(s.length >= 1 && s.length &lt;= 5){
-      return parseInt(s);   
-  }
+    <pre class="javascript"><code>function solution(n) {
+    if(Math.sqrt(n) % 1 !== 0){
+        return -1;
+    } else {
+        return(Math.sqrt(n) + 1)*(Math.sqrt(n) + 1)
+    }
 }
 </code></pre>
   </div>
   <p class="t_box">
-    조건에 맞을 때 문자열 s를 숫자로 변환해주는 메서드 parseInt()메서드를
-    사용해주었습니다.
+    제곱근의 값이 1로 나누었을 때 나머지가 있으면 양의 정수 x의 제곱이 아니기
+    때문에 -1을 리턴하고 그 외에는 x+1을 제곱한다.
   </p>
   <!-- 내 풀이 -->
 
   <h2 class="t_tit" data-ke-size="size26">다른 사람들의 풀이</h2>
   <div class="t_code">
-    <pre class="javascript"><code>function strToInt(str){
-  return str/1
-  }
+    <pre class="javascript"><code>function solution(n) {
+    var answer = 0;
+  
+    for(let i=0, a=0; i&lt;=n; i++){
+      if(n/i===i){
+        a = i + 1
+        return a*a
+      } else {
+        answer = -1
+      }
+    }
+  
+    return answer;
+}
 </code></pre>
   </div>
   <!-- <p class="t_box">findIndex를 사용하는 방법 또한 있습니다.</p> -->
