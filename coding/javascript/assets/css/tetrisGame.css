@@ -27,9 +27,65 @@
     top: 50%;
     transform: translate(-50%, 0%);
     background: rgba(0,0,0,0.6);
+    position: relative;
 }
-.tetris__start {}
-.tetris__restart {}
+
+.tetrits__cover{
+    display: none;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    line-height: 20px;
+}
+.tetrits__cover.show {
+    display: block;
+}
+.tetrisCover__tit {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.tetrisCover__close {
+    padding: 0 5px;
+}
+.tetrisCover__close:hover {
+    background: #666;
+}
+.tetris__start {
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px;
+    background: #666;
+    color: #fff;
+}
+.tetris__startBtn {
+    margin-top: 20px;
+    font-size: 25px;
+    background: #555;
+    padding: 3px;
+    line-height: 2;
+
+}
+.tetris__startBtn:hover {
+    background: #888;
+
+}
+.tetris__restart {
+    position: absolute;
+    border-radius: 10px;
+    top: 200px;
+    left: 200px;
+    text-align: center;
+    width: 250px;
+    font-size: 30px;
+    padding: 40px;
+    background: #666;
+    color: #fff;
+}
 .tetris__play {}
 .playground {
     

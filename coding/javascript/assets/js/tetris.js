@@ -2,7 +2,7 @@ const tetrisWrap = document.querySelector(".tetris__wrap");
 const playground = tetrisWrap.querySelector(".playground > ul");
 // variables
 let rows = 20;
-let cols = 13;
+let cols = 14;
 let tetrisScore = 0;
 let duration = 500;
 let downInterval;
@@ -59,6 +59,16 @@ const blocks = {
         [[0,1],[1,1],[2,0],[2,1]],
     ]
 }
+
+//게임시작 버튼
+const tetrisStartBtn = document.querySelector(".tetris__start .tetris__startBtn");
+const tetrisMsg = document.querySelector(".tetrits__cover.show");
+
+tetrisStartBtn.addEventListener("click", () => {
+    tetrisMsg.classList.remove("show");
+
+});
+
 // 시작하기
 function init() {
     tempMovingItem = { ...movingItem };
@@ -235,3 +245,4 @@ document.addEventListener("keydown", (e) => {
     }
 });
 init();
+
