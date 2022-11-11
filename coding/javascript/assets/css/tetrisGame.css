@@ -1,6 +1,7 @@
 .tetris__wrap {
     display: none;
 }
+
 .tetris__wrap.show {
     display: block;
 }
@@ -19,7 +20,7 @@
     background: #666;
 }
 .tetris__inner {
-    width: 600px;
+    width: 500px;
     padding: 20px;
     border-radius: 10px;
     position: absolute;
@@ -28,6 +29,13 @@
     transform: translate(-50%, 0%);
     background: rgba(0,0,0,0.6);
     position: relative;
+}
+.tetris__info {
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;  
+    background: rgba(0,0,0,0.6);
+    color: #fff;
 }
 
 .tetrits__cover{
@@ -96,15 +104,15 @@
 .playground ul > li{
     list-style: none;
     width: 100%;
-    height: 40px;
+    height: 35px;
 }
 .playground ul > li > ul {
     display: flex;
 }
 .playground ul > li > ul > li{
     list-style: none;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #fff;
 }
 
