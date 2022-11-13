@@ -239,6 +239,22 @@ function dropBlock() {
     }, 10);
 }
 
+// 게임 오버
+const tetrisRestart = tetrisWrap.querySelector(".tetris__restart");
+const tetrisInfo = tetrisWrap.querySelector(".tetris__info");
+const resultScore = tetrisWrap.querySelector(".tetris__score span");
+function tetrisGameover() {
+    clearInterval(setTetrisTime);
+    duration = 500;
+    tetrisInfo.classList.remove("show");
+    tetrisRestart.classList.add("show");
+    resultScore.innerText = tetrisScore;
+    }
+
+
+
+
+
 // 이벤트
 document.addEventListener("keydown", (e) => {
     switch (e.keyCode) {

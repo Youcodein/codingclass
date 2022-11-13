@@ -1,49 +1,47 @@
 <div class="document">
   <h2 class="t_tit" data-ke-size="size26">
-    Programmers Lv.1 : 정수 제곱근 판별
+    Programmers Lv.1 : 나누어 떨어지는 숫자 배열
   </h2>
   <p class="t_desc2" data-ke-size="size16">
-    " 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려
-    합니다. n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수
-    x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. "
+    array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
+divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
   </p>
   <p class="t_desc2" data-ke-size="size16">
-    n은 1이상, 50000000000000 이하인 양의 정수입니다.
+    arr은 자연수를 담은 배열입니다.<br>
+    정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.<br>
+    divisor는 자연수입니다.<br>
+    array는 길이 1 이상인 배열입니다.
   </p>
   <h2 class="t_tit" data-ke-size="size26">내 풀이</h2>
   <div class="t_code">
-    <pre class="javascript"><code>function solution(n) {
-    if(Math.sqrt(n) % 1 !== 0){
-        return -1;
-    } else {
-        return(Math.sqrt(n) + 1)*(Math.sqrt(n) + 1)
+<pre class="javascript"><code>function solution(arr, divisor) {
+  var answer = [];
+  for(i=0; i&lt;arr.length; i++) {
+    if(arr[i] % divisor == 0) {
+      answer.push(arr[i]);
     }
+  }
+  if(answer.length == 0) {
+    answer.push(-1);
+  }
+  answer.sort((a,b) => a - b);
+  return answer;
 }
 </code></pre>
   </div>
   <p class="t_box">
-    제곱근의 값이 1로 나누었을 때 나머지가 있으면 양의 정수 x의 제곱이 아니기
-    때문에 -1을 리턴하고 그 외에는 x+1을 제곱한다.
+    배열을 divisor로 나눴을때 나오는 값이 0이면 나누어 떨어지는 숫자를 골라냅니다.<br>
+    sort()를 사용하여 오름차순으로 정렬해줍니다.
   </p>
   <!-- 내 풀이 -->
 
   <h2 class="t_tit" data-ke-size="size26">다른 사람들의 풀이</h2>
   <div class="t_code">
-    <pre class="javascript"><code>function solution(n) {
-    var answer = 0;
-  
-    for(let i=0, a=0; i&lt;=n; i++){
-      if(n/i===i){
-        a = i + 1
-        return a*a
-      } else {
-        answer = -1
-      }
-    }
-  
-    return answer;
+<pre class="javascript"><code>function solution(arr, divisor) {
+  var answer = arr.filter(v => v%divisor == 0);
+  return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
 }
 </code></pre>
   </div>
-  <!-- <p class="t_box">findIndex를 사용하는 방법 또한 있습니다.</p> -->
+  <p class="t_box">filter()와 삼항연산자 사용</p>
 </div>
