@@ -187,6 +187,7 @@
 			  </div>
 			</div>
 			<div class="tetris__info">
+				<div class="time"><span>0</span> 초</div>
 				<p>SCORE <span>0</span></p>
 			</div>
 		  <div class="tetris__play">
@@ -822,18 +823,18 @@
 
 	  //메모리 게임
 
-	  const TetrisIcon = document.querySelector(".icon4");
-	  const TetrisWrap = document.querySelector(".tetris__wrap");
-	  const TetrisClose = document.querySelector(".tetris__close");
-	  TetrisIcon.addEventListener("click", () => {
-		TetrisWrap.classList.toggle("show");
-		searchWrap.classList.remove("show");
-		memoryWrap1.classList.remove("show");
-	  });
-	  TetrisClose.addEventListener("click", () => {
-		TetrisWrap.classList.remove("show");
-	  });
-	//   테트리스 게임
+	//   const TetrisIcon = document.querySelector(".icon4");
+	//   const TetrisWrap = document.querySelector(".tetris__wrap");
+	//   const TetrisClose = document.querySelector(".tetris__close");
+	//   TetrisIcon.addEventListener("click", () => {
+	// 	TetrisWrap.classList.toggle("show");
+	// 	searchWrap.classList.remove("show");
+	// 	memoryWrap1.classList.remove("show");
+	//   });
+	//   TetrisClose.addEventListener("click", () => {
+	// 	TetrisWrap.classList.remove("show");
+	//   });
+	// //   테트리스 게임
 	</script>
   </body>
 </html>

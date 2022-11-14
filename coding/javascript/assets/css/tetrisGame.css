@@ -38,6 +38,14 @@
     color: #fff;
 }
 
+.tetris__restart{
+    display: none;
+}
+
+.tetris__restart.show{
+    display: block;
+}
+
 .tetrits__cover{
     display: none;
     width: 300px;

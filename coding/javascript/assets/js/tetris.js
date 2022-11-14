@@ -1,5 +1,22 @@
 const tetrisWrap = document.querySelector(".tetris__wrap");
 const playground = tetrisWrap.querySelector(".playground > ul");
+
+const tetrisStart = document.querySelector(".tetris__start");
+const tetrisStartBtn = document.querySelector(".tetris__start .tetris__startBtn");
+const tetrisMsg = document.querySelector(".tetrits__cover.show");
+
+const tetrisRestart = tetrisWrap.querySelector(".tetris__restart");
+const tetrisRestartBtn = tetrisWrap.querySelector(".tetris__restartBtn");
+const tetrisInfo = tetrisWrap.querySelector(".tetris__info");
+const resultScore = tetrisWrap.querySelector(".tetris__score span");
+
+const resultTime = tetrisWrap.querySelector(".tetris__total .time span");
+const resultLine = tetrisWrap.querySelector(".tetris__total .line span");
+
+const TetrisIcon = document.querySelector(".icon4");
+const TetrisWrap = document.querySelector(".tetris__wrap");
+const TetrisClose = document.querySelector(".tetris__close");
+
 // variables
 let rows = 18;
 let cols = 13;
@@ -64,8 +81,7 @@ const blocks = {
 }
 
 //게임시작 버튼
-const tetrisStartBtn = document.querySelector(".tetris__start .tetris__startBtn");
-const tetrisMsg = document.querySelector(".tetrits__cover.show");
+
 
 tetrisStartBtn.addEventListener("click", () => {
     tetrisMsg.classList.remove("show");
@@ -163,6 +179,7 @@ function checkMatch(){
     childNodes[0].children[0].childNodes.forEach((li) => {
         if (li.classList.contains("seized")) {
         stopTetris = true;
+        tetrisGameover();
         }
     });
 
@@ -239,19 +256,80 @@ function dropBlock() {
     }, 10);
 }
 
+// 시간 설정하기
+function setTime() {
+    setTetrisTime = setInterval(() => {
+      tetrisTime++;
+      document.querySelector(".tetris__info .time span").innerText = tetrisTime;
+    }, 1000);
+  }
+
 // 게임 오버
-const tetrisRestart = tetrisWrap.querySelector(".tetris__restart");
-const tetrisInfo = tetrisWrap.querySelector(".tetris__info");
-const resultScore = tetrisWrap.querySelector(".tetris__score span");
+
 function tetrisGameover() {
     clearInterval(setTetrisTime);
     duration = 500;
     tetrisInfo.classList.remove("show");
     tetrisRestart.classList.add("show");
+    resultTime.innerText = tetrisTime;
+  resultLine.innerText = tetrisScore;
     resultScore.innerText = tetrisScore;
     }
 
+// 게임 시작하기
+function tetrisStartFunc() {
+    stopTetris = false;
+    tetrisStart.classList.remove("show");
+    tetrisInfo.classList.add("show");
+    document.querySelector(".tetris__restart").classList.remove("show");
+    generateNewBlock();
+    setTime();
+  }
 
+
+
+  // 게임 시작하기
+  tetrisStartBtn.addEventListener("click", () => {
+    tetrisStartFunc();
+  });
+
+  // 리셋하기
+function resetTetris() {
+
+    tetrisInfo.classList.remove("show");
+    clearInterval(setTetrisTime);
+    tetrisScore = 0;
+    tetrisTime = 0;
+    stopTetris = true;
+    duration = 500;
+    document.querySelector(".tetris__info .time span").innerText = tetrisTime;
+  
+    const tetrisMinos = playground.querySelectorAll("li > ul > li");
+    tetrisMinos.forEach((minos) => {
+      // minos.className = "original";
+      minos.className = "";
+    });
+  }
+
+  // 게임 재시작하기
+  tetrisRestart.addEventListener("click", () => {
+    resetTetris();
+    tetrisRestart.classList.remove("show");
+    tetrisStart.classList.add("show");
+  });
+  // 창 끄기
+
+    TetrisIcon.addEventListener("click", () => {
+    resetTetris();
+    TetrisWrap.classList.toggle("show");
+    tetrisRestart.classList.remove("show");
+    tetrisStart.classList.add("show");
+  });
+  TetrisClose.addEventListener("click", () => {
+    resetTetris();
+		TetrisWrap.classList.remove("show");
+        tetrisRestart.classList.remove("show");
+  });
 
 
 
