@@ -1,21 +1,20 @@
-const tetrisWrap = document.querySelector(".tetris__wrap");
-const playground = tetrisWrap.querySelector(".playground > ul");
+const tetrisWrap2 = document.querySelector(".tetris__wrap");
+const playground = tetrisWrap2.querySelector(".playground > ul");
 
 const tetrisStart = document.querySelector(".tetris__start");
 const tetrisStartBtn = document.querySelector(".tetris__start .tetris__startBtn");
 const tetrisMsg = document.querySelector(".tetrits__cover.show");
 
-const tetrisRestart = tetrisWrap.querySelector(".tetris__restart");
-const tetrisRestartBtn = tetrisWrap.querySelector(".tetris__restartBtn");
-const tetrisInfo = tetrisWrap.querySelector(".tetris__info");
-const resultScore = tetrisWrap.querySelector(".tetris__score span");
+const tetrisRestart = tetrisWrap2.querySelector(".tetris__restart");
+const tetrisRestartBtn = tetrisWrap2.querySelector(".tetris__restartBtn");
+const tetrisInfo = tetrisWrap2.querySelector(".tetris__info");
+const resultScore = tetrisWrap2.querySelector(".tetris__score span");
 
-const resultTime = tetrisWrap.querySelector(".tetris__total .time span");
-const resultLine = tetrisWrap.querySelector(".tetris__total .line span");
+const resultTime = tetrisWrap2.querySelector(".tetris__total .time span");
+const resultLine = tetrisWrap2.querySelector(".tetris__total .line span");
 
-const TetrisIcon = document.querySelector(".icon4");
-const TetrisWrap = document.querySelector(".tetris__wrap");
-const TetrisClose = document.querySelector(".tetris__close");
+const TetrisIcon2 = document.querySelector(".icon4");
+const TetrisCloseBtn = document.querySelector(".tetris__close");
 
 // variables
 let rows = 18;
@@ -196,8 +195,9 @@ function checkMatch(){
             child.remove();
             prependNewLine();
             tetrisScore++;
-            document.querySelector(".tetris__info > p > span").innerText = tetrisScore;
-    }
+            document.querySelector(".tetris__info .score span").innerText = tetrisScore * 10;
+            duration > 200 ? duration = duration - 20 : duration;
+        }
     });
 
     generateNewBlock()
@@ -223,7 +223,6 @@ function generateNewBlock(){
     movingItem.direction = 0;
     tempMovingItem = { ...movingItem };
 
-    renderBlocks();
 }
 
 // 빈칸 감지
@@ -272,7 +271,7 @@ function tetrisGameover() {
     tetrisInfo.classList.remove("show");
     tetrisRestart.classList.add("show");
     resultTime.innerText = tetrisTime;
-  resultLine.innerText = tetrisScore;
+    resultLine.innerText = tetrisScore * 10;
     resultScore.innerText = tetrisScore;
     }
 
@@ -287,13 +286,7 @@ function tetrisStartFunc() {
   }
 
 
-
-  // 게임 시작하기
-  tetrisStartBtn.addEventListener("click", () => {
-    tetrisStartFunc();
-  });
-
-  // 리셋하기
+// 리셋하기
 function resetTetris() {
 
     tetrisInfo.classList.remove("show");
@@ -303,35 +296,14 @@ function resetTetris() {
     stopTetris = true;
     duration = 500;
     document.querySelector(".tetris__info .time span").innerText = tetrisTime;
-  
+    document.querySelector(".tetris__info .score span").innerText = tetrisScore;
+    
     const tetrisMinos = playground.querySelectorAll("li > ul > li");
     tetrisMinos.forEach((minos) => {
-      // minos.className = "original";
-      minos.className = "";
+        // minos.className = "original";
+        minos.className = "";
     });
-  }
-
-  // 게임 재시작하기
-  tetrisRestart.addEventListener("click", () => {
-    resetTetris();
-    tetrisRestart.classList.remove("show");
-    tetrisStart.classList.add("show");
-  });
-  // 창 끄기
-
-    TetrisIcon.addEventListener("click", () => {
-    resetTetris();
-    TetrisWrap.classList.toggle("show");
-    tetrisRestart.classList.remove("show");
-    tetrisStart.classList.add("show");
-  });
-  TetrisClose.addEventListener("click", () => {
-    resetTetris();
-		TetrisWrap.classList.remove("show");
-        tetrisRestart.classList.remove("show");
-  });
-
-
+    }
 
 // 이벤트
 document.addEventListener("keydown", (e) => {
@@ -360,5 +332,33 @@ document.addEventListener("keydown", (e) => {
             break;
     }
 });
+
+
+// 게임 시작하기
+    tetrisStartBtn.addEventListener("click", () => {
+        tetrisStartFunc();
+        });
+
+  // 게임 재시작하기
+  tetrisRestartBtn.addEventListener("click", () => {
+    resetTetris();
+    tetrisRestart.classList.remove("show");
+    tetrisStart.classList.add("show");
+    tetrisStartFunc();
+});
+  // 창 끄기
+
+    TetrisIcon2.addEventListener("click", () => {
+    resetTetris();
+    tetrisRestart.classList.remove("show");
+    tetrisStart.classList.add("show");
+  });
+  TetrisCloseBtn.addEventListener("click", () => {
+    resetTetris();
+    tetrisRestart.classList.remove("show");
+    tetrisStart.classList.add("show");
+  });
+
+
 init();
 

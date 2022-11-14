@@ -1,3 +1,4 @@
+
 .music__wrap {
     display: none;
 }
@@ -11,7 +12,7 @@
     background: #000;
     position: absolute;
     right: 100px;
-    top: 100px;
+    top: -600px;
     padding: 10px;
     padding-top: 5px;
 }

@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>gameEffect01</title>
-	<link rel="stylesheet" href="../assets/css/bg.css" />
-	<!-- <link rel="stylesheet" href="../assets/css/bg2.css" /> -->
+	<!-- <link rel="stylesheet" href="../assets/css/bg.css" /> -->
+	<link rel="stylesheet" href="../assets/css/bg2.css" />
 	<link rel="stylesheet" href="../assets/css/game.css" />
 	<link rel="stylesheet" href="../assets/css/memory.css" />
 	<link rel="stylesheet" href="../assets/css/music.css" />
@@ -21,6 +21,50 @@
 	  <div class="time"></div>
 	</header>
 	<!-- header -->
+	<div class="bg">
+		<p class="p1">This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			neque: 00, 11, 22, 33. Quo est ex tempora recusandae pariatur: 12, 34, 56, 78.
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+			This is GameEffect Project of Youcodein. Ipsa atque vel laboriosam sit, minima labore alias nobis ea corrupti<br>
+		   </p>
+	   <p>---------------------------------</p>
+	   <p class="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+	   </p>
+   
+	   <p>---------------------------------</p>
+	   <p class="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+		   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa atque vel laboriosam sit, minima labore alias nobis laborum. Q
+		   uo est ex tempora recusandae pariatur consequuntur natus aspernatur.<br>
+	   </p>
+	</div>
+	
+                                           
+	<!-- bg -->
 
 	<main id="main">
 	  <div class="mouse__cursor">
@@ -176,7 +220,9 @@
 					<p>추억의 테트리스 게임~!</p>
 					<div class="tetris__startBtn">Game Start</div>
 				</div>
-			  <div class="tetris__restart">
+			  
+			</div>
+			<div class="tetris__restart">
 				<div class="desc">GAME OVER</div>
                         <div class="tetris__total">
                             <div class="time"><span>0</span> 초</div>
@@ -185,10 +231,10 @@
                         <div class="tetris__score"><span>0</span> 점</div>
 				<div class="tetris__restartBtn">Try Again?</div>
 			  </div>
-			</div>
 			<div class="tetris__info">
 				<div class="time"><span>0</span> 초</div>
-				<p>SCORE <span>0</span></p>
+				<div class="score"><span>0</span> 점</div>
+
 			</div>
 		  <div class="tetris__play">
 			<div class="playground">
@@ -596,6 +642,7 @@
 	<script src="../assets/js/searchgame01.js"></script>
 	<script src="../assets/js/memory.js"></script>
 	<script src="../assets/js/tetris.js"></script>
+	<script src="../assets/js/bg.js"></script>
 	<script>
 	  $(".icon1").draggable({
 		drag: function () {
@@ -637,6 +684,7 @@
 	  $(".tetris__wrap").draggable({ stack: ".wrap", opacity: 0.8 });
 	  $(".sourceInner").draggable({ stack: ".wrap", opacity: 0.8 });
 	  $(".tetrits__cover").draggable({ stack: ".wrap", opacity: 0.8 });
+	  $(".tetris__restart").draggable({ stack: ".wrap", opacity: 0.8 });
 
 	  // $(".music__inner").draggable({
 	  //   drag: function () {
@@ -799,7 +847,7 @@
 	  const searchWrap = document.querySelector(".search__wrap");
 	  const searchClose = document.querySelectorAll(".search__header div");
 	  searchIcon.addEventListener("click", () => {
-		searchWrap.classList.add("show");
+		searchWrap.classList.toggle("show");
 		memoryWrap1.classList.remove("show");
 	  });
 	  searchClose.forEach((e) => {
@@ -823,18 +871,18 @@
 
 	  //메모리 게임
 
-	//   const TetrisIcon = document.querySelector(".icon4");
-	//   const TetrisWrap = document.querySelector(".tetris__wrap");
-	//   const TetrisClose = document.querySelector(".tetris__close");
-	//   TetrisIcon.addEventListener("click", () => {
-	// 	TetrisWrap.classList.toggle("show");
-	// 	searchWrap.classList.remove("show");
-	// 	memoryWrap1.classList.remove("show");
-	//   });
-	//   TetrisClose.addEventListener("click", () => {
-	// 	TetrisWrap.classList.remove("show");
-	//   });
-	// //   테트리스 게임
+	  const TetrisIcon = document.querySelector(".icon4");
+	  const TetrisWrap = document.querySelector(".tetris__wrap");
+	  const TetrisClose = document.querySelector(".tetris__close");
+	  TetrisIcon.addEventListener("click", () => {
+		TetrisWrap.classList.toggle("show");
+		searchWrap.classList.remove("show");
+		memoryWrap1.classList.remove("show");
+	  });
+	  TetrisClose.addEventListener("click", () => {
+		TetrisWrap.classList.remove("show");
+	  });
+	//   테트리스 게임
 	</script>
   </body>
 </html>

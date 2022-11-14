@@ -38,12 +38,28 @@
     color: #fff;
 }
 
-.tetris__restart{
+.tetris__restart {
     display: none;
+    position: absolute;
+    border-radius: 10px;
+    left: 25%;
+    top: 35%;
+    text-align: center;
+    width: 250px;
+    font-size: 18px;
+    padding: 40px;
+    background: #666;
+    color: #fff;
+}
+.tetris__restart.show {
+    display: block;
 }
 
-.tetris__restart.show{
-    display: block;
+.tetris__restartBtn {
+    padding: 20px;
+}
+.tetris__restartBtn:hover {
+    background: rgb(63, 63, 63);
 }
 
 .tetrits__cover{
@@ -90,18 +106,7 @@
     background: #888;
 
 }
-.tetris__restart {
-    position: absolute;
-    border-radius: 10px;
-    top: 200px;
-    left: 200px;
-    text-align: center;
-    width: 250px;
-    font-size: 30px;
-    padding: 40px;
-    background: #666;
-    color: #fff;
-}
+
 .tetris__play {}
 .playground {
     
