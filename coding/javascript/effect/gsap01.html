@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #contents > section {
+            min-height: 90vh;
+        }
+        #section1 {
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        }
+        #section2 {
+            background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+        }
+        #section3 {
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        #section4 {
+            background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+        }
+        #section5 {
+            background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+        }
+        #section6 {
+            background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+        }
+        .square.red {
+            background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+        }
+        .square2 {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+
+        }
+        .panel {
+            height: 100vh;
+            background-color: beige;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+        .box-red {
+            background-color: red;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            transition: all 600ms ease-in-out;
+            background-color: tan;
+            color: #667eea;
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+            padding: 20px;
+        }
+        .not-active {
+            background: #fff;
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>about</li>
+            <li>work</li>
+            <li>contact</li>
+        </ul>
+    </nav>
+    <div class="panel">
+        hello This is Youcodein's page. welcome to my page! this is a test page, and i do not know What I say!
+    </div>
+    <!-- <div class="box"></div> -->
+    <!-- <div class="panel"></div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.create({
+            trigger: ".panel",
+            start: "top 6%",
+            markers: true,
+            toggleClass: {targets: "nav", className: "not-active"},
+            onEnter: ()=> console.log("onEnter"),
+            onLeave: ()=> console.log("onLeave"),
+            onEnterBack: ()=> console.log("onEnterBack"),
+            onLeaveBack: ()=> console.log("onLeaveBack"),
+        })
+
+
+    </script>
+
+    <script>
+        // gsap.registerPlugin(ScrollTrigger);
+
+        // gsap.to(".square",{
+        //     x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger:".square",
+        //         start: "top 70%",
+        //         end: ()=>`+=${document.querySelector(".square").offsetHeight}`,
+        //         markers: true,
+        //         toggleClass: "red"
+        //     }
+        // });
+
+        //toggleActions: "onEnter onLeave onEnterBack onLeaveBack"
+        // play, pause, resume, reset, restart, complete, reverse, none
+        //ex)toggleActions: "restart pause resume reset"
+
+        // 스크롤 할때마다 움직이기
+        // scrub: true
+        // scrub: 4(스무스 정도 조정)
+
+        // 고정
+        // pin: true,
+        // pinSpacing: false
+
+
+
+        // 기본 애니메이션
+        //     gsap.to(".square",{
+        //     // x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger:".square",
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         markers: {
+        //             startColor: "red",
+        //             endColor: "skyblue",
+        //             fontSize: "20px"
+        //         },
+        //         toggleClass: "red",
+        //         toggleActions: "restart none none none",
+        //         pin: true,
+        //         pinSpacing: false
+        //     }
+        // });
+
+
+        // 애니메이션
+        // const tl = gsap.timeline({repeat: 2, yoyo:true});
+        // tl.to(".square",{x:1000, duration: 2, rotation:100,ease: "elastic", skewY: 1, borderRadius: 0})
+        // .to(".square",{y:500, duration: 2, rotation:0,ease: "elastic",skewY: 3,borderRadius: 100,})
+        // .to(".square",{x:0, duration: 2, rotation:300,ease: "elastic",skewY: 1,width: 400})
+        // .to(".square",{y:0, duration: 2, rotation:0,width: 200})
+
+        // 타임라인 걸기
+    
+        // const tl = gsap.timeline({
+        //     scrollTrigger : {
+        //         trigger: ".square",
+        //         markers: true, 
+        //         start: "top 80%",
+        //         end: "top 30%",
+        //         scrub: 1
+        //     }
+        // })
+
+        // tl.to(".square",{x:1000, duration: 2, rotation:100, skewY: 1, borderRadius: 0})
+        // .to(".square",{y:500, duration: 2, rotation:0,skewY: 3,borderRadius: 100,})
+        // .to(".square",{x:0, duration: 2, rotation:300,skewY: 1,width: 400})
+        // .to(".square",{y:0, duration: 2, rotation:0,width: 200})
+
+        
+
+    </script>
+</body>
+</html>
