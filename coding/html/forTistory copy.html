@@ -1,47 +1,41 @@
 <div class="document">
   <h2 class="t_tit" data-ke-size="size26">
-    Programmers Lv.1 : 나누어 떨어지는 숫자 배열
+    Programmers Lv.1 : 제일 작은 수 제거하기
   </h2>
   <p class="t_desc2" data-ke-size="size16">
-    array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.
-divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
+    정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.
   </p>
   <p class="t_desc2" data-ke-size="size16">
-    arr은 자연수를 담은 배열입니다.<br>
-    정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.<br>
-    divisor는 자연수입니다.<br>
-    array는 길이 1 이상인 배열입니다.
+    arr은 길이 1 이상인 배열입니다.<br>
+인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.
   </p>
   <h2 class="t_tit" data-ke-size="size26">내 풀이</h2>
   <div class="t_code">
-<pre class="javascript"><code>function solution(arr, divisor) {
-  var answer = [];
-  for(i=0; i&lt;arr.length; i++) {
-    if(arr[i] % divisor == 0) {
-      answer.push(arr[i]);
-    }
+<pre class="javascript"><code>function solution(arr) {
+  if (arr.length === 1) return [-1];
+  
+  let i = 0;
+  for (let j = 0; j &lt; arr.length; j += 1) {
+      if (arr[i] > arr[j]) i = j;
   }
-  if(answer.length == 0) {
-    answer.push(-1);
-  }
-  answer.sort((a,b) => a - b);
-  return answer;
+  arr.splice(i, 1);
+  return arr;
 }
 </code></pre>
   </div>
   <p class="t_box">
-    배열을 divisor로 나눴을때 나오는 값이 0이면 나누어 떨어지는 숫자를 골라냅니다.<br>
-    sort()를 사용하여 오름차순으로 정렬해줍니다.
+    배열의 순서나 값을 조작하지 않은 채 작은 수만 판별하고, 마지막에 가장 작은 수가 존재하는 인덱스의 값만 제거하는 방식
   </p>
   <!-- 내 풀이 -->
 
   <h2 class="t_tit" data-ke-size="size26">다른 사람들의 풀이</h2>
   <div class="t_code">
-<pre class="javascript"><code>function solution(arr, divisor) {
-  var answer = arr.filter(v => v%divisor == 0);
-  return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
-}
+<pre class="javascript"><code>
+  function solution(arr) {
+      const min = Math.min(...arr);
+      return arr.length !== 1 ? arr.filter(i => i !== min) : [-1]
+  }
 </code></pre>
   </div>
-  <p class="t_box">filter()와 삼항연산자 사용</p>
+  <!-- <p class="t_box">filter()와 삼항연산자 사용</p> -->
 </div>
