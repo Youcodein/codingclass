@@ -271,8 +271,8 @@ function tetrisGameover() {
     tetrisInfo.classList.remove("show");
     tetrisRestart.classList.add("show");
     resultTime.innerText = tetrisTime;
-    resultLine.innerText = tetrisScore * 10;
-    resultScore.innerText = tetrisScore;
+    resultLine.innerText = tetrisScore;
+    resultScore.innerText = tetrisScore * 10;
     }
 
 // 게임 시작하기
@@ -334,18 +334,19 @@ document.addEventListener("keydown", (e) => {
 });
 
 
-// 게임 시작하기
-    tetrisStartBtn.addEventListener("click", () => {
-        tetrisStartFunc();
-        });
+    // 게임 시작하기
+        tetrisStartBtn.addEventListener("click", () => {
+            tetrisStartFunc();
+            });
 
-  // 게임 재시작하기
-  tetrisRestartBtn.addEventListener("click", () => {
-    resetTetris();
-    tetrisRestart.classList.remove("show");
-    tetrisStart.classList.add("show");
-    tetrisStartFunc();
-});
+    // 게임 재시작하기
+    tetrisRestartBtn.addEventListener("click", () => {
+        resetTetris();
+        tetrisRestart.classList.remove("show");
+        tetrisStart.classList.add("show");
+        tetrisStartFunc();
+    });
+
   // 창 끄기
 
     TetrisIcon2.addEventListener("click", () => {
@@ -358,7 +359,7 @@ document.addEventListener("keydown", (e) => {
     tetrisRestart.classList.remove("show");
     tetrisStart.classList.add("show");
   });
-
+  
 
 init();
 

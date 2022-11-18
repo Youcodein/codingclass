@@ -400,7 +400,7 @@ const searchTime = document.querySelector(".time span");
     const searchResultWrap = document.querySelector(".search__result");
     const searchRestart = document.querySelector(".search__result .restart");
 
-    let goodJobSound = new Audio("../assets/audio/Success.mp3");
+    let goodJobSound = new Audio("../assets/audio/Success.m4a");
     let clearSound = new Audio("../assets/audio/up.mp3");
 
     let timeReamining = 120,    //남은시간
@@ -557,7 +557,7 @@ const searchTime = document.querySelector(".time span");
         searchAudioStop.style.display = "none";
         searchAudio.play();
     });
-    searchRestart.addEventListener("click", restart);
+    // searchRestart.addEventListener("click", restart);   ''
 
     // 서치게임
     const searchClose1 = document.querySelectorAll(".search__header div");

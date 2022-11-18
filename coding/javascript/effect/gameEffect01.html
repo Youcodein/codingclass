@@ -342,8 +342,8 @@
 			  src="../assets/audio/music_audio01.mp3"
 			  loop="loop"
 			></audio>
-			<audio id="audioC" src="../assets/audio/Button 3.m4a"></audio>
-			<audio id="audioF" src="../assets/audio/Error 1.m4a"></audio>
+			<!-- <audio id="audioC" src="../assets/audio/Button 3.m4a"></audio> -->
+			<audio id="audioF" src="../assets/audio/Error.m4a"></audio>
 			<div class="icon"></div>
 		  </div>
 
@@ -628,10 +628,7 @@
 	</div>
 
 	<div class="sourceInner">
-	  <iframe
-		src="https://github1s.com/Youcodein/coding2/tree/main/javascript/effect"
-		frameborder="0"
-	  ></iframe>
+	  
 	  <div class="sourceClose">X</div>
 	</div>
 	<!-- 소스 보기 -->
@@ -876,8 +873,6 @@
 	  const TetrisClose = document.querySelector(".tetris__close");
 	  TetrisIcon.addEventListener("click", () => {
 		TetrisWrap.classList.toggle("show");
-		searchWrap.classList.remove("show");
-		memoryWrap1.classList.remove("show");
 	  });
 	  TetrisClose.addEventListener("click", () => {
 		TetrisWrap.classList.remove("show");

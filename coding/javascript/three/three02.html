@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3js2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #000;
+        }
+        canvas {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas id="webgl"></canvas>
+
+    <script src="three.min.js"></script>
+    <script>
+        
+        class Stage {
+            constructor(){
+
+                this.renderParam = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                }
+
+                this.cameraParam = {
+                    fov: 75,
+                    near: 1,
+                    far: 1000
+                }
+
+
+
+                this.scene = null;
+                this.renderer = null;
+                this.camera = null;
+                this.mesh = null;
+                // this.mesh2 = null;
+
+                this.init();
+            }
+
+            init() {
+                this._setScene();           //화면 설정
+                this._setRender();          //렌더러 설정
+                this._setCamera();          //카메라 설정
+                // this._setMesh();            //메쉬 설정
+                // this._setMesh2();            //메쉬 설정
+                // this._setMesh3();            //메쉬 설정
+                this._setMesh4();            //메쉬 설정
+                this._setLight();           //조명 설정
+
+                this._update();             //업데이트 설정
+                this._render();         
+                
+                onresize = this._resize.bind(this); // 리사이즈 설정
+
+            }
+
+            _setScene(){
+                this.scene = new THREE.Scene();
+            }
+            _setRender(){
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl"),
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1 );
+            }
+
+            _setCamera(){
+                this.camera = new THREE.PerspectiveCamera(
+                    this.cameraParam.fov,
+                    this.renderParam.width / this.renderParam.height,
+                    this.cameraParam.near,
+                    this.cameraParam.far
+                );
+                this.camera.position.set(0, 0, 7);
+            }
+            _setMesh(){
+                const geometry = new THREE.TorusGeometry(2, .5, 16, 100);
+                const material = new THREE.MeshLambertMaterial({color: 0xff0000});
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.scene.add(this.mesh);
+            }
+            _setMesh2(){
+                const geometry = new THREE.BoxGeometry(3, 3, 3, 4, 4, 4, 4 );
+                const material = new THREE.MeshStandardMaterial({color: 0xff0000});
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.mesh.position.set(-3,0,0)
+                this.scene.add(this.mesh);
+            }
+
+            _setMesh3(){
+                const geometry = new THREE.BoxGeometry(3, 3, 3, 4, 4, 4, 4 );
+                const material = new THREE.MeshStandardMaterial({
+                    color: 0xff0000,
+                    // wireframe: true
+                });
+                this.mesh2 = new THREE.Mesh(geometry, material);
+                this.mesh2.position.set(3,0,0)
+                this.scene.add(this.mesh2);
+            }
+
+            _setMesh4(){
+                const geometry = new THREE.ConeGeometry( 5, 20, 10 );
+                const material = new THREE.MeshLambertMaterial( {color: 0xffff00} );
+                this.mesh = new THREE.Mesh( geometry, material );
+                this.mesh.position.set(0,0,-30)
+                this.scene.add( this.mesh );
+            }
+
+            _setLight(){
+                const light = new THREE.DirectionalLight(0xffffff, 1.5);
+                light.position.y = 10;
+                this.scene.add(light);
+
+                const light2 = new THREE.DirectionalLight(0xffffff, 0.5)
+                light2.position.set(-10, -10, 10)
+                this.scene.add(light2);
+
+                const ambientLight = new THREE.AmbientLight(0x4B8483);
+                this.scene.add(ambientLight);
+            }
+            _update(){
+                this.mesh.rotation.x += .02;
+                this.mesh.rotation.y += .02;
+                this.mesh.rotation.z += .02;
+
+                // this.mesh2.rotation.x += .015;
+                // this.mesh2.rotation.y += .015;
+                // this.mesh2.rotation.z += .015;
+            }
+            _render() {
+                this._update();
+                this.renderer.render(this.scene, this.camera);
+                requestAnimationFrame(this._render.bind(this))
+            }
+            _resize(){
+                this.camera.aspect = window.innerWidth / window.innerHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.render(this.scene, this.camera);
+            }
+        }
+
+        (()=>{
+            const stage = new Stage();
+        })();
+    </script>
+</body>
+</html>
