@@ -16,6 +16,10 @@ const resultLine = tetrisWrap2.querySelector(".tetris__total .line span");
 const TetrisIcon2 = document.querySelector(".icon4");
 const TetrisCloseBtn = document.querySelector(".tetris__close");
 
+let tetrisMusic = new Audio("../assets/audio/tetrisBGM.mp3");
+let tetrisMatchMusic = new Audio("../assets/audio/O.mp3");
+let tetrisEndMusic = new Audio("../assets/audio/up.mp3");
+
 // variables
 let rows = 18;
 let cols = 13;
@@ -178,6 +182,7 @@ function checkMatch(){
     childNodes[0].children[0].childNodes.forEach((li) => {
         if (li.classList.contains("seized")) {
         stopTetris = true;
+        tetrisEndMusic.play();
         tetrisGameover();
         }
     });
@@ -192,6 +197,7 @@ function checkMatch(){
 
 
         if(matched){
+            tetrisMatchMusic.play();
             child.remove();
             prependNewLine();
             tetrisScore++;
@@ -266,6 +272,8 @@ function setTime() {
 // 게임 오버
 
 function tetrisGameover() {
+    tetrisMusic.pause();
+    tetrisMusic.currentTime = 0;
     clearInterval(setTetrisTime);
     duration = 500;
     tetrisInfo.classList.remove("show");
@@ -283,12 +291,15 @@ function tetrisStartFunc() {
     document.querySelector(".tetris__restart").classList.remove("show");
     generateNewBlock();
     setTime();
+    tetrisMusic.play();
+    tetrisMusic.loop = true;
   }
 
 
 // 리셋하기
 function resetTetris() {
-
+    tetrisMusic.pause();
+    tetrisMusic.currentTime = 0;
     tetrisInfo.classList.remove("show");
     clearInterval(setTetrisTime);
     tetrisScore = 0;
