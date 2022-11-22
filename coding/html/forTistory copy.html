@@ -1,59 +1,43 @@
 <div class="document">
   <h2 class="t_tit" data-ke-size="size26">
-    Programmers Lv.1 : 약수의 갯수의 덧셈
+    Programmers Lv.1 : 부족한 금액 계산하기
   </h2>
   <p class="t_desc2" data-ke-size="size16">
-    두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요.
+    새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를 받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.
+놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
+단, 금액이 부족하지 않으면 0을 return 하세요.
   </p>
   <p class="t_desc2" data-ke-size="size16">
-    1 ≤ left ≤ right ≤ 1,000
+    놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수<br>
+처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수<br>
+놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
   </p>
   <h2 class="t_tit" data-ke-size="size26">내 풀이</h2>
   <div class="t_code">
-<pre class="javascript"><code>function divisors(num) {
-  let count = 0;
-  
-  for(let i = 1; i &lt;= num; i++) {
-      if(num % i == 0) {
-          count++;
-      }
-  }
-  
-  return count;
-}
-
-function solution(left, right) {
-  let answer = 0;
-  
-  for(let i = left; i &lt;= right; i++) {
-      let count = divisors(i);          
-      if (count % 2 === 0) {
-          answer += i;
-      } else {
-          answer -= i;
-      }      
-  }   
-  
-  return answer;
+<pre class="javascript"><code>function solution(price, money, count) {
+    let totalPrice = 0;
+    
+    for(let i=1;i&lt;=count;i++){
+        totalPrice += price * i;
+    }
+    
+    return money > totalPrice ? 0 : totalPrice-money
 }
 </code></pre>
   </div>
   <p class="t_box">
+    count만큼 순회하며 totalPrice에 price * i 를 더한다.
+    만약 money가 totalPrice보다 크면 0을 ,
+    그렇지 않다면 totalPrice - money를 return 한다.
   </p>
   <!-- 내 풀이 -->
 
   <h2 class="t_tit" data-ke-size="size26">다른 사람들의 풀이</h2>
   <div class="t_code">
-<pre class="javascript"><code>function solution(left, right) {
-  var answer = 0;
-  for (let i = left; i &lt;= right; i++) {
-      if (Number.isInteger(Math.sqrt(i))) { // 제곱근이 정수면 약수의 개수는 홀수
-          answer -= i;
-      } else {
-          answer += i;
-      }
-  }
-  return answer;
+<pre class="javascript"><code>function solution(price, money, count) {
+  const tmp = (price * count * (count + 1)) / 2 - money;
+  return tmp > 0 ? tmp : 0;
+}turn answer;
 }
 </code></pre>
   </div>
