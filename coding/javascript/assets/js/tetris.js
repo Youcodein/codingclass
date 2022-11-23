@@ -202,7 +202,7 @@ function checkMatch(){
             prependNewLine();
             tetrisScore++;
             document.querySelector(".tetris__info .score span").innerText = tetrisScore * 10;
-            duration > 200 ? duration = duration - 20 : duration;
+            duration > 200 ? duration = duration - 10 : duration;
         }
     });
 
