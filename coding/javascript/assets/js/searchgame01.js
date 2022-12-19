@@ -383,7 +383,7 @@ const cssProperty = [
     { num: 383, name: "z-index", desc: "엘리먼트의 겹쳐지는 순서를 지정한다" },
 ];
 
-const searchTime = document.querySelector(".time span");
+const searchTime = document.querySelector(".search__time span");
     const searchList = document.querySelector(".search__list");
     const searchAnswers = document.querySelector(".search__answers");
     const searchMissAnswers = document.querySelector(".search__missAnswers");
@@ -403,13 +403,13 @@ const searchTime = document.querySelector(".time span");
     let goodJobSound = new Audio("../assets/audio/Success.m4a");
     let clearSound = new Audio("../assets/audio/up.mp3");
 
-    let timeReamining = 120,    //남은시간
+    let timeReamining = 3,    //남은시간
         timeInterval = "",  //시간 간격
         Score = 0,    //점수
         answers = {}; //새로운 정답
 
     function updateList(){
-        cssProperty.forEach( data =>{
+        cssProperty.forEach( (data) =>{
             searchList.innerHTML += `<span>${data.name}</span>`;
         });
     }
@@ -539,6 +539,7 @@ const searchTime = document.querySelector(".time span");
 
             searchAnswers.innerHTML = "";
             searchMissAnswers.innerHTML = "";
+            
 
             startQuiz();
         }, 1000);
@@ -557,26 +558,26 @@ const searchTime = document.querySelector(".time span");
         searchAudioStop.style.display = "none";
         searchAudio.play();
     });
-    // searchRestart.addEventListener("click", restart);   ''
+    searchRestart.addEventListener("click", restart);
 
     // 서치게임
-    const searchClose1 = document.querySelectorAll(".search__header div");
-    searchClose1.forEach( (e) => {
-        e.addEventListener("click", () => {
-            searchResultWrap.classList.remove("show");
-            searchStart.style.display = "block";
-            timeReamining = 120;
-            Score = 0;
-            searchCount.innerText = "0";
+    // const searchClose1 = document.querySelectorAll(".search__header div");
+    // searchClose1.forEach( (e) => {
+    //     e.addEventListener("click", () => {
+    //         searchResultWrap.classList.remove("show");
+    //         searchStart.style.display = "block";
+    //         timeReamining = 120;
+    //         Score = 0;
+    //         searchCount.innerText = "0";
     
-            searchAnswers.innerHTML = "";
-            searchMissAnswers.innerHTML = "";
+    //         searchAnswers.innerHTML = "";
+    //         searchMissAnswers.innerHTML = "";
     
             
-            searchAudio.pause();
-            searchAudioPlay.style.display = "none";
-            searchAudioStop.style.display = "block";
-            searchTime.innerText = displayTime();
-            clearInterval(timeInterval);
-        });
-    })
+    //         searchAudio.pause();
+    //         searchAudioPlay.style.display = "none";
+    //         searchAudioStop.style.display = "block";
+    //         searchTime.innerText = displayTime();
+    //         clearInterval(timeInterval);
+    //     });
+    // })
