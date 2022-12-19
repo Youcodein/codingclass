@@ -403,7 +403,7 @@ const searchTime = document.querySelector(".search__time span");
     let goodJobSound = new Audio("../assets/audio/Success.m4a");
     let clearSound = new Audio("../assets/audio/up.mp3");
 
-    let timeReamining = 3,    //남은시간
+    let timeReamining = 120,    //남은시간
         timeInterval = "",  //시간 간격
         Score = 0,    //점수
         answers = {}; //새로운 정답
@@ -529,20 +529,32 @@ const searchTime = document.querySelector(".search__time span");
 
     };
 
-    //다시 시작하기
-    function restart(){
-        setTimeout(()=>{
-            searchResultWrap.classList.remove("show");
-            timeReamining = 120;
-            Score = 0;
-            searchScoreNow.innerText = "0";
+    // //다시 시작하기
+    // function restart(){
+    //     setTimeout(()=>{
+    //         searchResultWrap.classList.remove("show");
+    //         timeReamining = 120;
+    //         Score = 0;
+    //         searchScoreNow.innerText = "0";
 
-            searchAnswers.innerHTML = "";
-            searchMissAnswers.innerHTML = "";
+    //         searchAnswers.innerHTML = "";
+    //         searchMissAnswers.innerHTML = "";
             
 
-            startQuiz();
-        }, 1000);
+    //         startQuiz();
+    //     }, 1000);
+    // }
+    // 다시 시작하기
+    function restart(){
+        searchResultWrap.classList.remove("show");
+        // searchAudioBtn.classList.remove("playing");
+        searchAudio.play();
+        startQuiz();
+        timeReamining = 120;
+        Score = 0;
+        searchScoreNow.innerText = "0";
+        searchAnswers.innerHTML = "";
+            searchMissAnswers.innerHTML = "";
     }
     
     //버튼 이벤트
